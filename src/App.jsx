@@ -1,7 +1,7 @@
-import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/400.css'
-import '@fontsource/roboto/500.css'
-import '@fontsource/roboto/700.css'
+import '@fontsource/montserrat/400.css'
+import '@fontsource/montserrat/500.css'
+import '@fontsource/montserrat/600.css'
+import '@fontsource/montserrat/700.css'
 import './css/custom-scrollbar.css'
 import CssBaseLine from '@mui/material/CssBaseline'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
@@ -12,8 +12,27 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 
 function App() {
+  //customer theme for drak mode
   const theme = createTheme({
-    palette: { mode: 'dark' }
+    palette: {
+      type: 'dark',
+      primary: {
+        main: '#00bcd4',
+      },
+      secondary: {
+        main: '#ff4081',
+      },
+      background: {
+        default: '#1E1E1E',
+      },
+      text: {
+        primary: '#fff',
+        secondary: '#fff',
+      },
+    },
+    typography: {
+      fontFamily: 'Montserrat',
+    },
   })
 
   return (
