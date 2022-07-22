@@ -1,7 +1,13 @@
 import React from 'react'
+import { TitleSection, WrapperContainer } from '../../styles/home'
 
 export default function PopularCategories() {
   return (
-    <div>PopularCategories</div>
+    <WrapperContainer>
+      <TitleSection>
+      Popular categories
+      </TitleSection>
+      
+    </WrapperContainer>
   )
 }

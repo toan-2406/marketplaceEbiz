@@ -4,7 +4,7 @@ export const Colors = {
   primary: "#00bcd4",
   secondary: "#ff9800",
   success: "#00bcd4",
-  error: "#f44336",
+  error: "#D0004B",
   warning: "#ff9800",
   info: "#2196f3",
   disabled: "#bdbdbd",
@@ -31,9 +31,9 @@ export const Colors = {
   whiteDark: "#B6BDCB",
   //black
   black: "#000000",
-    blackDark1: "#808089",
+  blackDark1: "#808089",
   blackDark: "#1E1E1E",
-  blackCard: "#1C1D21"
+  blackCard: "#292b30",
 };
 
 const theme = createTheme({
@@ -44,8 +44,11 @@ const theme = createTheme({
       contrastText: Colors.white,
     },
     secondary: {
-      main: Colors.secondary,
-      contrastText: Colors.white,
+      main: Colors.textWhite,
+      contrastText: Colors.textWhite
+    },
+    error: {
+      main: Colors.error,
     },
     success: {
       main: Colors.success,
@@ -56,7 +59,19 @@ const theme = createTheme({
     },
     fontFamily: {
       default: "Montserrat, sans-serif",
-    }
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1270,
+      xl: 1536,
+    },
+  },
+  typography: {
+    fontFamily: "Montserrat, sans-serif",
   },
   components: {
     MuiButton: {
@@ -71,9 +86,7 @@ const theme = createTheme({
         minHeight: "unset",
         lineHeight: "unset",
         fontFamily: "Roboto, sans-serif",
-        fontWeight: "500",
         letterSpacing: "0.02857em",
-        textTransform: "none",
         color: Colors.text,
         backgroundColor: Colors.white,
         border: "1px solid " + Colors.border,
@@ -96,9 +109,18 @@ const theme = createTheme({
         letterSpacing: "0.02857em",
         textTransform: "none",
         color: Colors.white,
-      }
+      },
+    },
+    MuiTab: {
+      root: {
+        background: Colors.blackDark,
+        color: Colors.white
+      },
+      indicator: {
+        backgroundColor: Colors.error,
+        color: Colors.error
+      },
     }
-    
   },
 });
 

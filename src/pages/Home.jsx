@@ -11,6 +11,7 @@ import Spolight from "../components/Spolight";
 import TopCollection from "../components/TopCollection";
 import NFTs from "../components/NFTs";
 import PopularCategories from "../components/PopularCategories";
+import { BackGroundSection } from "../styles/home";
 
 
 
@@ -23,7 +24,10 @@ const Home = () => {
       <Banner/> 
       <Spolight/>
       <TopCollection/>
+      <BackGroundSection>
+
       <NFTs/>
+      </BackGroundSection>
       <PopularCategories/>  
       {
         //Banner
