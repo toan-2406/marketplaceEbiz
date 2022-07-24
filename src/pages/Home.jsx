@@ -1,24 +1,14 @@
-import { Box, Typography, Container, Stack } from "@mui/material";
-import LoadingButton from "@mui/lab/LoadingButton";
-import { useDispatch } from "react-redux";
-import { setBoards } from "../redux/features/boardSlice";
-import { useNavigate } from "react-router-dom";
-import boardApi from "../api/boardApi";
-import { useState } from "react";
-import nftsell from "../assets/images/home/nft_sell.png";
-import  Banner  from "../components/Banner";
-import Spolight from "../components/Spolight";
-import TopCollection from "../components/TopCollection";
-import NFTs from "../components/NFTs";
-import PopularCategories from "../components/PopularCategories";
+import { Box} from "@mui/material";
+import  Banner  from "../components/page/home/Banner";
+import Spolight from "../components/page/home/Spolight";
+import TopCollection from "../components/page/home/TopCollection";
+import NFTs from "../components/page/home/NFTs";
+import PopularCategories from "../components/page/home/PopularCategories";
 import { BackGroundSection } from "../styles/home";
 
 
 
 const Home = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
   return (
     <Box>
       <Banner/> 

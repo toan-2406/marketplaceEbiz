@@ -32,7 +32,7 @@ export const Colors = {
   //black
   black: "#000000",
   blackDark1: "#808089",
-  blackDark: "#1E1E1E",
+  blackDark: "#141414",
   blackCard: "#292b30",
 };
 

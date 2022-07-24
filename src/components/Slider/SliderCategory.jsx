@@ -10,18 +10,19 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 
-const SliderNFTs = (props) => {
+const SliderCategory = (props) => {
   return (
     <Swiper
-      slidesPerView={3}
-      spaceBetween={16}
+      slidesPerView={3.5}
+      spaceBetween={40}
       slidesPerGroup={1}
       loop={true}
+      style={{ width: "100%" }} 
       loopFillGroupWithBlank={true}
       pagination={{
         type: "progressbar",
       }}
-      navigation={{ enabled: true}}
+      navigation={{ enabled: true }}
       modules={[Pagination, Navigation]}
       className="mySwiper"
     >
@@ -30,4 +31,4 @@ const SliderNFTs = (props) => {
   );
 };
 
-export default SliderNFTs;
+export default SliderCategory;

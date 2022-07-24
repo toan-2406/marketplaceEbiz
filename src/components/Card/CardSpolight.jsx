@@ -11,7 +11,7 @@ export default function CardSpolight(props) {
     <Card sx={{ maxWidth: 400,background:'transparent' }}>
       <CardActionArea sx={{
         "&:hover": {
-          background: hover ? '#f5f5f5' : 'transparent',
+          background:  'transparent',
           cursor: 'pointer',
         },
        

@@ -1,4 +1,4 @@
-import { Container, Typography,Box } from "@mui/material";
+import { Container, Typography,Box, Link } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Colors } from "../theme";
 import bgmain from "../../assets/images/bg-main.png";
@@ -7,6 +7,18 @@ export const WrapperContainer = styled(Container)(({ theme }) => ({
   maxwidth: 1200,
   margin: "0 auto",
   padding: "30px",
+}));
+
+export const TitleFooter = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  fontSize: "18px",
+  color: Colors.textWhite,
+}));
+export const LinkFooter = styled(Link)(({ theme }) => ({
+  fontWeight: 500,
+  fontSize: "14px",
+  color: Colors.whiteDark,
+  textDecoration: "none",
 }));
 
 export const TitleSection = styled(Typography)(({ theme }) => ({

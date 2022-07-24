@@ -1,0 +1,46 @@
+.swiper-button-next,.swiper-button-prev{
+    background: linear-gradient(45deg, #88069D 0.01%, #D0004B 97.2%);
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+}
+.swiper-button-next::after,.swiper-button-prev::after{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+.swiper {
+    width: 85%;
+    height: 100%;
+    position: unset;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal,
+  .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+  .swiper-vertical
+    > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    bottom: 50px !important;
+    top: unset;
+    width: 60% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }

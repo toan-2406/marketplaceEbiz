@@ -1,7 +1,6 @@
-import { BoxContainer,BoxContent } from '../../styles/home/banner'
+import { BoxContainer,BoxContent } from '../../../../styles/home/banner'
 import React from 'react'
-import { Box } from '@mui/system'
-import bannerImg from '../../assets/images/home/nft_sell.png'
+import bannerImg from '../../../../assets/images/home/nft_sell.png'
 import { Container, Typography } from '@mui/material'
 
 export default function Banner() {

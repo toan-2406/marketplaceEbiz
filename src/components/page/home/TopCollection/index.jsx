@@ -1,8 +1,8 @@
 import { Box, Link, Tab, Tabs, Typography } from "@mui/material";
 import React from "react";
-import { ButtonContent, ButtonOutline } from "../../styles/component/button";
-import { TitleSection, WrapperContainer } from "../../styles/home";
-import { ActionTabs,ActionTab } from "../../styles/home/topcollection";
+import { ButtonContent, ButtonOutline } from "../../../../styles/component/button";
+import { TitleSection, WrapperContainer } from "../../../../styles/home";
+import { ActionTabs,ActionTab } from "../../../../styles/home/topcollection";
 import CardTopCollection from "./CardTopCollection";
 
 const data = [
