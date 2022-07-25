@@ -8,7 +8,7 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
     height:'100%',
     padding:'0px 0px',
     background: 'transparent',
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('md')]:{
         flexDirection:"column",
         alignItems:'center'
     }

@@ -1,4 +1,4 @@
-import { Box, Link, Tab, Tabs, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import { ButtonContent, ButtonOutline } from "../../../../styles/component/button";
 import { TitleSection, WrapperContainer } from "../../../../styles/home";

@@ -1,7 +1,7 @@
-import { Box, Container, Divider, styled } from "@mui/material";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Box, Divider } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
-import Header from "./component/header";
+import {Header} from "./component/header";
 import Footer from "./component/footer";
 import { BackGroundOverLay, Line } from "../../styles/home";
 

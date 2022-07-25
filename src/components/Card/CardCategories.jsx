@@ -4,7 +4,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import {  CardActionArea } from "@mui/material";
-import hightlight from "../../assets/images/home/category/hightlight.png";
 
 
 export default function CardCategories(props) {
@@ -12,15 +11,13 @@ export default function CardCategories(props) {
   return (
     <Card
       sx={{
-        maxWidth: 400,
         width: "100%",
         height: "100%",
-        maxHeight: "386px",
         background: "#1C1D21",
         borderRadius: "20px",
         color: "unset",
         boxShadow: "none",
-        marginBottom: "150px",
+        marginBottom: "64px",
       }}
     >
       <CardActionArea
@@ -38,9 +35,9 @@ export default function CardCategories(props) {
           image={item.images}
           alt="popular categories"
         />
-        <CardContent>
+        <CardContent sx={{paddingBottom: 'unset'}}>
           <Typography
-            sx={{ mt: "40px", textTransform: "uppercase", mb: "16px" }}
+            sx={{ mt: "40px", textTransform: "uppercase" }}
             gutterBottom
             variant="h5"
             component="p"

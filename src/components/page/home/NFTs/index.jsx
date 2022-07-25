@@ -1,9 +1,8 @@
 import React from "react";
 import { TitleSection, WrapperContainer } from "../../../../styles/home";
-import Slider from "../../../Slider/SliderNFTs";
-import { SwiperSlide } from "swiper/react";
-import CardNTFs from "../../../Card/CardNTFs";
-import './style.css';
+import SliderNFT from "../../../Slider/SliderNFTs";
+
+import "./style.css";
 
 const data = [
   {
@@ -15,8 +14,7 @@ const data = [
         "https://openseauserdata.com/files/e488a88498206481dc37e32581204b9b.gif",
     },
     name: "Toàn Dev 2k",
-    description:
-      "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
   },
   {
     id: 2,
@@ -27,8 +25,7 @@ const data = [
         "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     },
     name: "Toàn Dev 2k",
-    description:
-      "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
   },
   {
     id: 3,
@@ -39,8 +36,7 @@ const data = [
         "https://lh3.googleusercontent.com/P1WOzkGqp_mU_1jvpFhQnevYKryg0BZbzmuiawx-Xm-5NtuvhWXXPQu5P0llghCzAinhL6iOS8M0wmBLS_naA4d1jsyBTYyXP47br6U=h400",
     },
     name: "Toàn Dev 2k",
-    description:
-      "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
   },
   {
     id: 4,
@@ -51,8 +47,7 @@ const data = [
         "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     },
     name: "Toàn Dev 2k",
-    description:
-      "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
   },
   {
     id: 5,
@@ -63,8 +58,7 @@ const data = [
         "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     },
     name: "Toàn Dev 2k",
-    description:
-      "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
   },
   {
     id: 6,
@@ -75,8 +69,7 @@ const data = [
         "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     },
     name: "Toàn Dev 2k",
-    description:
-      "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
   },
   {
     id: 7,
@@ -87,22 +80,15 @@ const data = [
         "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     },
     name: "Toàn Dev 2k",
-    description:
-      "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
   },
 ];
 
 export default function NFTs() {
   return (
-    <WrapperContainer sx={{position: 'relative'}}>
+    <WrapperContainer sx={{ position: "relative" }}>
       <TitleSection>Trending in all NFTs</TitleSection>
-      <Slider>
-        {data.map((item) => (
-          <SwiperSlide key={item.id}>
-            <CardNTFs item={item} />
-          </SwiperSlide>
-        ))}
-      </Slider>
+      <SliderNFT data={data} />
     </WrapperContainer>
   );
 }

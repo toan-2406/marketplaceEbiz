@@ -5,7 +5,6 @@ import {
   ListItem,
   ListItemText,
   Stack,
-  Typography,
 } from "@mui/material";
 import React from "react";
 import {
@@ -141,7 +140,7 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={2}>
           <TitleFooter>Join the community</TitleFooter>
-          <Stack sx={{marginTop: "8px"}} direction="row" spacing={1.5} alignItems="center">
+          <Stack sx={{marginTop: "8px"}} direction='row' flexWrap="wrap" justifyContent="flex-start" spacing={1.5} alignItems="center">
             {dataComunity.map((item) => {
               return (
                 <Link href={item.link} key={item.id}>

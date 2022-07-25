@@ -11,6 +11,7 @@ import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import theme from './styles/theme'
+import "swiper/css/bundle";
 
 function App() {
  

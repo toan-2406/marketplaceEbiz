@@ -5,10 +5,10 @@ import { Container, Typography } from '@mui/material'
 
 export default function Banner() {
   return (
-    <Container maxWidth='lg'>
+    <Container maxWidth='lg' >
       <BoxContainer>
 
-          <img src={bannerImg} alt="banner"/>
+          <img src={bannerImg} alt="banner" style={{width:'100%'}}/>
      
       <BoxContent>
       <Typography variant='h3' color='white'  >

@@ -1,18 +1,25 @@
 .swiper-button-next,.swiper-button-prev{
     background: linear-gradient(45deg, #88069D 0.01%, #D0004B 97.2%);
-    border-radius: 8px;
-    width: 48px;
-    height: 48px;
+    border-radius: 8px !important;
+    width: 48px !important;
+    height: 48px !important;
 }
 .swiper-button-next::after,.swiper-button-prev::after{
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 16px !important;
+    font-weight: 600  !important;
     color: #fff;
 }
 .swiper {
     width: 85%;
     height: 100%;
-    position: unset;
+    position: unset !important;
+  }
+  @media screen and (max-width: 768px) {
+    .swiper {
+        width: 100%;
+        height: 100%;
+        position: unset !important;
+    }
   }
   .swiper-slide {
     text-align: center;
@@ -39,8 +46,12 @@
   .swiper-vertical
     > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
     bottom: 50px !important;
-    top: unset;
+    top: unset !important;
     width: 60% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    background: #ffffff11;
+backdrop-filter: blur(70px);
+border-radius: 100px;
   }
+ 

@@ -14,7 +14,10 @@ export default function Spolight() {
     <WrapperContainer>
       <TitleSection>Spotlight - Project you’ll love</TitleSection>
       <Stack
-        direction="row"
+        direction={{
+          xs: "column",
+          md: "row",
+        }}
         justifyContent="space-between"
         alignItems="center"
         spacing={2}

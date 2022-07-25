@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Avatar, Button, CardActionArea } from "@mui/material";
+import { Avatar, CardActionArea } from "@mui/material";
 import { StyledBadge } from "../../styles/home/topcollection";
 
 export default function CardNTFs(props) {
