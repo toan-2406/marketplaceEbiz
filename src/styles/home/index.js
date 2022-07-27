@@ -41,6 +41,20 @@ export const BackGroundOverLay = styled("div")(({ theme }) => ({
   maxHeight: '1076px',
   width: "100%",
 }));
+export const BackGroundOverLayFull = styled("div")(({ theme }) => ({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundImage: `url(${bgmain})`,
+  backgroundSize: "cover",
+  backgroundPosition: "top",
+  backgroundRepeat: "no-repeat",
+  zIndex: -1,
+  height: "100%",
+  width: "100%",
+}));
 export const BackGroundSection = styled(Box)(({ theme }) => ({
   backgroundImage: `url(${bgmain})`,
   backgroundSize: "cover",

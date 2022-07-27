@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import CardNTFs from "../components/Card/CardNTFs";
-import { TitleSection, WrapperContainer } from "../styles/home";
+import { BackGroundOverLayFull, TitleSection, WrapperContainer } from "../styles/home";
 import { ActionTab, ActionTabs } from "../styles/home/topcollection";
 
 const data = [
@@ -125,7 +125,8 @@ const ExploreCollection = () => {
   const domains = data.filter((item) => item.category.includes("domains"));
   const sports = data.filter((item) => item.category.includes("sports"));
   return (
-    <WrapperContainer>
+    <WrapperContainer sx={{paddingBottom:'90px'}}>
+        <BackGroundOverLayFull/>
       <TitleSection>Explore Collections</TitleSection>
       <Box>
         <ActionTabs
@@ -148,8 +149,8 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="1">
         <Grid container spacing={2}>
           {trending.map((item) => (
-            <Grid item xs={3}>
-              <CardNTFs item={item} key={item.id} />
+            <Grid item xs={3} key={item.id}>
+              <CardNTFs item={item}  />
             </Grid>
           ))}
         </Grid>
@@ -157,8 +158,8 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="2">
       <Grid container spacing={2}>
           {art.map((item) => (
-            <Grid item xs={3}>
-              <CardNTFs item={item} key={item.id} />
+            <Grid item xs={3} key={item.id} >
+              <CardNTFs item={item}  />
             </Grid>
           ))}
         </Grid>
@@ -166,8 +167,8 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="3">
       <Grid container spacing={2}>
           {collectibles.map((item) => (
-            <Grid item xs={3}>
-              <CardNTFs item={item} key={item.id} />
+            <Grid item xs={3} key={item.id}>
+              <CardNTFs item={item}  />
             </Grid>
           ))}
         </Grid>
@@ -175,8 +176,8 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="4">
       <Grid container spacing={2}>
           {music.map((item) => (
-            <Grid item xs={3}>
-              <CardNTFs item={item} key={item.id} />
+            <Grid item xs={3} key={item.id}>
+              <CardNTFs item={item}  />
             </Grid>
           ))}
         </Grid>
@@ -184,8 +185,8 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="5">
       <Grid container spacing={2}>
           {photography.map((item) => (
-            <Grid item xs={3}>
-              <CardNTFs item={item} key={item.id} />
+            <Grid item xs={3} key={item.id}>
+              <CardNTFs item={item}  />
             </Grid>
           ))}
         </Grid>
@@ -193,8 +194,8 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="6">
       <Grid container spacing={2}>
           {domains.map((item) => (
-            <Grid item xs={3}>
-              <CardNTFs item={item} key={item.id} />
+            <Grid item xs={3} key={item.id}>
+              <CardNTFs item={item}  />
             </Grid>
           ))}
         </Grid>
@@ -202,8 +203,8 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="7">
       <Grid container spacing={2}>
           {sports.map((item) => (
-            <Grid item xs={3}>
-              <CardNTFs item={item} key={item.id} />
+            <Grid item xs={3} key={item.id}>
+              <CardNTFs item={item}  />
             </Grid>
           ))}
         </Grid>

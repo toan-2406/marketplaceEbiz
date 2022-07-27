@@ -92,12 +92,10 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const OpenMenu = () => {
-    setIsOpen(true);
+  const ToggleMenu = () => {
+    setIsOpen(!isOpen);
   }
-  const CloseMenu = () => {
-    setIsOpen(false);
-  }
+
   return (
     <AppBar
       position="relative"
@@ -169,10 +167,11 @@ export const Header = () => {
             color="inherit"
             aria-label="menu"
             sx={{ display: { md: "flex",lg:"none", xl: "none" } }}
+            onClick={ToggleMenu}
           >
             {
-              isOpen ?<CloseIcon onClick={CloseMenu} /> 
-              :<MenuIcon onClick={OpenMenu} />
+              isOpen ?<CloseIcon/> 
+              :<MenuIcon  />
             }
           </IconButton>
       </Toolbar>

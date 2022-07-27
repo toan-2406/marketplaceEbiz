@@ -13,6 +13,8 @@ import Login from './pages/Login'
 import theme from './styles/theme'
 import "swiper/css/bundle";
 import ExploreCollection from './pages/ExploreCollection'
+import Create from './pages/Create'
+import Rankings from './pages/Rankings'
 
 function App() {
  
@@ -27,6 +29,8 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<Signup />} />
             <Route path='/explore' element={<ExploreCollection />} />
+            <Route path='/create' element={<Create />} />
+            <Route path='/rankings' element={<Rankings />} />
           </Route>
         </Routes>
       </BrowserRouter>

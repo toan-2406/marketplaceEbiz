@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import {Header} from "./component/header";
 import Footer from "./component/footer";
-import { BackGroundOverLay, Line } from "../../styles/home";
+import { Line } from "../../styles/home";
 
 
 const MainLayout = () => {
@@ -14,7 +14,7 @@ const MainLayout = () => {
         position: "relative",
       }}
     >
-      <BackGroundOverLay/>
+      
       <Header />
       <Line/>
       <Outlet />

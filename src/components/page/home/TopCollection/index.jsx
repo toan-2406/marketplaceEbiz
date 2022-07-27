@@ -256,7 +256,7 @@ export default function TopCollection() {
         }
       }>
       <ButtonOutline>
-        <ButtonContent>
+        <ButtonContent >
             Go to Rankings
         </ButtonContent>
       </ButtonOutline>
