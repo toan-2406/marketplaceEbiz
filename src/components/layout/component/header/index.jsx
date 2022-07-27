@@ -115,11 +115,13 @@ export const Header = () => {
         }}
       >
         <Box sx={{ height: "60px", padding: "5px 0" }}>
+          <Link to="/">
           <img
             src="https://ebizworldsolutions.com/website-development/img/main/ebizw.png"
             style={{ height: "100%" }}
             alt="log"
           />
+          </Link>
         </Box>
 
         <Search sx={{ml:2, display:{xs:'none',sm:'none',md:'flex'}}}>

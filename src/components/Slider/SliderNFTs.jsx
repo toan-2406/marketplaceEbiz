@@ -1,6 +1,6 @@
 import React,{useEffect, useState }  from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -42,10 +42,11 @@ const SliderNFTs = (props) => {
       navigation={{ enabled: true}}
       modules={[Pagination, Navigation]}
       className="mySwiper"
+      
     >
       
        {props.data.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.id} >
           <CardNTFs item={item} />
         </SwiperSlide>
         ))}

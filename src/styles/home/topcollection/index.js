@@ -26,6 +26,15 @@ export const ActionTabs = styled(Tabs)(({ theme }) => ({
     color: Colors.textWhite,
     border: "none",
   },
+
+    '& .MuiTabs-indicator': {
+     width: '50px !important',
+     transform: 'translateX(50%) !important',
+     background: Colors.gradientColor,
+     height: '3px !important',
+     borderRadius: '25px !important',
+    },
+
 }));
 export const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -59,6 +68,7 @@ export const ActionTab = styled(Tab)(({ theme }) => ({
   background: "transparent",
   color: "#808089",
   border: "none",
+  textTransform: "capitalize",
   "&:hover": {
     background: "transparent",
     color: Colors.textWhite,

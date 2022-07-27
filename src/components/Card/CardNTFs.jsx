@@ -19,7 +19,7 @@ export default function CardNTFs(props) {
         borderRadius: "20px",
         color: "unset",
         boxShadow: "none",
-        marginBottom: "54px",
+        
       }}
     >
       <CardActionArea
@@ -54,6 +54,7 @@ export default function CardNTFs(props) {
             borderRadius: "20px",
             transform: "translateY(-20px)",
             position: "relative",
+            textAlign: "center",
           }}
         >
           <StyledBadge

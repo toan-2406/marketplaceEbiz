@@ -86,7 +86,7 @@ const data = [
 
 export default function NFTs() {
   return (
-    <WrapperContainer sx={{ position: "relative" }}>
+    <WrapperContainer sx={{ position: "relative",paddingBottom:'84px' }}>
       <TitleSection>Trending in all NFTs</TitleSection>
       <SliderNFT data={data} />
     </WrapperContainer>

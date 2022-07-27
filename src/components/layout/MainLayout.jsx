@@ -12,7 +12,6 @@ const MainLayout = () => {
     <Box
       sx={{
         position: "relative",
-        height: "2000px",
       }}
     >
       <BackGroundOverLay/>
