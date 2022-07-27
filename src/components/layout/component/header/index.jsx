@@ -33,7 +33,7 @@ const navbarLink = [
   },
 ];
 
-const Search = styled("div")(({ theme }) => ({
+const Search = styled(Box)(({ theme }) => ({
   position: "relative",
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   // background: theme.palette.common.white,

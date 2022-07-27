@@ -36,17 +36,17 @@ const SliderCategory = (props) => {
       onActiveIndexChange={(realIndex) => {
         setRealIndex(realIndex.realIndex)
       }}
-
       pagination={{
         type: "progressbar",
         progressbarFillClass: "swiper-progressbar-fill",
         renderProgressbar: (progressbarEl) => {
-          return '<span class="' + progressbarEl + '">' + + "</span>";
+          return '<span class="' + progressbarEl + '"></span>';
         }
       }} 
       navigation={{ enabled: true }}
       modules={[Pagination, Navigation]}
       className="mySwiper"
+      
     >
        {props.data.map((item) => (
           <SwiperSlide key={item.id}>
