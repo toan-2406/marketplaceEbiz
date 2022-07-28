@@ -18,7 +18,7 @@ import facebook from "../../../../assets/images/footer/facebook.png";
 import instagram from "../../../../assets/images/footer/instagram.png";
 import youtube from "../../../../assets/images/footer/youtube.png";
 import gmail from "../../../../assets/images/footer/gmail.png";
-
+import logo from "../../../../assets/images/header/logo.png";
 const data = [
   {
     id: 1,
@@ -105,7 +105,7 @@ const Footer = () => {
         alignItems="flex-start"
       >
         <Grid item xs={12} sm={6} md={4}>
-          <img src='https://ebizworldsolutions.com/website-development/img/main/ebizw.png' alt="logo" />
+          <img src={logo} alt="logo" />
         </Grid>
         <Grid item xs={12} sm={6} md={2}>
           <TitleFooter>Marketplace</TitleFooter>

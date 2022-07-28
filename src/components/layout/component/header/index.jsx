@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from '@mui/icons-material/Close';
-
+import logo from "../../../../assets/images/header/logo.png";
 import moon from "../../../../assets/images/header/moon.svg";
 
 const navbarLink = [
@@ -112,12 +112,11 @@ export const Header = () => {
           alignItems: "center",
         }}
       >
-        <Box sx={{ height: "60px", padding: "5px 0" }}>
+        <Box sx={{ height: "28px" }}>
           <Link to="/">
           <img
-            src="https://ebizworldsolutions.com/website-development/img/main/ebizw.png"
-            style={{ height: "100%" }}
-            alt="log"
+            src={logo}
+            alt="log0"
           />
           </Link>
         </Box>

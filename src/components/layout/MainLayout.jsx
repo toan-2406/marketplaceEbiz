@@ -1,12 +1,11 @@
 import { Box, Divider } from "@mui/material";
-import { Outlet } from "react-router-dom";
 
 import {Header} from "./component/header";
 import Footer from "./component/footer";
 import { Line } from "../../styles/home";
 
 
-const MainLayout = () => {
+const MainLayout = ({children}) => {
   
   return (
     <Box
@@ -17,7 +16,7 @@ const MainLayout = () => {
       
       <Header />
       <Line/>
-      <Outlet />
+      {children}
       <Divider variant="fullWidth" sx={{
         background: "rgba(255,255,255,0.3)",
       }}/>
