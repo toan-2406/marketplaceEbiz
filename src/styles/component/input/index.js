@@ -6,6 +6,7 @@ export const InputOutline = styled(Input)(({ theme }) => ({
     background: '#B6BDCB',
     borderRadius: '8px',
     backdropFilter: 'blur(70px)',
+    backgroundBlendMode: 'soft-light',
     width: '100%',
     height: 44,
     paddingLeft:16,
@@ -34,6 +35,7 @@ export const InputTextArea = styled(TextField)(({ theme }) => ({
 background: '#B6BDCB',
     borderRadius: '8px',
     backdropFilter: 'blur(70px)',
+    backgroundBlendMode: 'soft-light',
     width: '100%',
     height: 'auto',
 }));
@@ -41,6 +43,7 @@ export const InputSelect = styled(Select)(({ theme }) => ({
     background: '#B6BDCB',
     borderRadius: '8px',
     backdropFilter: 'blur(70px)',
+    backgroundBlendMode: 'soft-light',
     width: '100%',
     height: 'auto',
 }));
