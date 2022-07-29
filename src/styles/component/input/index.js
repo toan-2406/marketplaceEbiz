@@ -1,4 +1,4 @@
-import { Box, Input, TextareaAutosize } from '@mui/material';
+import { Box, Input, Select, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Colors } from '../../theme';
 
@@ -30,7 +30,14 @@ export const InputContainer = styled(Box)(({theme}) => ({
     padding: 2,
     position: 'relative',
 }));
-export const InputTextArea = styled(TextareaAutosize)(({ theme }) => ({
+export const InputTextArea = styled(TextField)(({ theme }) => ({
+background: '#B6BDCB',
+    borderRadius: '8px',
+    backdropFilter: 'blur(70px)',
+    width: '100%',
+    height: 'auto',
+}));
+export const InputSelect = styled(Select)(({ theme }) => ({
     background: '#B6BDCB',
     borderRadius: '8px',
     backdropFilter: 'blur(70px)',

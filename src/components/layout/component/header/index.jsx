@@ -16,7 +16,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from '@mui/icons-material/Close';
 import logo from "../../../../assets/images/header/logo.png";
-import moon from "../../../../assets/images/header/moon.svg";
 
 const navbarLink = [
   {
@@ -77,7 +76,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const ColorButton = styled(Button)(({ theme }) => ({
   paddingLeft: "20px",
-  paddingRight: "20px",
   color: "#fff",
   background: "linear-gradient(266.64deg, #D7003A -0.29%, #88069D 99.71%)",
   borderRadius: "100px",
@@ -149,16 +147,6 @@ export const Header = () => {
           ))}
           </Stack>
           <ColorButton>Connect wallet</ColorButton>
-          {/* darkmode button */}
-          <IconButton
-            aria-label="darkmode"
-            aria-haspopup="true"
-            color="inherit"
-            sx={{ display: { xs: "none", md: "flex" } }}
-          >
-            <img src={moon} alt="darkmode" />
-          </IconButton>
-          
         </Box>
         <IconButton
             size="large"

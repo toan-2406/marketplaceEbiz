@@ -1,16 +1,22 @@
-import { Box, Typography } from "@mui/material";
+import { Box, MenuItem, Typography } from "@mui/material";
 import React from "react";
 import {
   InputContainer,
   InputOutline,
+  InputSelect,
   InputTextArea,
 } from "../../styles/component/input";
-import { TitleInput } from "../../styles/create";
+import { Subtitle, TitleInput } from "../../styles/create";
 
-export default function Input({ name, type, required, placeholder }) {
+export default function Input({ name, type, required, placeholder, label,select,subname }) {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   return (
     <Box>
-      <TitleInput>
+      <TitleInput sx={{paddingBottom: subname && 'unset'}}>
         {name}{" "}
         <Typography
           component="span"
@@ -23,11 +29,30 @@ export default function Input({ name, type, required, placeholder }) {
           {required ? "*" : ""}
         </Typography>
       </TitleInput>
+      {subname && <Subtitle sx={{marginBottom: '10px'}}>{subname}</Subtitle>}
       <InputContainer>
         {type === "text" ? (
           <InputOutline placeholder={placeholder} />
+        ) : type === "textarea" ? (
+          <InputTextArea
+            placeholder={placeholder}
+            multiline
+            rows={4}
+          />
         ) : (
-          <InputTextArea minRows={3}/>
+          <InputSelect  value={age}
+          onChange={handleChange}
+          displayEmpty
+          inputProps={{ 'aria-label': 'Without label' }} >
+          <MenuItem value="">
+            <em>{label}</em>
+          </MenuItem>
+             {select.map((item) => (
+              <MenuItem key={item.id} value={item.name}>
+                {item.name}
+              </MenuItem>
+            ))}
+          </InputSelect>
         )}
       </InputContainer>
     </Box>

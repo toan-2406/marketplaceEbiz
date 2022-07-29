@@ -8,6 +8,7 @@ const HeaderOnlyLayout = ({ children }) => {
     <Box
       sx={{
         position: "relative",
+        paddingBottom: "100px",
       }}
     >
       <Header />
