@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Colors } from '../../theme';
 
 export const InputOutline = styled(Input)(({ theme }) => ({
-    background: '#B6BDCB',
+    background: Colors.body,
     borderRadius: '8px',
     backdropFilter: 'blur(70px)',
     backgroundBlendMode: 'soft-light',
@@ -32,7 +32,7 @@ export const InputContainer = styled(Box)(({theme}) => ({
     position: 'relative',
 }));
 export const InputTextArea = styled(TextField)(({ theme }) => ({
-background: '#B6BDCB',
+background: Colors.body,
     borderRadius: '8px',
     backdropFilter: 'blur(70px)',
     backgroundBlendMode: 'soft-light',
@@ -40,7 +40,7 @@ background: '#B6BDCB',
     height: 'auto',
 }));
 export const InputSelect = styled(Select)(({ theme }) => ({
-    background: '#B6BDCB',
+    background: Colors.body,
     borderRadius: '8px',
     backdropFilter: 'blur(70px)',
     backgroundBlendMode: 'soft-light',

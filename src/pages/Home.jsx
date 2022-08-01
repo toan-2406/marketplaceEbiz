@@ -1,31 +1,28 @@
-import { Box} from "@mui/material";
-import  Banner  from "../components/page/home/Banner";
-import Spolight from "../components/page/home/Spolight";
-import TopCollection from "../components/page/home/TopCollection";
-import NFTs from "../components/page/home/NFTs";
-import PopularCategories from "../components/page/home/PopularCategories";
+import React, { Suspense } from "react";
+import { Box } from "@mui/material";
 import { BackGroundSection } from "../styles/home";
-
-
+const Banner = React.lazy(() => import("../components/page/home/Banner"));
+const Spolight = React.lazy(() => import("../components/page/home/Spolight"));
+const TopCollection = React.lazy(() =>
+  import("../components/page/home/TopCollection")
+);
+const NFTs = React.lazy(() => import("../components/page/home/NFTs"));
+const PopularCategories = React.lazy(() =>
+  import("../components/page/home/PopularCategories")
+);
 
 const Home = () => {
   return (
     <Box>
-      <Banner/> 
-      <Spolight/>
-      <TopCollection/>
-      <BackGroundSection>
-
-      <NFTs/>
-      </BackGroundSection>
-      <PopularCategories/>  
-      {
-        //Banner
-        //Spolight
-        //Top Collection
-        //NFTs
-        //Popular Categories
-      }
+      <Suspense fallback={<div style={{display:'none'}}>Loading...</div>}>
+        <Banner />
+        <Spolight />
+      </Suspense>
+        <TopCollection />
+        <BackGroundSection>
+          <NFTs />
+        </BackGroundSection>
+        <PopularCategories /> 
     </Box>
   );
 };

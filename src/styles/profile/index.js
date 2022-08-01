@@ -16,7 +16,7 @@ export const LinkCustom = styled(Link)(({ theme }) => ({
   },
 }));
 export const EditPhotoContainer = styled(Box)(({ theme }) => ({
-  background: "#B6BDCB",
+  background: Colors.body,
   width: "100%",
   height: "100%",
   borderRadius: "inherit",

@@ -18,7 +18,7 @@ export const TitleFooter = styled(Typography)(({ theme }) => ({
 export const LinkFooter = styled(Link)(({ theme }) => ({
   fontWeight: 500,
   fontSize: "14px",
-  color: Colors.whiteDark,
+  color: Colors.body,
   textDecoration: "none",
 }));
 

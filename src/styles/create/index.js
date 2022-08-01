@@ -22,7 +22,7 @@ export const TitleInput = styled(Typography)(({ theme }) => ({
     lineHeight: '28px',
 }));
 export const Subtitle = styled(Typography)(({theme}) => ({
-  color: "#B6BDCB",
+  color: Colors.body,
   fontWeight: "500",
   lineheight: "22px",
   fontSize: "12px",

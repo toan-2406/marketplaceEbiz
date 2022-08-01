@@ -4,6 +4,7 @@ const routes = {
     create: '/create',
     ranking: '/rankings',
     profileDetail: '/profile-detail',
+    listItemDetail: '/list-detail',
 };
 
 export default routes;
