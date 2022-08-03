@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import CardNTFs from "../components/Card/CardNTFs";
-import { BackGroundOverLayFull, TitleSection, WrapperContainer } from "../styles/home";
+import { BackGroundOverLayFull, BackGroundOverLayPage, TitleSection, WrapperContainer } from "../styles/home";
 import { ActionTab, ActionTabs } from "../styles/home/topcollection";
 
 const data = [
@@ -126,7 +126,7 @@ const ExploreCollection = () => {
   const sports = data.filter((item) => item.category.includes("sports"));
   return (
     <WrapperContainer sx={{paddingBottom:'90px'}}>
-        <BackGroundOverLayFull/>
+        <BackGroundOverLayPage/>
       <TitleSection>Explore Collections</TitleSection>
       <Box>
         <ActionTabs

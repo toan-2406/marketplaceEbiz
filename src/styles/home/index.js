@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import { Colors } from "../theme";
 import bgmain from "../../assets/images/bg-main.png";
 import bgmain1 from "../../assets/images/bg-main2.png";
+import bgpage from "../../assets/images/bg-page.png";
 
 export const WrapperContainer = styled(Container)(({ theme }) => ({
   maxwidth: 1200,
@@ -63,6 +64,20 @@ export const BackGroundOverLayFull = styled("div")(({ theme }) => ({
   right: 0,
   bottom: 0,
   backgroundImage: `url(${bgmain})`,
+  backgroundSize: "cover",
+  backgroundPosition: "top",
+  backgroundRepeat: "no-repeat",
+  zIndex: -1,
+  height: "100%",
+  width: "100%",
+}));
+export const BackGroundOverLayPage = styled("div")(({ theme }) => ({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundImage: `url(${bgpage})`,
   backgroundSize: "cover",
   backgroundPosition: "top",
   backgroundRepeat: "no-repeat",

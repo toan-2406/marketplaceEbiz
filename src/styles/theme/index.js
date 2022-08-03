@@ -20,11 +20,12 @@ export const Colors = {
   textRed: "#FF2B38",
   textGreen: "#00A40F",
   //Border
-  border: "#e0e0e0",
+  border: "#951188",
   borderDark: "#bdbdbd",
   //Background
   background: "#fafafa",
   backgroundDark: "#212121",
+  backgroundInput:'rgba(76, 33, 83, 0.25)',
   //Shadow
   shadow: "rgba(0, 0, 0, 0.2)",
   shadowDark: "rgba(0, 0, 0, 0.4)",
@@ -32,6 +33,7 @@ export const Colors = {
   gradient: "linear-gradient(to right, #00bcd4, #ff9800)",
   gradientColor: "linear-gradient(45deg, #88069D 0.01%, #D0004B 97.2%)",
   gradientDark: "linear-gradient(to right, #212121, #424242)",
+  
   //white
   white: "#ffffff",
   body: "#B6BDCB",

@@ -8,12 +8,18 @@ import {
 } from "../styles/create";
 import {
   BackGroundOverLayFull,
+  BackGroundOverLayPage,
   TitleSection,
   WrapperContainer,
 } from "../styles/home";
 import iconupload from "../assets/images/create/iconupload.png";
 import Input from "../components/Input";
-import { ButtonContent, ButtonOutline,ButtonAdd } from "../styles/component/button";
+import {
+  ButtonContent,
+  ButtonOutline,
+  ButtonAdd,
+} from "../styles/component/button";
+import ModalMain from "../components/Modal";
 
 const collection = [
   {
@@ -67,7 +73,7 @@ function ToggleField(props) {
       justifyContent={"space-between"}
     >
       <Box>
-        <TitleInput sx={{paddingBottom:'unset'}}>
+        <TitleInput sx={{ paddingBottom: "unset" }}>
           {name}{" "}
           <Typography
             component="span"
@@ -86,26 +92,45 @@ function ToggleField(props) {
     </Stack>
   );
 }
-function AddField (props){
+function AddField(props) {
   return (
-    <Stack direction={"row"} alignItems="center" justifyContent={"space-between"}>
+    <Stack
+      direction={"row"}
+      alignItems="center"
+      justifyContent={"space-between"}
+    >
       <Box>
-        <TitleInput>
-          {props.name}
-        </TitleInput>
+        <TitleInput>{props.name}</TitleInput>
       </Box>
       <ButtonAdd>Add</ButtonAdd>
     </Stack>
-  )
+  );
 }
 
 const Create = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const OpenModal = () => {
+    setIsOpen(true);
+  };
   return (
     <WrapperContainer>
-      <BackGroundOverLayFull />
+      {isOpen && (
+        <ModalMain width="40%" open={isOpen} setOpen={setIsOpen}>
+          <Stack direction={"column"} spacing={2} paddingY={'20px'} justifyContent="center" alignItems='center'>
+            <TitleInput sx={{fontSize:24}}>Congratulations!</TitleInput>
+            <Box sx={{ width: '214px', height: '214px',borderRadius: '8px', overflow: 'hidden' }}>
+              <img style={{ height: '100%', width: '100%',objectFit:'cover'}} src='https://openseauserdata.com/files/e488a88498206481dc37e32581204b9b.gif' alt="iconupload" />
+            </Box>
+            <Typography color="primary">
+              <b>#1988 </b>has been successfully created
+            </Typography>
+          </Stack>
+        </ModalMain>
+      )}
+      <BackGroundOverLayPage />
       <TitleSection>Create New Item</TitleSection>
       <Grid container spacing={10}>
-        <Grid item  md={4} sm={12} >
+        <Grid item md={4} sm={12}>
           <Title name="Image, Video, Audio, or 3D Model" required />
           <Subtitle sx={{ fontSize: "14px !important" }}>
             Files types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG,
@@ -125,7 +150,7 @@ const Create = () => {
           <AddField name="Levels" />
           <AddField name="Stats" />
         </Grid>
-        <Grid item md={8} sm={12} >
+        <Grid item md={8} sm={12}>
           <Input
             name="Name"
             required={true}
@@ -165,9 +190,15 @@ const Create = () => {
             label="Select blockchain"
             select={blockchain}
           />
-          <Box sx={{display: 'flex', justifyContent: 'flex-end', marginTop: '16px'}}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              marginTop: "16px",
+            }}
+          >
             <ButtonOutline>
-              <ButtonContent >Create</ButtonContent>
+              <ButtonContent onClick={OpenModal}>Create</ButtonContent>
             </ButtonOutline>
           </Box>
         </Grid>

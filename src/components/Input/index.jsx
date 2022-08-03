@@ -16,7 +16,8 @@ export default function Input({ name, type, required, placeholder, label,select,
   };
   return (
     <Box>
-      <TitleInput sx={{paddingBottom: subname && 'unset'}}>
+      {
+        name && <TitleInput sx={{paddingBottom: subname && 'unset'}}>
         {name}{" "}
         <Typography
           component="span"
@@ -29,8 +30,11 @@ export default function Input({ name, type, required, placeholder, label,select,
           {required ? "*" : ""}
         </Typography>
       </TitleInput>
+      }
       {subname && <Subtitle sx={{marginBottom: '10px'}}>{subname}</Subtitle>}
-      <InputContainer>
+      <InputContainer sx={{
+        height: type === 'textarea' ? 'auto' : '44px'
+      }}>
         {type === "text" ? (
           <InputOutline placeholder={placeholder} />
         ) : type === "textarea" ? (
@@ -45,7 +49,7 @@ export default function Input({ name, type, required, placeholder, label,select,
           displayEmpty
           inputProps={{ 'aria-label': 'Without label' }} >
           <MenuItem value="">
-            <em>{label}</em>
+            <span>{label}</span>
           </MenuItem>
              {select.map((item) => (
               <MenuItem key={item.id} value={item.name}>

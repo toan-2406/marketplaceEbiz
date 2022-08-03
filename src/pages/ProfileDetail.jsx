@@ -4,6 +4,7 @@ import Input from "../components/Input";
 import { ButtonContent, ButtonOutline } from "../styles/component/button";
 import {
   BackGroundOverLayFull,
+  BackGroundOverLayPage,
   TitleSection,
   WrapperContainer,
 } from "../styles/home";
@@ -28,7 +29,7 @@ function EditPhoto (props){
 const ProfileDetail = () => {
   return (
     <WrapperContainer>
-      <BackGroundOverLayFull />
+      <BackGroundOverLayPage />
       <LinkCustom href="/">Back</LinkCustom>
       <TitleSection>Profile Details</TitleSection>
       <Grid container spacing={5}>
