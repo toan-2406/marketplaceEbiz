@@ -3,12 +3,15 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Avatar, CardActionArea } from "@mui/material";
+import { Avatar, CardActionArea} from "@mui/material";
 import { StyledBadge } from "../../styles/home/topcollection";
 
+import { Link } from "react-router-dom";
 export default function CardNTFs(props) {
   const { item } = props;
+
   return (
+    <Link to='/collection-detail'>
     <Card
       sx={{
         maxWidth: 400,
@@ -113,5 +116,6 @@ export default function CardNTFs(props) {
         </CardContent>
       </CardActionArea>
     </Card>
+    </Link>
   );
 }

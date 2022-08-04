@@ -3,7 +3,6 @@ import React from "react";
 import Input from "../components/Input";
 import { ButtonContent, ButtonOutline } from "../styles/component/button";
 import {
-  BackGroundOverLayFull,
   BackGroundOverLayPage,
   TitleSection,
   WrapperContainer,

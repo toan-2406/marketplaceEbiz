@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { Avatar, Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
 import React from "react";
 import Input from "../components/Input";
 import { ButtonContent, ButtonOutline } from "../styles/component/button";
@@ -11,7 +11,7 @@ import {
 } from "../styles/home";
 
 import { LinkCustom } from "../styles/profile";
-import { IOSSwitch, TitleInput } from "../styles/create";
+import { IOSSwitch, Subtitle, TitleInput } from "../styles/create";
 import CardNTFs from "../components/Card/CardNTFs";
 
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -23,6 +23,7 @@ import {
   InputSelect,
 } from "../styles/component/input";
 import ModalMain from "../components/Modal";
+import HorizontalLinearStepper from "../components/Stepper";
 const item = {
   id: 1,
   name: "NFT 1",
@@ -51,7 +52,7 @@ const currency = [
 
 const ListItemDetail = () => {
   const [value, setValue] = React.useState(0);
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(true);
   const OpenModal = () => {
     setIsOpen(true);
   };
@@ -63,17 +64,93 @@ const ListItemDetail = () => {
   return (
     <WrapperContainer>
       {isOpen && (
-        <ModalMain width="40%" open={isOpen} setOpen={setIsOpen}>
-          <TitleInput sx={{fontSize:24}}>Complete your listing</TitleInput>
-          <Stack direction={"column"} spacing={2} paddingY={'20px'} justifyContent="center" alignItems='center'>
-            
-            <Box sx={{ width: '214px', height: '214px',borderRadius: '8px', overflow: 'hidden' }}>
-              <img style={{ height: '100%', width: '100%',objectFit:'cover'}} src='https://openseauserdata.com/files/e488a88498206481dc37e32581204b9b.gif' alt="iconupload" />
+        <ModalMain width="60%" open={isOpen} setOpen={setIsOpen}>
+          <TitleInput sx={{ fontSize: 24, textAlign: "center" }}>
+            Complete your listing
+          </TitleInput>
+          <Line />
+          <Stack
+            direction={"row"}
+            spacing={2}
+            paddingY={"31px"}
+            paddingX={"78px"}
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box
+              sx={{ display: "flex", alignItems: "center", columnGap: "23px" }}
+            >
+              <Box
+                sx={{
+                  background:
+                    "linear-gradient(45deg, #88069D 0.01%, #D0004B 97.2%)",
+                  borderRadius: "50%",
+                  padding: "2px",
+                }}
+              >
+                <Avatar
+                  sx={{ height: 50, width: 50 }}
+                  src={item.images.avatar}
+                  alt="avatar"
+                />
+              </Box>
+              <Box>
+                <TitleInput
+                  sx={{
+                    fontSize: 16,
+                    marginBottom: "7px",
+                    fontWeight: 600,
+                    lineHeight: "24px",
+                    padding: "unset",
+                  }}
+                >
+                  #1898
+                </TitleInput>
+                <Subtitle
+                  sx={{
+                    margin: "unset",
+                    color: "#B6BDCB",
+                    fontSize: 14,
+                    fontWeight: 400,
+                  }}
+                >
+                  Bored Ape Yacht Club
+                </Subtitle>
+              </Box>
             </Box>
-            <Typography color="primary">
-              <b>#1988 </b>has been successfully created
-            </Typography>
-          </Stack>
+            <Box>
+              <Stack direction="column" alignItems='center'>
+                <Typography
+                  component="p"
+                  sx={{ fontWeight: 600, fontSize: 14, lineHeight: '24px',color:'#808089' }}
+                >
+                  Price
+                </Typography>
+                <Typography component="p" sx={{
+                  fontWeight: 600,
+                  fontSize: '14px',
+                  lineHeight: '24px',
+                  color: '#E5E9F0'
+                }}>
+                  0,003 ETH
+                </Typography>
+                <Subtitle
+                  sx={{
+                    margin: "unset",
+                    color: "#B6BDCB",
+                    fontSize: 14,
+                    fontWeight: 400,
+                  }}
+                >
+                  ($9.45)
+                </Subtitle>
+              </Stack>
+            </Box>
+          </Stack> 
+          <Line />
+          <Box sx={{padding:'41px 33px'}}>
+            <HorizontalLinearStepper/>
+          </Box>
         </ModalMain>
       )}
       <BackGroundOverLayPage />
@@ -99,29 +176,45 @@ const ListItemDetail = () => {
               <Input required={false} label="ETC" select={currency} />
             </Box>
           </Stack>
-          <Stack direction={"row"} spacing={3} justifyContent='space-between' alignItems='center'>
+          <Stack
+            direction={"row"}
+            spacing={3}
+            justifyContent="space-between"
+            alignItems="center"
+          >
             <TitleInput>Duration</TitleInput>
             <IOSSwitch />
           </Stack>
           <Stack direction={"row"} spacing={3}>
             <Box width="50%">
-            <Input name='Starting Date' required={false} label="ETC" select={currency} />
+              <Input
+                name="Starting Date"
+                required={false}
+                label="ETC"
+                select={currency}
+              />
             </Box>
             <Box width="50%">
-              <Input name='Expiration Date' required={false} label="ETC" select={currency} />
+              <Input
+                name="Expiration Date"
+                required={false}
+                label="ETC"
+                select={currency}
+              />
             </Box>
           </Stack>
-          <Line sx={{margin: '20px 0'}}/>
+          <Line sx={{ margin: "20px 0" }} />
           <TitleInput>Fees</TitleInput>
-          <Stack direction={"row"} spacing={3} justifyContent='space-between' alignItems='center'>
-            <Typography sx={{color: '#B6BDCB'}}>
-            Service Fee
-            </Typography>
+          <Stack
+            direction={"row"}
+            spacing={3}
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography sx={{ color: "#B6BDCB" }}>Service Fee</Typography>
 
-            <Typography sx={{color: '#B6BDCB'}}>
-            2.5%
-            </Typography>
-            </Stack>
+            <Typography sx={{ color: "#B6BDCB" }}>2.5%</Typography>
+          </Stack>
           <Box
             sx={{
               display: "flex",
@@ -130,7 +223,9 @@ const ListItemDetail = () => {
             }}
           >
             <ButtonOutline>
-              <ButtonContent onClick={OpenModal}>Complete Listing</ButtonContent>
+              <ButtonContent onClick={OpenModal}>
+                Complete Listing
+              </ButtonContent>
             </ButtonOutline>
           </Box>
         </Grid>

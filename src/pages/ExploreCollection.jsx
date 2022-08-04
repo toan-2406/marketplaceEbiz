@@ -14,7 +14,7 @@ const data = [
         "https://openseauserdata.com/files/e488a88498206481dc37e32581204b9b.gif",
     },
     name: "Toàn Dev 2k",
-    description: "Lorem ipsum dolor sit amet, consect adipiscing elit",
+    description: "Lorem ipsum dolor sit amet, c    onsect adipiscing elit",
     category: ["trending", "art"],
   },
   {

@@ -75,7 +75,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const ColorButton = styled(Button)(({ theme }) => ({
-  paddingLeft: "20px",
+
   color: "#fff",
   background: "linear-gradient(266.64deg, #D7003A -0.29%, #88069D 99.71%)",
   borderRadius: "100px",

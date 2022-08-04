@@ -6,10 +6,16 @@ import bgmain1 from "../../assets/images/bg-main2.png";
 import bgpage from "../../assets/images/bg-page.png";
 
 export const WrapperContainer = styled(Container)(({ theme }) => ({
-  maxwidth: 1200,
+  maxWidth: 1200,
   margin: "0 auto",
   padding: "30px",
 }));
+export const ContainerFull = styled(Box)(({ theme }) => ({
+  maxWidth: 1750,
+  margin: "0 auto",
+  padding: " 10px 30px",
+}));
+
 
 export const TitleFooter = styled(Typography)(({ theme }) => ({
   fontWeight: 700,

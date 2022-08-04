@@ -5,7 +5,6 @@ import { Colors } from "../../theme";
 export const InputOutline = styled(Input)(({ theme }) => ({
   background: Colors.backgroundInput,
   borderRadius: "8px",
-  backgroundClip: "padding-box",
   width: "100%",
   height: "100%",
   padding: "8px 16px",
@@ -18,12 +17,16 @@ export const InputOutline = styled(Input)(({ theme }) => ({
     display: "none",
   },
 
-  "& .MuiInput-input": {
-    color: "#fff",
+  color: Colors.textWhite,
     fontSize: "16px",
     fontWeight: "400",
     lineHeight: "24px",
-  },
+   
+   '&::placeholder': {
+      color: Colors.blackDark1
+    }
+
+  
 }));
 export const InputContainer = styled(Box)(({ theme }) => ({
   borderRadius: "8px",
@@ -32,11 +35,12 @@ export const InputContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   background: "transparent",
   border: "1px solid " + Colors.border,
+
 }));
 export const InputTextArea = styled(TextField)(({ theme }) => ({
   background: Colors.backgroundInput,
   borderRadius: "8px",
-  color: "#fff",
+  color: Colors.blackDark1,
   width: "100%",
   height: "auto",
   outline: "none",
@@ -45,12 +49,31 @@ export const InputTextArea = styled(TextField)(({ theme }) => ({
   },
   "&::before": {
     display: "none",
-  }
+  },
+  "& .MuiOutlinedInput-input": {
+    color: Colors.textWhite,
+    fontSize: "16px",
+    fontWeight: "400",
+    lineHeight: "24px",
+    '&::placeholder': {
+      color: Colors.blackDark1,
+    },
+  },
+  
 }));
 export const InputSelect = styled(Select)(({ theme }) => ({
   background: Colors.backgroundInput,
   borderRadius: "8px",
-  color: "#fff",
+ "& .MuiOutlinedInput-input": {
+    color: Colors.textWhite,
+    fontSize: "16px",
+    fontWeight: "400",
+    lineHeight: "24px",
+    '&::placeholder': {
+      color: Colors.blackDark1,
+    },
+  },
+  
   width: "100%",
   height: "auto",
   outline: "none",

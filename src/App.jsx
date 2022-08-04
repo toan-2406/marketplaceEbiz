@@ -11,6 +11,7 @@ import theme from './styles/theme'
 import "swiper/css/bundle";
 import  {publicRoutes} from './routes'
 import { Fragment } from 'react'
+import './css/custom-editor.css'
 
 
 function App() {
