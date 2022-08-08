@@ -50,8 +50,6 @@ export default function CardNTFs(props) {
             height: "40%",
             backgroundColor: "rgb(231 231 231 / 11%)",
             backdropFilter: "blur(70px) !important",
-            backgroundBlendMode: "soft-light",
-            mixBlendMode: "normal",
             transition: "all 0.3s ",
             width: "100%",
             borderRadius: "20px",

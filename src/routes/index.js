@@ -11,6 +11,7 @@ import Rankings from '../pages/Rankings';
 import ProfileDetail from '../pages/ProfileDetail';
 import ListItemDetail from '../pages/ListItemDetail';
 import DetailCollection from '../pages/DetailCollection';
+import Search from '../pages/Search';
 
 // Public routes
 export const publicRoutes = [
@@ -21,6 +22,7 @@ export const publicRoutes = [
     { path: config.routes.profileDetail, component: ProfileDetail, layout: HeaderOnlyLayout }, 
     { path: config.routes.listItemDetail, component: ListItemDetail, layout: HeaderOnlyLayout },
     { path: config.routes.detailCollection, component: DetailCollection },
+    { path: config.routes.search, component: Search, layout: HeaderOnlyLayout  },
 ];
 
 export const privateRoutes = [];

@@ -10,12 +10,13 @@ import {
   Typography,
   Stack,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from '@mui/icons-material/Close';
 import logo from "../../../../assets/images/header/logo.png";
+
 
 const navbarLink = [
   {
@@ -90,10 +91,20 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState("");
+ 
   const ToggleMenu = () => {
     setIsOpen(!isOpen);
   }
-
+  const onSearch = (e) => {
+    setSearch(e.target.value);
+    console.log(search);
+    //if press enter key then navigate to search page
+    if (e.key === "Enter") {
+      Navigate("/search");
+    }
+  
+  }
   return (
     <AppBar
       position="relative"
@@ -111,10 +122,10 @@ export const Header = () => {
         }}
       >
         <Box sx={{ height: "28px" }}>
-          <Link to="/">
+          <Link to="/search">
           <img
             src={logo}
-            alt="log0"
+            alt="logo"
           />
           </Link>
         </Box>
@@ -126,6 +137,7 @@ export const Header = () => {
           <StyledInputBase 
             placeholder="Search by NFTs, collections, and accounts"
             inputProps={{ "aria-label": "search" }}
+           onChange={onSearch}
           />
         </Search>
         <Box sx={{ display: { xs: "none", md: "none",lg:'flex' }, gap:'20px', alignItems: "center" }}>

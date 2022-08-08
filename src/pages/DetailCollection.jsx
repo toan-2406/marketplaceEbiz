@@ -98,7 +98,7 @@ export default function DetailCollection() {
             <Stack direction={"row"} spacing={6}>
               <LanguageIcon
                 sx={{
-                  fill: "#E5E9F0",
+                  fill: "#E5E9F0", 
                   fontSize: "28px",
                 }}
               />
@@ -145,7 +145,7 @@ export default function DetailCollection() {
       <TabPanel value={value} index="2">
         <ExploreDetailActivity/>
       </TabPanel>
-      </ContainerFull>
+      </ContainerFull> 
     </>
   );
 }

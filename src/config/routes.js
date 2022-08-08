@@ -6,6 +6,7 @@ const routes = {
     profileDetail: '/profile-detail',
     listItemDetail: '/list-detail',
     detailCollection: '/collection-detail',
+    search: '/search',
 };
 
 export default routes;
