@@ -15,7 +15,7 @@ export default function Input({ name, type, required, placeholder, label,select,
     setAge(event.target.value);
   };
   return (
-    <Box>
+    <Box sx={{height:'100%'}}>
       {
         name && <TitleInput sx={{paddingBottom: subname && 'unset'}}>
         {name}{" "}

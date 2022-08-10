@@ -5,6 +5,7 @@ import { ButtonContent, ButtonOutline } from "../../../styles/component/button";
 import Input from "../../Input";
 import CardCollection from "../../Card/CardCollection";
 import TableTraction from "../../TableList/TableTraction";
+import { InputContainer } from "../../../styles/component/input";
 const type = [
   {
     id: 1,
@@ -81,9 +82,10 @@ export default function ExploreDetailActivity() {
   return (
     <>
       <Stack direction={"row"} justifyContent="space-between" marginBottom={2}>
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
+      <InputContainer>
+        <IconButton size="large" color="secondary" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
           <MenuIcon />
-        </IconButton>
+        </IconButton></InputContainer>
      
          
           <Box sx={{ width: 256 }}>

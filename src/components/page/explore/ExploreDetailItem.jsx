@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { ButtonContent, ButtonOutline } from "../../../styles/component/button";
 import Input from "../../Input";
 import CardCollection from "../../Card/CardCollection";
+import { InputContainer } from "../../../styles/component/input";
 const type = [
   {
     id: 1,
@@ -96,9 +97,10 @@ export default function ExploreDetailItem() {
   return (
     <>
       <Stack direction={"row"} justifyContent="space-between" marginBottom={2}>
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
+      <InputContainer>
+        <IconButton size="large" color="secondary" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
           <MenuIcon />
-        </IconButton>
+        </IconButton></InputContainer>
         <Stack direction={"row"} spacing={3} alignItems="center">
           <ButtonOutline>
             <ButtonContent sx={{ padding: "5px 20px" }}>

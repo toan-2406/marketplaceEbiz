@@ -1,8 +1,12 @@
-import { Grid, Stack } from "@mui/material";
+import { Box, Grid, IconButton, Stack } from "@mui/material";
 import React,{useState} from "react";
 import CardCollection from "../components/Card/CardCollection";
 import Input from "../components/Input";
+import { ButtonContent, ButtonOutline } from "../styles/component/button";
 import { BackGroundOverLayPage, ContainerFull } from "../styles/home";
+import MenuIcon from "@mui/icons-material/Menu";
+import DropDown from "../components/DropDown/Dropdown";
+import { InputContainer } from "../styles/component/input";
 const data = [
     {
       id: 1,
@@ -95,6 +99,22 @@ export default function Search() {
   return (
     <ContainerFull>
         <BackGroundOverLayPage/>
+        <Stack direction={"row"} justifyContent="space-between" marginBottom={2}>
+        <InputContainer>
+        <IconButton size="large" color="secondary" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
+          <MenuIcon />
+        </IconButton></InputContainer>
+        <Stack direction={"row"} spacing={3} alignItems="center">
+          <ButtonOutline>
+            <ButtonContent sx={{ padding: "5px 20px" }}>
+              Make collection offer
+            </ButtonContent>
+          </ButtonOutline>
+          <Box sx={{ width: 256 }}>
+            <Input required={false} label="Select blockchain" select={type} />
+          </Box>
+        </Stack>
+      </Stack>
       <Grid container spacing={2}>
         <Grid
           item
@@ -107,10 +127,9 @@ export default function Search() {
           }}
         >
           <Stack rowGap={1}>
-            <Input required={false} label="Sale type" select={type} />
-            <Input required={false} label="Price" select={type} />
-            <Input required={false} label="Background" select={type} />
-            <Input required={false} label="Colthes" select={type} />
+            <DropDown type='checkbox'  />
+            <DropDown />
+            <DropDown type='checkbox'/>
           </Stack>
         </Grid>
         <Grid item xs={12} md={isOpen ? 9.5 : 12}>

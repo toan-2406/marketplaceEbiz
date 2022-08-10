@@ -30,8 +30,8 @@ export const InputOutline = styled(Input)(({ theme }) => ({
 }));
 export const InputContainer = styled(Box)(({ theme }) => ({
   borderRadius: "8px",
-  height: "44px",
-  overflow: "hidden",
+  height: "auto",
+  // overflow: "hidden",
   position: "relative",
   background: "transparent",
   border: "1px solid " + Colors.border,
@@ -71,6 +71,9 @@ export const InputSelect = styled(Select)(({ theme }) => ({
     lineHeight: "24px",
     '&::placeholder': {
       color: Colors.blackDark1,
+    },
+    '& .MuiSvgIcon-root': {
+      color: Colors.textWhite,
     },
   },
   

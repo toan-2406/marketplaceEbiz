@@ -16,6 +16,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from '@mui/icons-material/Close';
 import logo from "../../../../assets/images/header/logo.png";
+import { ColorButton } from "../../../../styles/component/button";
 
 
 const navbarLink = [
@@ -75,19 +76,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const ColorButton = styled(Button)(({ theme }) => ({
 
-  color: "#fff",
-  background: "linear-gradient(266.64deg, #D7003A -0.29%, #88069D 99.71%)",
-  borderRadius: "100px",
-  fontSize: "1rem",
-  textTransform: "capitalize",
-  transition: "0.3s ease",
-  whiteSpace: "nowrap",
-  "&:hover": {
-    background: "linear-gradient(266.64deg, #88069D -0.29% , #D7003A 99.71%)",
-  },
-}));
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
