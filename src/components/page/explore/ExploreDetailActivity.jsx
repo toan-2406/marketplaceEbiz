@@ -4,7 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { ButtonContent, ButtonOutline } from "../../../styles/component/button";
 import Input from "../../Input";
 import CardCollection from "../../Card/CardCollection";
-import TableTraction from "../../TableList/TableTraction";
+import TableMain from "../../TableList/TableMain";
 import { InputContainer } from "../../../styles/component/input";
 const type = [
   {
@@ -77,6 +77,50 @@ const data = [
     timeTransaction: "2021-09-01T00:00:00.000Z"
   },
 ];
+const headCells = [
+  {
+    id: "status",
+    numeric: false,
+    disablePadding: true,
+    label: "",
+  },
+  {
+    id: "name",
+    numeric: false,
+    disablePadding: false,
+    label: "Item",
+  },
+  {
+    id: "price",
+    numeric: true,
+    disablePadding: false,
+    label: "Price",
+  },
+  {
+    id: "quantity",
+    numeric: true,
+    disablePadding: false,
+    label: "Quantity",
+  },
+  {
+    id: "from",
+    numeric: true,
+    disablePadding: false,
+    label: "From",
+  },
+  {
+    id: "to",
+    numeric: true,
+    disablePadding: false,
+    label: "To",
+  },
+  {
+    id: "time",
+    numeric: true,
+    disablePadding: false,
+    label: "Time",
+  },
+];
 export default function ExploreDetailActivity() {
   const [isOpen, setIsOpen] = useState(true);
   return (
@@ -103,7 +147,7 @@ export default function ExploreDetailActivity() {
         </Stack>
         </Grid>
         <Grid item xs={12} md={isOpen ? 10 : 12 }>
-          <TableTraction data={data} />
+          <TableMain headCells={headCells} data={data} />
         </Grid>
       </Grid>
     </>

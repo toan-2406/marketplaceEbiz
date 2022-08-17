@@ -147,7 +147,9 @@ export const Header = () => {
             </Typography>
           ))}
           </Stack>
+          <Link to="/connect-wallet">
           <ColorButton>Connect wallet</ColorButton>
+          </Link>
         </Box>
         <IconButton
             size="large"

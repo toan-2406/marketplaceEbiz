@@ -24,57 +24,14 @@ import { visuallyHidden } from "@mui/utils";
 import { Avatar } from "@mui/material";
 import { SubTitleBold, TitleBold } from "../../styles/component/typography";
 
-const headCells = [
-  {
-    id: "status",
-    numeric: false,
-    disablePadding: true,
-    label: "",
-  },
-  {
-    id: "name",
-    numeric: false,
-    disablePadding: false,
-    label: "Item",
-  },
-  {
-    id: "price",
-    numeric: true,
-    disablePadding: false,
-    label: "Price",
-  },
-  {
-    id: "quantity",
-    numeric: true,
-    disablePadding: false,
-    label: "Quantity",
-  },
-  {
-    id: "from",
-    numeric: true,
-    disablePadding: false,
-    label: "From",
-  },
-  {
-    id: "to",
-    numeric: true,
-    disablePadding: false,
-    label: "To",
-  },
-  {
-    id: "time",
-    numeric: true,
-    disablePadding: false,
-    label: "Time",
-  },
-];
+
 function EnhancedTableHead(props) {
-  const { rowCount } = props;
+  const { rowCount, headCell } = props;
 
   return (
     <TableHead>
       <TableRow>
-        {headCells.map((headCell) => (
+        {headCell.map((headCell) => (
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? "center" : "left"}
@@ -88,12 +45,12 @@ function EnhancedTableHead(props) {
   );
 }
 
-export default function TableTraction(props) {
+export default function TableMain(props) {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-  const { data } = props;
+  const { data , headCells } = props;
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data.length) : 0;
@@ -106,7 +63,7 @@ export default function TableTraction(props) {
             aria-labelledby="tableTitle"
   
           >
-            <EnhancedTableHead rowCount={data.length} />
+            <EnhancedTableHead headCell={headCells} rowCount={data.length} />
             <TableBody>
               {data.map((row, index) => {
                 return (

@@ -30,7 +30,7 @@ import {
   ButtonOutline,
   ColorButton,
 } from "../styles/component/button";
-import TableTraction from "../components/TableList/TableTraction";
+import TableMain from "../components/TableList/TableMain";
 import SliderNoneProgessBar from "../components/Slider/SliderNoneProgessBar";
 const data = [
   {
@@ -160,6 +160,50 @@ const data1 = [
     price: 90.99,
     currency:'ETH',
     lastPrice: 9,
+  },
+];
+const headCells = [
+  {
+    id: "status",
+    numeric: false,
+    disablePadding: true,
+    label: "",
+  },
+  {
+    id: "name",
+    numeric: false,
+    disablePadding: false,
+    label: "Item",
+  },
+  {
+    id: "price",
+    numeric: true,
+    disablePadding: false,
+    label: "Price",
+  },
+  {
+    id: "quantity",
+    numeric: true,
+    disablePadding: false,
+    label: "Quantity",
+  },
+  {
+    id: "from",
+    numeric: true,
+    disablePadding: false,
+    label: "From",
+  },
+  {
+    id: "to",
+    numeric: true,
+    disablePadding: false,
+    label: "To",
+  },
+  {
+    id: "time",
+    numeric: true,
+    disablePadding: false,
+    label: "Time",
   },
 ];
 export default function ItemDetail() {
@@ -453,13 +497,13 @@ export default function ItemDetail() {
           </BorderBox>
           <DropDown type="normal" title="Offers">
             <Box sx={{maxHeight: '272px',overflow: 'auto'}}>
-            <TableTraction data={data} />
+            <TableMain headCells={headCells} data={data} />
             </Box>
            
           </DropDown>
           <DropDown type="normal" title="Offers">
             <Box sx={{maxHeight: '400px',overflow: 'auto'}}>
-            <TableTraction data={data} />
+            <TableMain headCells={headCells} data={data} />
             </Box>
            
           </DropDown>

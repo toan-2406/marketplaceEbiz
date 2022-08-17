@@ -13,6 +13,7 @@ import ListItemDetail from '../pages/ListItemDetail';
 import DetailCollection from '../pages/DetailCollection';
 import Search from '../pages/Search';
 import ItemDetail from '../pages/ItemDetail';
+import ConnectWallet from '../pages/ConnectWallet';
 
 // Public routes
 export const publicRoutes = [
@@ -25,6 +26,7 @@ export const publicRoutes = [
     { path: config.routes.detailCollection, component: DetailCollection },
     { path: config.routes.search, component: Search, layout: HeaderOnlyLayout  },
     { path: config.routes.itemDetail, component: ItemDetail  },
+    { path: config.routes.connectWallet, component: ConnectWallet },
 ];
 
 export const privateRoutes = [];
