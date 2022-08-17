@@ -1,4 +1,4 @@
-import { Box, Grid, IconButton, Stack } from "@mui/material";
+import { Box, Grid, IconButton, Stack,ListItem,Checkbox,ListItemButton,ListItemText } from "@mui/material";
 import React,{useState} from "react";
 import CardCollection from "../components/Card/CardCollection";
 import Input from "../components/Input";
@@ -7,6 +7,8 @@ import { BackGroundOverLayPage, ContainerFull } from "../styles/home";
 import MenuIcon from "@mui/icons-material/Menu";
 import DropDown from "../components/DropDown/Dropdown";
 import { InputContainer } from "../styles/component/input";
+import Tags from "../components/Tags";
+
 const data = [
     {
       id: 1,
@@ -94,6 +96,20 @@ const data = [
       name: "Ethereum Classic",
     },
   ];
+  const tags = [
+    {
+      id: 1,
+      name: "Ethereum",
+    },
+    {
+      id: 2,
+      name: "Bitcoin",
+    },
+    {
+      id: 3,
+      name: "Ethereum Classic",
+    }
+  ]
 export default function Search() {
     const [isOpen, setIsOpen] = useState(true);
   return (
@@ -127,12 +143,85 @@ export default function Search() {
           }}
         >
           <Stack rowGap={1}>
-            <DropDown type='checkbox'  />
+            <DropDown type='checkbox'  >
+           {
+            type.map((item) => (
+              <ListItem
+                key={item.id}
+                sx={{ borderTop: "1px solid #88069D", paddingY: "0.5rem" }}
+                secondaryAction={
+                  <Checkbox
+                    edge="end"
+                    sx={{
+                      color: "#E5E9F0",
+                      borderRadius: "6px",
+                      fontWeight: "400",
+                    }}
+                    // onChange={handleToggle(value)}
+                    // checked={checked.indexOf(value) !== -1}
+                    // inputProps={{ 'aria-labelledby': labelId }}
+                  />
+                }
+                disablePadding
+              >
+                <ListItemButton
+                  sx={{ py: 0, minHeight: 32, color: "rgba(255,255,255,.8)" }}
+                >
+                  <ListItemText
+                    primary={item.name}
+                    primaryTypographyProps={{
+                      fontSize: 14,
+                      fontWeight: "medium",
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))
+           }
+            </DropDown>
             <DropDown />
-            <DropDown type='checkbox'/>
+            <DropDown type='checkbox'  >
+           {
+            type.map((item) => (
+              <ListItem
+                key={item.id}
+                sx={{ borderTop: "1px solid #88069D", paddingY: "0.5rem" }}
+                secondaryAction={
+                  <Checkbox
+                    edge="end"
+                    sx={{
+                      color: "#E5E9F0",
+                      borderRadius: "6px",
+                      fontWeight: "400",
+                    }}
+                    // onChange={handleToggle(value)}
+                    // checked={checked.indexOf(value) !== -1}
+                    // inputProps={{ 'aria-labelledby': labelId }}
+                  />
+                }
+                disablePadding
+              >
+                <ListItemButton
+                  sx={{ py: 0, minHeight: 32, color: "rgba(255,255,255,.8)" }}
+                >
+                  <ListItemText
+                    primary={item.name}
+                    primaryTypographyProps={{
+                      fontSize: 14,
+                      fontWeight: "medium",
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))
+           }
+            </DropDown>
           </Stack>
         </Grid>
         <Grid item xs={12} md={isOpen ? 9.5 : 12}>
+          <Stack spacing={2} direction="vertical">
+           <Tags tags={tags}/>
+          </Stack>
           <Grid
             container
             rowSpacing={2}

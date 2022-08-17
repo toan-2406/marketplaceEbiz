@@ -7,6 +7,7 @@ const routes = {
     listItemDetail: '/list-detail',
     detailCollection: '/collection-detail',
     search: '/search',
+    itemDetail: '/item-detail',
 };
 
 export default routes;

@@ -19,6 +19,7 @@ export const Colors = {
   textSecondary: "#757575",
   textRed: "#FF2B38",
   textGreen: "#00A40F",
+  textBlue: "#0085FF",
   //Border
   border: "#951188",
   borderDark: "#bdbdbd",
@@ -26,6 +27,7 @@ export const Colors = {
   background: "#fafafa",
   backgroundDark: "#212121",
   backgroundInput:'rgba(76, 33, 83, 0.25)',
+  backgroundCard:'rgba(179, 85, 194, 0.25)',
   //Shadow
   shadow: "rgba(0, 0, 0, 0.2)",
   shadowDark: "rgba(0, 0, 0, 0.4)",

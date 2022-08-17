@@ -21,3 +21,9 @@ export const SubTitleBold = styled(Typography)(({ theme }) => ({
     lineHeight: "20px",
     color: Colors.body,
   }));
+  export const TitleNormal = styled(Typography)(({ theme }) => ({
+    fontWeight: 500,
+    fontSize: "16px",
+    lineHeight: "24px",
+    color: Colors.textWhite,
+  }));

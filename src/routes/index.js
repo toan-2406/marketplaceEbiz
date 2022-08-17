@@ -12,6 +12,7 @@ import ProfileDetail from '../pages/ProfileDetail';
 import ListItemDetail from '../pages/ListItemDetail';
 import DetailCollection from '../pages/DetailCollection';
 import Search from '../pages/Search';
+import ItemDetail from '../pages/ItemDetail';
 
 // Public routes
 export const publicRoutes = [
@@ -23,6 +24,7 @@ export const publicRoutes = [
     { path: config.routes.listItemDetail, component: ListItemDetail, layout: HeaderOnlyLayout },
     { path: config.routes.detailCollection, component: DetailCollection },
     { path: config.routes.search, component: Search, layout: HeaderOnlyLayout  },
+    { path: config.routes.itemDetail, component: ItemDetail  },
 ];
 
 export const privateRoutes = [];

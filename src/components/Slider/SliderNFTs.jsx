@@ -49,7 +49,7 @@ const SliderNFTs = (props) => {
           <SwiperSlide key={item.id} >
           <CardNTFs item={item} />
         </SwiperSlide>
-        ))}
+        ))} 
     </Swiper>
   );
 };
