@@ -1,12 +1,14 @@
 import {
+  Avatar,
   Box,
   Grid,
+  IconButton,
   ListItem,
   ListItemText,
   Stack,
   ToggleButton,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   SubTitleBold,
   TitleBold,
@@ -32,133 +34,147 @@ import {
 } from "../styles/component/button";
 import TableMain from "../components/TableList/TableMain";
 import SliderNoneProgessBar from "../components/Slider/SliderNoneProgessBar";
+import ModalMain from "../components/Modal";
+import PuchaseItem, { PurchaseSuccess } from "../components/Modal/PuchaseItem";
 const data = [
   {
     id: 1,
     status: "Sale",
     name: "CryptoPunks #1",
     price: "0.1 ETH",
-    image: "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
+    image:
+      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
     quality: 1,
     from: "H12078",
     to: "Ton.Dev",
-    timeTransaction: "2021-09-01T00:00:00.000Z"
+    timeTransaction: "2021-09-01T00:00:00.000Z",
   },
   {
     id: 2,
     status: "Transfer",
     name: "CryptoPunks #2",
     price: "0.1 ETH",
-    image: "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
+    image:
+      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
     quality: 2,
     from: "H12078",
     to: "Ton.Dev",
-    timeTransaction: "2021-09-01T00:00:00.000Z"
+    timeTransaction: "2021-09-01T00:00:00.000Z",
   },
   {
     id: 3,
     status: "List",
     name: "CryptoPunks #3",
     price: "0.1 ETH",
-    image: "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
+    image:
+      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
     quality: 3,
     from: "H12078",
     to: "Ton.Dev saddsjads",
-    timeTransaction: "2021-09-01T00:00:00.000Z"
+    timeTransaction: "2021-09-01T00:00:00.000Z",
   },
   {
     id: 4,
     status: "Offer",
     name: "CryptoPunks #4",
     price: "0.1 ETH",
-    image: "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
+    image:
+      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
     quality: 4,
     from: "H12078",
     to: "Ton.Dev saddsjads",
-    timeTransaction: "2021-09-01T00:00:00.000Z"
+    timeTransaction: "2021-09-01T00:00:00.000Z",
   },
   {
     id: 5,
     status: "Collection offers",
     name: "CryptoPunks #5",
     price: "0.1 ETH",
-    image: "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
+    image:
+      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
     quality: 5,
     from: "H12078",
     to: "Ton.Dev saddsjads",
-    timeTransaction: "2021-09-01T00:00:00.000Z"
+    timeTransaction: "2021-09-01T00:00:00.000Z",
   },
 ];
 const data1 = [
   {
     id: 1,
-    collectionID:'0123',
-    images: "https://openseauserdata.com/files/e488a88498206481dc37e32581204b9b.gif",
+    collectionID: "0123",
+    images:
+      "https://openseauserdata.com/files/e488a88498206481dc37e32581204b9b.gif",
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
-    currency:'ETH',
+    currency: "ETH",
     lastPrice: 9,
   },
   {
     id: 2,
-    collectionID: '0123',
-    images:"https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    collectionID: "0123",
+    images:
+      "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
-    currency:'ETH',
+    currency: "ETH",
     lastPrice: 9,
   },
   {
     id: 3,
-    collectionID: '0123',
-    images: "https://lh3.googleusercontent.com/P1WOzkGqp_mU_1jvpFhQnevYKryg0BZbzmuiawx-Xm-5NtuvhWXXPQu5P0llghCzAinhL6iOS8M0wmBLS_naA4d1jsyBTYyXP47br6U=h400",
+    collectionID: "0123",
+    images:
+      "https://lh3.googleusercontent.com/P1WOzkGqp_mU_1jvpFhQnevYKryg0BZbzmuiawx-Xm-5NtuvhWXXPQu5P0llghCzAinhL6iOS8M0wmBLS_naA4d1jsyBTYyXP47br6U=h400",
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
-    currency:'ETH',
+    currency: "ETH",
     lastPrice: 9,
   },
   {
     id: 4,
-    collectionID: '0123',
-    images: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    collectionID: "0123",
+    images:
+      "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
 
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
-    currency:'ETH',
+    currency: "ETH",
     lastPrice: 9,
   },
   {
     id: 5,
-    collectionID: '0123',
-    images: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    collectionID: "0123",
+    images:
+      "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
-    currency:'ETH',
+    currency: "ETH",
     lastPrice: 9,
   },
   {
     id: 6,
-    collectionID: '0123',
-    images: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    collectionID: "0123",
+    images:
+      "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
-    currency:'ETH',
+    currency: "ETH",
     lastPrice: 9,
   },
   {
     id: 7,
-    collectionID: '0123',
-    images:  "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    collectionID: "0123",
+    images:
+      "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
-    currency:'ETH',
+    currency: "ETH",
     lastPrice: 9,
   },
 ];
@@ -206,11 +222,37 @@ const headCells = [
     label: "Time",
   },
 ];
-export default function ItemDetail() {
 
+export default function ItemDetail() {
+  const [isOpen, setIsOpen] = React.useState(true);
   const [selected, setSelected] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const OpenModal = () => {
+    setIsOpen(true);
+  };
+  //useEffect to update progress bar
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => prevProgress + 50);
+      console.log(progress);
+    }, 800);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [progress]);
   return (
     <WrapperContainer>
+      {isOpen && (
+        <ModalMain width="40%" open={isOpen} setOpen={setIsOpen}>
+          {progress >= 100 ? (
+            <PurchaseSuccess />
+          ) : (
+         
+           <PuchaseItem progress={progress}/>
+          
+          )}
+        </ModalMain>
+      )}
       <BackGroundOverLayPage />
       <Grid container spacing={2}>
         <Grid item xs={12} md={5} sx={{ "& > * ~ *": { marginTop: "20px" } }}>
@@ -490,36 +532,41 @@ export default function ItemDetail() {
               mt={2}
             >
               <ButtonOutline>
-                <ButtonContent  sx={{padding: '15px 67px'}}>Make offer</ButtonContent>
+                <ButtonContent sx={{ padding: "15px 67px" }}>
+                  Make offer
+                </ButtonContent>
               </ButtonOutline>
-              <ColorButton sx={{padding: '18px 75px'}}>Buy now</ColorButton>
+              <ColorButton sx={{ padding: "18px 75px" }} onClick={OpenModal}>
+                Buy now
+              </ColorButton>
             </Stack>
           </BorderBox>
           <DropDown type="normal" title="Offers">
-            <Box sx={{maxHeight: '272px',overflow: 'auto'}}>
-            <TableMain headCells={headCells} data={data} />
+            <Box sx={{ maxHeight: "272px", overflow: "auto" }}>
+              <TableMain headCells={headCells} data={data} />
             </Box>
-           
           </DropDown>
           <DropDown type="normal" title="Offers">
-            <Box sx={{maxHeight: '400px',overflow: 'auto'}}>
-            <TableMain headCells={headCells} data={data} />
+            <Box sx={{ maxHeight: "400px", overflow: "auto" }}>
+              <TableMain headCells={headCells} data={data} />
             </Box>
-           
           </DropDown>
         </Grid>
       </Grid>
-      <BorderBox padding='20px 0'>
-        <Stack padding='0 12px' direction='row' justifyContent="space-between" alignItems='center'>
-        <TitleBold>
-        NFTs related to this item
-        </TitleBold>
-        <ColorButton>View collection</ColorButton>
+      <BorderBox padding="20px 0">
+        <Stack
+          padding="0 12px"
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <TitleBold>NFTs related to this item</TitleBold>
+          <ColorButton>View collection</ColorButton>
         </Stack>
-        <Box mt={2} paddingLeft='12px'>
-        <SliderNoneProgessBar data={data1} mt={2}/>  
+        <Box mt={2} paddingLeft="12px">
+          <SliderNoneProgessBar data={data1} mt={2} />
         </Box>
-      </BorderBox >
+      </BorderBox>
     </WrapperContainer>
   );
 }

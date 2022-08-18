@@ -21,7 +21,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseLine />
       <BrowserRouter>
-    
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;

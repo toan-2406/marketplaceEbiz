@@ -1,5 +1,5 @@
 import { Avatar, Box, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import {
   Subtitle,
   TitleInput,
@@ -7,19 +7,22 @@ import {
   IOSSwitch,
 } from "../styles/create";
 import {
-  BackGroundOverLayFull,
   BackGroundOverLayPage,
   TitleSection,
   WrapperContainer,
 } from "../styles/home";
 import iconupload from "../assets/images/create/iconupload.png";
 import Input from "../components/Input";
+import CreateModal from "../components/Modal/Create";
 import {
   ButtonContent,
   ButtonOutline,
   ButtonAdd,
 } from "../styles/component/button";
 import ModalMain from "../components/Modal";
+import AddProperties from "../components/Modal/AddProperties";
+import AddLevels from "../components/Modal/AddLevels";
+import AddStats from "../components/Modal/AddStats";
 
 const collection = [
   {
@@ -93,6 +96,7 @@ function ToggleField(props) {
   );
 }
 function AddField(props) {
+  const { name, handleOpen,type } = props;
   return (
     <Stack
       direction={"row"}
@@ -100,33 +104,33 @@ function AddField(props) {
       justifyContent={"space-between"}
     >
       <Box>
-        <TitleInput>{props.name}</TitleInput>
+        <TitleInput>{name}</TitleInput>
       </Box>
-      <ButtonAdd>Add</ButtonAdd>
+      <ButtonAdd onClick={() => handleOpen(type)}>Add</ButtonAdd>
     </Stack>
   );
 }
 
 const Create = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const OpenModal = () => {
-    setIsOpen(true);
-  };
+  const [isOpen, setIsOpen] = React.useState({
+    isOpen: false,
+    type: "",
+  });
+ 
+  const handleOpen = (type) => {
+    setIsOpen({ isOpen: true, type });
+  }
   return (
     <WrapperContainer>
       {isOpen && (
         <ModalMain width="40%" open={isOpen} setOpen={setIsOpen}>
-          <Stack direction={"column"} spacing={2} paddingY={'20px'} justifyContent="center" alignItems='center'>
-            <TitleInput sx={{fontSize:24}}>Congratulations!</TitleInput>
-            <Box sx={{ width: '214px', height: '214px',borderRadius: '8px', overflow: 'hidden' }}>
-              <img style={{ height: '100%', width: '100%',objectFit:'cover'}} src='https://openseauserdata.com/files/e488a88498206481dc37e32581204b9b.gif' alt="iconupload" />
-            </Box>
-            <Typography color="primary">
-              <b>#1988 </b>has been successfully created
-            </Typography>
-          </Stack>
+          {isOpen.type === "properties" && <AddProperties />}
+          {isOpen.type === "levels" && <AddLevels />}
+          {isOpen.type === "stats" && <AddStats />}
+          {isOpen.type === "create" && <CreateModal />}
         </ModalMain>
       )}
+      
       <BackGroundOverLayPage />
       <TitleSection>Create New Item</TitleSection>
       <Grid container spacing={10}>
@@ -146,9 +150,9 @@ const Create = () => {
             />
             <input hidden accept="image/*" multiple type="file" />
           </UploadComponent>
-          <AddField name="Properties" />
-          <AddField name="Levels" />
-          <AddField name="Stats" />
+          <AddField name="Properties" type="properties" handleOpen={handleOpen}/>
+          <AddField name="Levels" type="levels" handleOpen={handleOpen}/>
+          <AddField name="Stats" type="stats" handleOpen={handleOpen}/>
         </Grid>
         <Grid item md={8} sm={12}>
           <Input
@@ -198,7 +202,7 @@ const Create = () => {
             }}
           >
             <ButtonOutline>
-              <ButtonContent onClick={OpenModal}>Create</ButtonContent>
+              <ButtonContent onClick={() => handleOpen("create")}>Create</ButtonContent>
             </ButtonOutline>
           </Box>
         </Grid>

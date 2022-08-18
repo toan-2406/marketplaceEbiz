@@ -143,7 +143,7 @@ export default function Search() {
           }}
         >
           <Stack rowGap={1}>
-            <DropDown type='checkbox'  >
+            <DropDown type='checkbox' title="Sale type"  >
            {
             type.map((item) => (
               <ListItem
@@ -180,7 +180,7 @@ export default function Search() {
            }
             </DropDown>
             <DropDown />
-            <DropDown type='checkbox'  >
+            <DropDown type='checkbox' title="Category" >
            {
             type.map((item) => (
               <ListItem

@@ -106,3 +106,8 @@ export const Line = styled("div")(({ theme }) => ({
   height: "1px",
   width: "100%",
 }));
+export const Line2 = styled("div")(({ theme }) => ({
+  backgroundColor:"rgba(255, 255, 255, 0.2)",
+  height: "1px",
+  width: "100%",
+}));
