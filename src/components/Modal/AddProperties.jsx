@@ -1,6 +1,6 @@
 import { Avatar, Box, Button, Grid, Stack } from "@mui/material";
 import React from "react";
-import { ButtonContent, ButtonOutline } from "../../styles/component/button";
+import { ButtonContent, ButtonOutline, ColorButton } from "../../styles/component/button";
 import { InputContainer, InputOutline } from "../../styles/component/input";
 import { SubTitleBold } from "../../styles/component/typography";
 import { TitleInput } from "../../styles/create";
@@ -36,13 +36,13 @@ export default function AddProperties() {
           <Button
             sx={{
               background: Colors.gradientColor,
-              height: "30px",
-              maxWidth: "30px",
+              minheight: "30px",
+              minWidth: "30px",
               borderRadius: "50%",
             }}
           >
             <CloseRoundedIcon
-              sx={{ color: "#fff", fontSize: 20, fontWeight: 700 }}
+              sx={{ color: "#fff", fontSize: 24, fontWeight: 700 }}
             />
           </Button>
         </Grid>
@@ -50,10 +50,14 @@ export default function AddProperties() {
       <ButtonOutline
         sx={{ borderRadius: "10px !important", marginTop: "10px" }}
       >
-        <ButtonContent sx={{ borderRadius: "10px !important" }}>
+        <ButtonContent sx={{ borderRadius: "10px !important" ,paddingY:"6px"}}>
           Add more
         </ButtonContent>
       </ButtonOutline>
+      <Box mt={5}>
+      <ColorButton sx={{width: "100%",borderRadius: "10px"}}>Save</ColorButton>
+      </Box>
+      
     </Box>
   );
 }

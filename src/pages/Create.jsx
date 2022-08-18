@@ -122,7 +122,7 @@ const Create = () => {
   }
   return (
     <WrapperContainer>
-      {isOpen && (
+      {isOpen.isOpen && (
         <ModalMain width="40%" open={isOpen} setOpen={setIsOpen}>
           {isOpen.type === "properties" && <AddProperties />}
           {isOpen.type === "levels" && <AddLevels />}

@@ -36,6 +36,7 @@ import TableMain from "../components/TableList/TableMain";
 import SliderNoneProgessBar from "../components/Slider/SliderNoneProgessBar";
 import ModalMain from "../components/Modal";
 import PuchaseItem, { PurchaseSuccess } from "../components/Modal/PuchaseItem";
+import MakeOffer from "../components/Modal/MakeOffer";
 const data = [
   {
     id: 1,
@@ -224,16 +225,22 @@ const headCells = [
 ];
 
 export default function ItemDetail() {
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState({
+    isOpen: false,
+    type: ""
+  });
   const [selected, setSelected] = useState(false);
   const [progress, setProgress] = useState(0);
-  const OpenModal = () => {
-    setIsOpen(true);
+  const OpenModal = (type) => {
+    setIsOpen({
+      isOpen: true,
+      type: type
+    });
   };
   //useEffect to update progress bar
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => prevProgress + 50);
+       setProgress((prevProgress) => prevProgress + 50);
       console.log(progress);
     }, 800);
     return () => {
@@ -242,15 +249,16 @@ export default function ItemDetail() {
   }, [progress]);
   return (
     <WrapperContainer>
-      {isOpen && (
+      {isOpen.isOpen && (
         <ModalMain width="40%" open={isOpen} setOpen={setIsOpen}>
-          {progress >= 100 ? (
-            <PurchaseSuccess />
+          {progress >= 100 && isOpen.type === "buy" ? (
+            <PurchaseSuccess /> 
           ) : (
-         
            <PuchaseItem progress={progress}/>
-          
           )}
+          {
+            isOpen.type === "makeoffer" && (<MakeOffer/>)
+          }
         </ModalMain>
       )}
       <BackGroundOverLayPage />
@@ -532,11 +540,11 @@ export default function ItemDetail() {
               mt={2}
             >
               <ButtonOutline>
-                <ButtonContent sx={{ padding: "15px 67px" }}>
+                <ButtonContent sx={{ padding: "15px 67px" }} onClick={() => OpenModal('makeoffer')}>
                   Make offer
                 </ButtonContent>
               </ButtonOutline>
-              <ColorButton sx={{ padding: "18px 75px" }} onClick={OpenModal}>
+              <ColorButton sx={{ padding: "18px 75px" }} onClick={() => OpenModal('buy')}>
                 Buy now
               </ColorButton>
             </Stack>
