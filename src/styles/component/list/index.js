@@ -2,7 +2,7 @@ import { ListItemText } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Colors } from "../../theme";
 
-export const ListItem_Items = styled(ListItemText)(({ theme }) => ({
+export const ListItemItems = styled(ListItemText)(({ theme }) => ({
   fontWeight: 500,
   fontSize: "16px",
   lineHeight: "24px",

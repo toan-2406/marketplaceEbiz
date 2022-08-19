@@ -17,8 +17,9 @@ export const ButtonContent = styled(Link)(({ theme }) => ({
     fontWeight: '600',
     textAlign: 'center',
     textTransform: 'none',
-    whiteSpace: 'nowrap',
+    
     textDecoration: 'none',
+    whiteSpace: 'nowrap',
 }));
 
 export const ButtonAdd = styled(Button)(({ theme }) => ({

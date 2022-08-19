@@ -1,4 +1,4 @@
-import { Avatar, Grid, Stack } from "@mui/material";
+import { Avatar, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import {
@@ -6,11 +6,10 @@ import {
   SubTitleBold,
   TitleBold,
 } from "../styles/component/typography";
-import { TitleInput } from "../styles/create";
+
 import {
   BackGroundOverLayPage,
-  ContainerFull,
-  TitleSection,
+  ContainerFull
 } from "../styles/home";
 import LanguageIcon from "@mui/icons-material/Language";
 import StarBorderIcon from "@mui/icons-material/StarBorder";

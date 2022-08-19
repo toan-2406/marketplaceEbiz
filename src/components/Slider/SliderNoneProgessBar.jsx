@@ -1,4 +1,4 @@
-import React,{useEffect, useState }  from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,8 +15,6 @@ import { useMediaQuery } from "@mui/material";
 import CardCollection from "../Card/CardCollection";
 
 const SliderNoneProgessBar = (props) => {
-  const [realIndex, setRealIndex] = useState(0)
-  const length = props.data.length;
   const isTable = useMediaQuery("(max-width:1112px)");
   const isMobile = useMediaQuery("(max-width:600px)");
   return (

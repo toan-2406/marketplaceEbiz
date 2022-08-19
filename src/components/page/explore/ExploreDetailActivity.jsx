@@ -1,9 +1,7 @@
 import { Box, Grid, IconButton, Stack } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ButtonContent, ButtonOutline } from "../../../styles/component/button";
 import Input from "../../Input";
-import CardCollection from "../../Card/CardCollection";
 import TableMain from "../../TableList/TableMain";
 import { InputContainer } from "../../../styles/component/input";
 const type = [

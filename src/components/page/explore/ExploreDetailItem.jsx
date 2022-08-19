@@ -96,18 +96,18 @@ export default function ExploreDetailItem() {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-      <Stack direction={"row"} justifyContent="space-between" marginBottom={2}>
-      <InputContainer>
+      <Stack direction={{xs:'column-reverse', sm:'row'}} justifyContent="space-between" marginBottom={2} flexWrap="wrap">
+      <InputContainer  mt={{xs:"10px",sm:0}} sx={{maxWidth:'50px'}}>
         <IconButton size="large" color="secondary" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
           <MenuIcon />
         </IconButton></InputContainer>
-        <Stack direction={"row"} spacing={3} alignItems="center">
+        <Stack direction={"row"} spacing={3} alignItems="center" >
           <ButtonOutline>
             <ButtonContent sx={{ padding: "5px 20px" }}>
               Make collection offer
             </ButtonContent>
           </ButtonOutline>
-          <Box sx={{ width: 256 }}>
+          <Box sx={{ maxWidth: 256 }}>
             <Input required={false} label="Select blockchain" select={type} />
           </Box>
         </Stack>

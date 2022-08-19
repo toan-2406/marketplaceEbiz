@@ -1,4 +1,4 @@
-import { Avatar, Divider, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
+import { Avatar,ListItem, ListItemAvatar } from '@mui/material'
 import React from 'react'
 import { Description, TitleBold } from '../styles/component/typography'
 import { BackGroundOverLayPage, Line2, WrapperContainer } from '../styles/home'
@@ -7,7 +7,7 @@ import metamaskicon from '../assets/images/icon/metamask-icon.svg'
 import coinbaseicon from '../assets/images/icon/coinbase-icon.svg'
 import wavewalleticon from '../assets/images/icon/wavewallet-icon.svg'
 import phantomicon from '../assets/images/icon/phantom-icon.svg'
-import { ListItem_Items } from '../styles/component/list'
+import { ListItemItems } from '../styles/component/list'
 
 export default function ConnectWallet() {
   return (
@@ -20,7 +20,7 @@ export default function ConnectWallet() {
                   <ListItemAvatar>
                     <Avatar src={metamaskicon} alt="wallet"/>
                   </ListItemAvatar>
-                  <ListItem_Items
+                  <ListItemItems
                     secondary="MetaMask"
                   />
                 </ListItem>
@@ -29,7 +29,7 @@ export default function ConnectWallet() {
                   <ListItemAvatar>
                     <Avatar src={coinbaseicon} alt="wallet"/>
                   </ListItemAvatar>
-                  <ListItem_Items
+                  <ListItemItems
                     secondary="Coinbase Wallet"
                   />
                 </ListItem>
@@ -38,7 +38,7 @@ export default function ConnectWallet() {
                   <ListItemAvatar>
                     <Avatar src={wavewalleticon} alt="wallet"/>
                   </ListItemAvatar>
-                  <ListItem_Items
+                  <ListItemItems
                     secondary="Wallet Connect"
                   />
                 </ListItem>
@@ -47,7 +47,7 @@ export default function ConnectWallet() {
                   <ListItemAvatar>
                     <Avatar src={phantomicon} alt="wallet"/>
                   </ListItemAvatar>
-                  <ListItem_Items 
+                  <ListItemItems 
                     secondary="Phantom"
                   />
                 </ListItem>

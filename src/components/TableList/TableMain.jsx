@@ -7,20 +7,10 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import TableSortLabel from "@mui/material/TableSortLabel";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+
 import Paper from "@mui/material/Paper";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
-import { visuallyHidden } from "@mui/utils";
+
 import { Avatar } from "@mui/material";
 import { SubTitleBold, TitleBold } from "../../styles/component/typography";
 
@@ -67,13 +57,16 @@ export default function TableMain(props) {
             <TableBody>
               {data.map((row, index) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.name}>
-                    <TableCell
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                    {
+                      row.status && <TableCell
                       align="center"
                     >
                      <TitleBold> {row.status}</TitleBold>
                     </TableCell>
-                    <TableCell align="center">
+                    }
+                    {
+                      row.name && <TableCell align="center">
                       <Box sx={{display:'flex', alignItems:'center'}}>
                         <Avatar
                           sx={{
@@ -87,11 +80,25 @@ export default function TableMain(props) {
                         <TitleBold component="span">{row.name}</TitleBold>
                       </Box>
                     </TableCell>
-                    <TableCell align="center"><TitleBold>{row.status === 'Transfer' ? '---' : row.price}</TitleBold></TableCell>
-                    <TableCell align="center"><TitleBold>{row.status === 'Collection offers' ? '---' : row.quality}</TitleBold></TableCell>
-                    <TableCell align="center"><SubTitleBold sx={{color: '#0085FF'}}>{row.from}</SubTitleBold></TableCell>
-                    <TableCell align="center"><SubTitleBold >{row.status === 'Collection offers' || row.status === 'Offer' || row.status === 'List' ? '---' : <SubTitleBold sx={{color: '#0085FF',overflow: 'hidden', display: '-webkit-box', WebkitLineClamp:1,maxWidth:160,whiteSpace:'nowrap',textOverflow: 'ellipsis', WebkiBoxOrient: 'vertical'}}>{row.to}</SubTitleBold> }</SubTitleBold></TableCell>
-                    <TableCell align="center"><SubTitleBold>{row.timeTransaction}</SubTitleBold></TableCell>
+                    }
+                    {
+                      row.price &&<TableCell align="center"><TitleBold>{row.status === 'Transfer' ? '---' : row.price}</TitleBold></TableCell>
+                    }
+                   {
+                    row.expiration &&  <TableCell align="center"><TitleBold>{row.expiration}</TitleBold></TableCell>
+                   }
+                   {
+                     row.quality && <TableCell align="center"><TitleBold>{row.status === 'Collection offers' ? '---' : row.quality}</TitleBold></TableCell>
+                   }
+                    {
+                      row.from && <TableCell align="center"><SubTitleBold sx={{color: '#0085FF'}}>{row.from}</SubTitleBold></TableCell>
+                    }
+                   {
+                     row.to && <TableCell align="center"><SubTitleBold >{row.status === 'Collection offers' || row.status === 'Offer' || row.status === 'List' ? '---' : <SubTitleBold sx={{color: '#0085FF',overflow: 'hidden', display: '-webkit-box', WebkitLineClamp:1,maxWidth:160,whiteSpace:'nowrap',textOverflow: 'ellipsis', WebkiBoxOrient: 'vertical'}}>{row.to}</SubTitleBold> }</SubTitleBold></TableCell>
+                   }
+                    {
+                      row.timeTransaction && <TableCell align="center"><SubTitleBold>{row.timeTransaction}</SubTitleBold></TableCell>
+                    }
                   </TableRow>
                 );
               })}

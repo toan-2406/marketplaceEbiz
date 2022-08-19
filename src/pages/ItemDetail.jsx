@@ -1,8 +1,6 @@
 import {
-  Avatar,
   Box,
   Grid,
-  IconButton,
   ListItem,
   ListItemText,
   Stack,
@@ -25,7 +23,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import DropDown from "../components/DropDown/Dropdown";
 import { Colors } from "../styles/theme";
-import { ListItem_Items } from "../styles/component/list";
+import { ListItemItems } from "../styles/component/list";
 import { Description } from "../styles/component/typography";
 import {
   ButtonContent,
@@ -37,67 +35,34 @@ import SliderNoneProgessBar from "../components/Slider/SliderNoneProgessBar";
 import ModalMain from "../components/Modal";
 import PuchaseItem, { PurchaseSuccess } from "../components/Modal/PuchaseItem";
 import MakeOffer from "../components/Modal/MakeOffer";
+import AcceptOffer from "../components/Modal/AcceptOffer";
+import CompleteCheckout from "../components/Modal/CompleteCheckout";
+import Transfer from "../components/Modal/Transfer";
 const data = [
   {
     id: 1,
-    status: "Sale",
-    name: "CryptoPunks #1",
-    price: "0.1 ETH",
-    image:
-      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
-    quality: 1,
-    from: "H12078",
-    to: "Ton.Dev",
-    timeTransaction: "2021-09-01T00:00:00.000Z",
+    price: "85,69 ETH ($90.557,19)",
+    expiration: "10 hours",
+    from: "franklinisbored",
   },
   {
     id: 2,
-    status: "Transfer",
-    name: "CryptoPunks #2",
-    price: "0.1 ETH",
-    image:
-      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
-    quality: 2,
-    from: "H12078",
-    to: "Ton.Dev",
-    timeTransaction: "2021-09-01T00:00:00.000Z",
+    price: "85,69 ETH ($90.557,19)",
+    expiration: "10 hours",
+    from: "franklinisbored",
   },
   {
     id: 3,
-    status: "List",
-    name: "CryptoPunks #3",
-    price: "0.1 ETH",
-    image:
-      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
-    quality: 3,
-    from: "H12078",
-    to: "Ton.Dev saddsjads",
-    timeTransaction: "2021-09-01T00:00:00.000Z",
+    price: "85,69 ETH ($90.557,19)",
+    expiration: "10 hours",
+    from: "franklinisbored",
   },
   {
     id: 4,
-    status: "Offer",
-    name: "CryptoPunks #4",
-    price: "0.1 ETH",
-    image:
-      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
-    quality: 4,
-    from: "H12078",
-    to: "Ton.Dev saddsjads",
-    timeTransaction: "2021-09-01T00:00:00.000Z",
-  },
-  {
-    id: 5,
-    status: "Collection offers",
-    name: "CryptoPunks #5",
-    price: "0.1 ETH",
-    image:
-      "https://openseauserdata.com/files/d32ded460ea85238572ab657783273ed.gif",
-    quality: 5,
-    from: "H12078",
-    to: "Ton.Dev saddsjads",
-    timeTransaction: "2021-09-01T00:00:00.000Z",
-  },
+    price: "85,69 ETH ($90.557,19)",
+    expiration: "10 hours",
+    from: "franklinisbored",
+  }
 ];
 const data1 = [
   {
@@ -181,47 +146,23 @@ const data1 = [
 ];
 const headCells = [
   {
-    id: "status",
-    numeric: false,
-    disablePadding: true,
-    label: "",
-  },
-  {
-    id: "name",
-    numeric: false,
-    disablePadding: false,
-    label: "Item",
-  },
-  {
     id: "price",
     numeric: true,
-    disablePadding: false,
+    disablePadding: true,
     label: "Price",
   },
   {
-    id: "quantity",
+    id: "expriration",
     numeric: true,
     disablePadding: false,
-    label: "Quantity",
+    label: "Expiration",
   },
   {
     id: "from",
     numeric: true,
     disablePadding: false,
     label: "From",
-  },
-  {
-    id: "to",
-    numeric: true,
-    disablePadding: false,
-    label: "To",
-  },
-  {
-    id: "time",
-    numeric: true,
-    disablePadding: false,
-    label: "Time",
-  },
+  }
 ];
 
 export default function ItemDetail() {
@@ -251,13 +192,13 @@ export default function ItemDetail() {
     <WrapperContainer>
       {isOpen.isOpen && (
         <ModalMain width="40%" open={isOpen} setOpen={setIsOpen}>
-          {progress >= 100 && isOpen.type === "buy" ? (
+          {/* {progress >= 100 && isOpen.type === "buy" ? (
             <PurchaseSuccess /> 
           ) : (
            <PuchaseItem progress={progress}/>
-          )}
+          )} */}
           {
-            isOpen.type === "makeoffer" && (<MakeOffer/>)
+            isOpen.type === "makeoffer" && (<Transfer/>)
           }
         </ModalMain>
       )}
@@ -350,7 +291,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />
@@ -364,7 +305,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />
@@ -378,7 +319,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />
@@ -392,7 +333,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />
@@ -406,7 +347,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />
@@ -420,7 +361,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />
@@ -434,7 +375,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />
@@ -448,7 +389,7 @@ export default function ItemDetail() {
                   backgroundColor: Colors.blackCard,
                 }}
               >
-                <ListItem_Items
+                <ListItemItems
                   primary="background"
                   secondary="New Punk Blue"
                 />

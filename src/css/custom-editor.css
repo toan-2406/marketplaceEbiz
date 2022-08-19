@@ -56,6 +56,27 @@
 .css-10klw3m{
     height: auto !important;
 }
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 100% !important;
+    color: #E5E9F0 !important;
+    border: 1px solid #951188!important;
+    border-radius: 8px !important;
+}
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root:hover{
+    outline: none !important;
+    border: 1px solid #951188!important;
+    border-radius: 8px !important;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+    color: #E5E9F0 !important;
+}
+.css-1b0dpw9-MuiInputBase-root-MuiOutlinedInput-root{
+    height: 44px !important;
+
+}
+.css-i4bv87-MuiSvgIcon-root{
+    color:#E5E9F0
+}
 a{
     text-decoration: none;
 }

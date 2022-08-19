@@ -112,7 +112,7 @@ function AddField(props) {
 }
 
 const Create = () => {
-  const [isOpen, setIsOpen] = React.useState({
+  const [isOpen, setIsOpen] = useState({
     isOpen: false,
     type: "",
   });

@@ -1,6 +1,5 @@
 import { Box, Stack, TablePagination } from '@mui/material';
 import React from 'react'
-import CardTopCollection from '../components/page/home/TopCollection/CardTopCollection';
 import TableMain from '../components/TableList/TableMain';
 import { BackGroundOverLayPage, TitleSection, WrapperContainer } from '../styles/home'
 import { ActionTab, ActionTabs } from '../styles/home/topcollection';

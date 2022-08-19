@@ -1,8 +1,8 @@
-import { Avatar, Box, Button, Grid, Stack } from "@mui/material";
+import {  Box, Button, Grid } from "@mui/material";
 import React from "react";
 import { ButtonContent, ButtonOutline, ColorButton } from "../../styles/component/button";
 import { InputContainer, InputOutline } from "../../styles/component/input";
-import { SubTitleBold } from "../../styles/component/typography";
+
 import { TitleInput } from "../../styles/create";
 import { Colors } from "../../styles/theme";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
