@@ -17,6 +17,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from '@mui/icons-material/Close';
 import logo from "../../../../assets/images/header/logo.png";
 import { ColorButton } from "../../../../styles/component/button";
+import ToggleSideBar from "../../../Drawer";
 
 
 const navbarLink = [
@@ -165,6 +166,7 @@ export const Header = () => {
             }
           </IconButton>
       </Toolbar>
+      <ToggleSideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
     </AppBar>
   );
 };

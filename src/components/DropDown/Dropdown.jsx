@@ -28,7 +28,7 @@ const blockchain = [
 ];
 
 export default function DropDown(props) {
-  const { type,children,data, title } = props;
+  const { type, children, data, title } = props;
   const [open, setOpen] = React.useState(true);
   return (
     <InputContainer
@@ -66,8 +66,7 @@ export default function DropDown(props) {
               }}
             />
           </ListItemButton>
-          {open &&
-            <Box >{children}</Box>}
+          {open && <Box>{children}</Box>}
         </>
       ) : type === "normal" ? (
         <>
@@ -75,7 +74,8 @@ export default function DropDown(props) {
             alignItems="flex-start"
             sx={{
               //   pb: open ? 0 : 2.5,
-              "& svg": { opacity: 1, fill: "#E5E9F0" },display:"inline-block"
+              "& svg": { opacity: 1, fill: "#E5E9F0" },
+              display: "inline-block",
             }}
           >
             <ListItemText
@@ -131,6 +131,8 @@ export default function DropDown(props) {
                     "& .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
                       right: "-2px !important",
                     },
+
+                    width: "64px !important",
                   }}
                 />
                 <Input required={false} placeholder="From" type="text" />

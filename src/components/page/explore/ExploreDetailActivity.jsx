@@ -124,7 +124,9 @@ export default function ExploreDetailActivity() {
   const [isOpen, setIsOpen] = useState(true);
   const [seeMore, setSeeMore] = useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
-
+ const SeeMore = (id) => {
+  
+ }
   return (
     <>
       <Stack direction={"row"} justifyContent="space-between" marginBottom={2}>
@@ -197,7 +199,12 @@ export default function ExploreDetailActivity() {
                     fontSize: 14,
                     fontWeight: 400,
                   }}
-                  onClick={() => setSeeMore(!seeMore)}
+                  //click vào item để xem chi tiết
+                  onClick={() => {
+                    SeeMore(item.id);
+                  }
+                  }
+
                 >
                   {
                     seeMore ? '- Lessmore' : '+ More'
