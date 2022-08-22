@@ -101,13 +101,13 @@ export default function ExploreDetailItem() {
         <IconButton size="large" color="secondary" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
           <MenuIcon />
         </IconButton></InputContainer>
-        <Stack direction={"row"} spacing={3} alignItems="center" >
-          <ButtonOutline>
-            <ButtonContent sx={{ padding: "5px 20px" }}>
+        <Stack direction={{xs:"column",sm:'row'}} spacing={3} alignItems="center" >
+          <ButtonOutline sx={{width:{xs:'100% !important',sm:'auto!important'}}}>
+            <ButtonContent sx={{ padding: "5px 20px" ,width:{xs:'100% !important',sm:'auto !important'}}}>
               Make collection offer
             </ButtonContent>
           </ButtonOutline>
-          <Box sx={{ maxWidth: 256 }}>
+          <Box sx={{ maxWidth: {xs:'100%', sm:256 },width:{xs:'100% !important',sm:'auto !important'} }}>
             <Input required={false} label="Select blockchain" select={type} />
           </Box>
         </Stack>

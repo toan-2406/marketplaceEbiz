@@ -1,4 +1,4 @@
-import { Avatar, Stack } from "@mui/material";
+import { Avatar, CardMedia, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import {
@@ -47,19 +47,21 @@ export default function DetailCollection() {
           height: "100%",
         }}
       >
-        <img
-          style={{ height: "312px", width: "100%", objectFit: "cover" }}
+        <CardMedia
+        component="img"
+      
+         sx={{objectFit: "fit !important",height:{xs:140,md:200,lg:312}}}
           src="https://openseauserdata.com/files/d2c44a48e7f10ff474b4912a9c955ec7.png"
           alt="cover"
         />
         <Avatar
           sx={{
             position: "absolute",
-            bottom: "-200px",
+            bottom: {xs:'-60%',md:'-100%',lg:'-60%'},
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: "200px",
-            height: "200px",
+            width: {xs:'90px',md:"200px"},
+            height: {xs:'90px',md:"200px"},
             borderRadius: "50%",
             border: "3px solid #fff",
           }}
@@ -67,14 +69,15 @@ export default function DetailCollection() {
           alt="avatar"
         />
       </Box>
-      <ContainerFull>
+      <ContainerFull mt={{xs:5,md:1}}>
         <Stack
-          direction={"row"}
+          direction={{xs:'row',md:'row'}}
           justifyContent="space-between"
-          alignItems="center"
+          alignItems={{xs:'start',md:'center'}}
+          spacing={1}
         >
           <Box>
-            <Stack direction={"row"} spacing={8}>
+            <Stack direction={"row"} flexWrap="wrap" columnGap={3} spacing={{xs:0,md:8}}>
               <Box>
                 <TitleBold>100.0K</TitleBold>
                 <SubTitleBold>items</SubTitleBold>
@@ -114,7 +117,9 @@ export default function DetailCollection() {
         <Box padding={"51px 0px"}>
           <TitleBold
             textAlign={"center"}
-            sx={{ marginBottom: "14px", fontSize: "30px" }}
+            sx={{ marginBottom: "14px", fontSize: {
+              xs: "24px",md:"30px"
+            } }}
           >
             Otherdeed for Otherside
           </TitleBold>

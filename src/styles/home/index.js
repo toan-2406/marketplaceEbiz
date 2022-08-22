@@ -8,12 +8,18 @@ import bgpage from "../../assets/images/bg-page.png";
 export const WrapperContainer = styled(Container)(({ theme }) => ({
   maxWidth: 1200,
   margin: "0 auto",
-  padding: "30px",
+  padding: '1rem',
+  [theme.breakpoints.up("md")]: {
+    padding: '24px',
+  },
 }));
 export const ContainerFull = styled(Box)(({ theme }) => ({
   maxWidth: 1750,
   margin: "0 auto",
-  padding: " 10px 30px",
+  padding: '1rem',
+  [theme.breakpoints.up("md")]: {
+    padding: '24px',
+  },
 }));
 
 

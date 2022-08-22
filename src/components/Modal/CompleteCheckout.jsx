@@ -1,4 +1,4 @@
-import {  Box, Stack, Typography } from "@mui/material";
+import {  Box, CardMedia, Stack, Typography } from "@mui/material";
 import React from "react";
 import { ColorButton } from "../../styles/component/button";
 import { Subtitle, TitleInput } from "../../styles/create";
@@ -33,8 +33,9 @@ export default function CompleteCheckout(props) {
                 overflow: "hidden",
               }}
             >
-              <img
-                style={{ height: "100%", width: "100%" }}
+              <CardMedia
+                xs={{ height: "100%", width: "100%" }}
+                component="img"
                 src="https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif"
                 alt="avatar"
               />
