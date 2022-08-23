@@ -94,6 +94,7 @@ export const TabPanelLayout = styled(Box)(({ theme }) => ({
   },
 }));
 export const TabPanelItem = styled(Box)(({ theme }) => ({
+  margin:'0 auto',
   padding: "18px 19px",
   display: "flex",
   alignItems: "center",

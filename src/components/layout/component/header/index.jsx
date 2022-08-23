@@ -9,6 +9,7 @@ import {
   IconButton,
   Typography,
   Stack,
+  useMediaQuery,
 } from "@mui/material";
 import { Link,Navigate } from "react-router-dom";
 
@@ -19,21 +20,7 @@ import logo from "../../../../assets/images/header/logo.png";
 import { ColorButton } from "../../../../styles/component/button";
 import ToggleSideBar from "../../../Drawer";
 
-
-const navbarLink = [
-  {
-    name: "Explore",
-    path: "/explore",
-  },
-  {
-    name: "Create",
-    path: "/create",
-  },
-  {
-    name: "Rankings",
-    path: "/rankings",
-  },
-];
+import {navbarLink} from '../../../../assets/data/navbar';
 
 const Search = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -82,7 +69,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
- 
+  const isTablet = useMediaQuery("(max-width: 1024px)");
   const ToggleMenu = () => {
     setIsOpen(!isOpen);
   }
@@ -157,7 +144,7 @@ export const Header = () => {
   
             color="inherit"
             aria-label="menu"
-            sx={{ display: { md: "flex",lg:"none", xl: "none" } }}
+            sx={{ display: { md: "flex",lg:"none", xl: "none" },zIndex:99999 }}
             onClick={ToggleMenu}
           >
             {
@@ -166,7 +153,7 @@ export const Header = () => {
             }
           </IconButton>
       </Toolbar>
-      <ToggleSideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
+      {isTablet && <ToggleSideBar isOpen={isOpen} setIsOpen={setIsOpen}/>}
     </AppBar>
   );
 };

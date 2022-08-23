@@ -1,75 +1,57 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import { navbarLink } from "../../assets/data/navbar";
+import { Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { ColorButton } from "../../styles/component/button";
+import { Colors } from "../../styles/theme";
+
 
 export default function ToggleSideBar(props) {
-  const [isOpen, setIsOpen] = React.useState(props.isOpen);
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setIsOpen({ ...isOpen, [anchor]: open });
-  };
-
-  const list = (anchor) => (
+  const {setIsOpen, isOpen} = props;
+  const list = () => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{ width: 250 ,background: Colors.gradientDark,height: "100vh",display: 'flex',flexDirection:'column', gap:'20px', alignItems: "center" ,justifyContent:'center'}}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={() => setIsOpen(false)}
+      onKeyDown={() => setIsOpen(false)}
+
     >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+
+          <Stack spacing={3} direction="column" alignItems={'center'}>
+          {navbarLink.map((page, index) => (
+            <Typography key={index} >
+              <Link
+                to={page.path}
+                style={{
+                  textDecoration: "none",
+                  color: "#fff",
+                  fontWeight: 600,
+                  fontSize: "1em",
+                }}
+              >
+                {page.name}
+              </Link>
+            </Typography>
+          ))}
+          </Stack>
+          <Link to="/connect-wallet">
+          <ColorButton>Connect wallet</ColorButton>
+          </Link>
+      
     </Box>
   );
 
   return (
     <>
       <SwipeableDrawer
-        anchor="left"
-        open="left"
-        onClose={() => props.setIsOpen(false)}
-        onOpen={() => props.setIsOpen(true)}
+        anchor="right"
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        onOpen={() => setIsOpen(true)}
       >
-        {list("left")}
+        {list()}
       </SwipeableDrawer>
     </>
   );

@@ -256,10 +256,10 @@ export default function Search() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  //create data limit 12 items
-  const dataLimit = useMemo(() => {
-    return data.slice(0, 12);
-  }, []);
+  // //create data limit 12 items
+  // const dataLimit = useMemo(() => {
+  //   return data.slice(0, 12);
+  // }, []);
 
   return (
     <ContainerFull>
@@ -271,7 +271,7 @@ export default function Search() {
           marginBottom={2}
         >
           <InputContainer
-            sx={{ position: fixed ? "fixed" : "unset", top: 10 }}
+            sx={{ position: fixed ? "fixed" : "unset", top: 10,zIndex:999 }}
             ref={filterEl}
           >
             <IconButton
@@ -384,7 +384,7 @@ export default function Search() {
               rowSpacing={2}
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
-              {dataLimit.map((item) => (
+              {data.map((item) => (
                 <Grid item xs={12} md={isOpen ? 3 : 2} key={item.id}>
                   <CardCollection item={item} />
                 </Grid>
