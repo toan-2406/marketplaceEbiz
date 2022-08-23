@@ -149,7 +149,7 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="1">
         <Grid container spacing={2}>
           {trending.map((item) => (
-            <Grid item xs={3} key={item.id}>
+            <Grid item xs={12} sm={6} md={3} key={item.id}>
               <CardNTFs item={item}  />
             </Grid>
           ))}
@@ -158,7 +158,7 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="2">
       <Grid container spacing={2}>
           {art.map((item) => (
-            <Grid item xs={3} key={item.id} >
+            <Grid item xs={12} sm={6} md={3} key={item.id} >
               <CardNTFs item={item}  />
             </Grid>
           ))}
@@ -167,7 +167,7 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="3">
       <Grid container spacing={2}>
           {collectibles.map((item) => (
-            <Grid item xs={3} key={item.id}>
+            <Grid item xs={12} sm={6} md={3} key={item.id}>
               <CardNTFs item={item}  />
             </Grid>
           ))}
@@ -176,7 +176,7 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="4">
       <Grid container spacing={2}>
           {music.map((item) => (
-            <Grid item xs={3} key={item.id}>
+            <Grid item xs={12} sm={6} md={3} key={item.id}>
               <CardNTFs item={item}  />
             </Grid>
           ))}
@@ -185,7 +185,7 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="5">
       <Grid container spacing={2}>
           {photography.map((item) => (
-            <Grid item xs={3} key={item.id}>
+            <Grid item xs={12} sm={6} md={3} key={item.id}>
               <CardNTFs item={item}  />
             </Grid>
           ))}
@@ -194,7 +194,7 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="6">
       <Grid container spacing={2}>
           {domains.map((item) => (
-            <Grid item xs={3} key={item.id}>
+            <Grid item xs={12} sm={6} md={3} key={item.id}>
               <CardNTFs item={item}  />
             </Grid>
           ))}
@@ -203,7 +203,7 @@ const ExploreCollection = () => {
       <TabPanel value={value} index="7">
       <Grid container spacing={2}>
           {sports.map((item) => (
-            <Grid item xs={3} key={item.id}>
+            <Grid item xs={12} sm={6} md={3} key={item.id}>
               <CardNTFs item={item}  />
             </Grid>
           ))}

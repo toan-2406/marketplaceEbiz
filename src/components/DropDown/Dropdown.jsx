@@ -123,6 +123,7 @@ export default function DropDown(props) {
           {open && (
             <Box sx={{ padding: "12px" }}>
               <Stack direction="row" spacing={1} justifyContent="space-between">
+                <Box sx={{width:'calc(100% / 3)'}}>
                 <Input
                   required={false}
                   label="USD"
@@ -135,8 +136,13 @@ export default function DropDown(props) {
                     width: "64px !important",
                   }}
                 />
+                </Box>
+                <Box sx={{width:'calc(100% / 3)'}}>
                 <Input required={false} placeholder="From" type="text" />
+                </Box>
+                <Box sx={{width:'calc(100% / 3)'}}>
                 <Input required={false} placeholder="To" type="text" />
+                </Box>
               </Stack>
               <Stack
                 direction="row"
@@ -144,16 +150,16 @@ export default function DropDown(props) {
                 spacing={1}
                 justifyContent="space-between"
               >
-                <Box sx={{ width: "50%" }}>
+                <Box sx={{ width: "50%",height:{xs:"30px",md:'auto'} }}>
                   {" "}
-                  <ButtonOutline sx={{ width: "100%" }}>
-                    <ButtonContent sx={{ width: "100%", padding: "unset" }}>
+                  <ButtonOutline sx={{ width: "100%",height:'100%' }}>
+                    <ButtonContent sx={{ width: "100%", padding: "unset",height:'100%' }}>
                       Clear
                     </ButtonContent>
                   </ButtonOutline>
                 </Box>
-                <Box sx={{ width: "50%" }}>
-                  <ColorButton sx={{ width: "100%", padding: "unset" }}>
+                <Box sx={{ width: "50%",height:{xs:"30px",md:'auto'} }}>
+                  <ColorButton sx={{ width: "100%",height:'100%', padding: "unset" }}>
                     Apply
                   </ColorButton>
                 </Box>

@@ -7,6 +7,7 @@ import {
   Checkbox,
   ListItemButton,
   ListItemText,
+  useMediaQuery,
 } from "@mui/material";
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import CardCollection from "../components/Card/CardCollection";
@@ -17,7 +18,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import DropDown from "../components/DropDown/Dropdown";
 import { InputContainer } from "../styles/component/input";
 import Tags from "../components/Tags";
-
+import ToggleDrawer from "../components/Drawer";
+import {type} from '../assets/data/global_data'
 const data = [
   {
     id: 1,
@@ -208,20 +210,6 @@ const data = [
     lastPrice: 9,
   },
 ];
-const type = [
-  {
-    id: 1,
-    name: "Ethereum",
-  },
-  {
-    id: 2,
-    name: "Bitcoin",
-  },
-  {
-    id: 3,
-    name: "Ethereum Classic",
-  },
-];
 const tags = [
   {
     id: 1,
@@ -237,10 +225,10 @@ const tags = [
   },
 ];
 export default function Search() {
-  const [isOpen, setIsOpen] = useState(true);
+  const isTablet = useMediaQuery("(max-width: 1024px)");
+  const [isOpen, setIsOpen] = useState(isTablet ? false : true);
   const [fixed, setFixed] = useState(false);
   const filterEl = useRef(null);
-
   //when scroll to the bottom of > 100px, the filter will be fixed
   const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -263,6 +251,9 @@ export default function Search() {
 
   return (
     <ContainerFull>
+      { 
+        isOpen && <ToggleDrawer isOpen={isOpen} setIsOpen={setIsOpen} type="filter">Hello</ToggleDrawer>
+      }
       <BackGroundOverLayPage />
       <Box>
         <Stack
@@ -295,7 +286,7 @@ export default function Search() {
           xs={12}
           md={2.5}
           sx={{
-            display: isOpen ? "block" : "none",
+            display: {xs:"none",md:isOpen ? "block" : "none"},
           }}
         >
           <Stack
@@ -337,7 +328,7 @@ export default function Search() {
                 </ListItem>
               ))}
             </DropDown>
-            <DropDown />
+            <DropDown title="Category"/>
             <DropDown type="checkbox" title="Category">
               {type.map((item) => (
                 <ListItem
@@ -385,7 +376,7 @@ export default function Search() {
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
               {data.map((item) => (
-                <Grid item xs={12} md={isOpen ? 3 : 2} key={item.id}>
+                <Grid item xs={12} sm={6} md={isOpen ? 3 : 2} key={item.id}>
                   <CardCollection item={item} />
                 </Grid>
               ))}
@@ -393,6 +384,7 @@ export default function Search() {
           </Box>
         </Grid>
       </Grid>
+
     </ContainerFull>
   );
 }

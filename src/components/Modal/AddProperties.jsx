@@ -8,31 +8,31 @@ import { Colors } from "../../styles/theme";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 export default function AddProperties() {
   return (
-    <Box padding={"12px 28px"}>
+    <Box sx={{padding:{xs:"10px",md:"12px 28px"}}}>
       <TitleInput sx={{ fontSize: 24 }} textAlign="center">
         Add Properties
       </TitleInput>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={5.5}>
+        <Grid item  xs={5.5}>
           <TitleInput>Type</TitleInput>
         </Grid>
-        <Grid item xs={12} md={5.5}>
+        <Grid item  xs={5.5}>
           <TitleInput>Name</TitleInput>
         </Grid>
-        <Grid item xs={12} md={1}></Grid>
+        <Grid item  xs={1}></Grid>
       </Grid>
-      <Grid container spacing={2} alignItems='center'>
-        <Grid item xs={12} md={5.5}>
+      <Grid container spacing={1} alignItems='center'>
+        <Grid item  xs={5} md={5.5}>
           <InputContainer>
             <InputOutline placeholder="Enter type (e.g.Size)" />
           </InputContainer>
         </Grid>
-        <Grid item xs={12} md={5.5}>
+        <Grid item  xs={5.5}>
           <InputContainer>
             <InputOutline placeholder="Enter item name" />
           </InputContainer>
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item  xs={1.5} md={1}>
           <Button
             sx={{
               background: Colors.gradientColor,
