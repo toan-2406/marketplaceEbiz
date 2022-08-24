@@ -151,7 +151,7 @@ export default function ExploreDetailActivity() {
         </Stack>
         </Grid>
         <Grid item xs={12} md={isOpen ? 10 : 12 }>
-          {
+        {
             isMobile ? ( 
            data.map((item) => (
             <Stack

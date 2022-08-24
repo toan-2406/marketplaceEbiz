@@ -19,7 +19,7 @@ function EditPhoto (props){
         <EditPhotoWrapper component="label" sx={{borderRadius:props.bradius,height:164,width:164}}>
             <EditPhotoContainer>
             <img src={props.src} alt='icon' />
-            <input hidden accept="image/*" multiple type="file" />
+            <input hidden accept="image/*"  type="file" />
             </EditPhotoContainer>
         </EditPhotoWrapper>
         </>

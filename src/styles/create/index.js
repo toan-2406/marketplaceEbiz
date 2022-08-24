@@ -8,10 +8,12 @@ export const UploadComponent = styled(Button)(({ theme }) => ({
     background: 'url(' + border + ')',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    width: '273px',
-    height: '199px',
     marginLeft: '15px',
     marginBottom: '15px',
+      width: '273px',
+      height: '199px',
+      position: 'relative',
+      zIndex: '1',
 }));
 
 export const TitleInput = styled(Typography)(({ theme }) => ({

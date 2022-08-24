@@ -28,7 +28,8 @@ export const Colors = {
   backgroundDark: "#212121",
   backgroundInput:'rgba(76, 33, 83, 0.25)',
   backgroundCard:'rgba(179, 85, 194, 0.25)',
-  //Shadow
+  backgroundSecondary:'#471E46',
+  //Shadow 
   shadow: "rgba(0, 0, 0, 0.2)",
   shadowDark: "rgba(0, 0, 0, 0.4)",
   //Gradient

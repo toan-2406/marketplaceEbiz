@@ -1,5 +1,13 @@
-import { Avatar, Box, Grid, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import {
+  Avatar,
+  Box,
+  CardMedia,
+  Grid,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
+import React, { useState, useEffect } from "react";
 import {
   Subtitle,
   TitleInput,
@@ -23,6 +31,7 @@ import ModalMain from "../components/Modal";
 import AddProperties from "../components/Modal/AddProperties";
 import AddLevels from "../components/Modal/AddLevels";
 import AddStats from "../components/Modal/AddStats";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 const collection = [
   {
@@ -96,7 +105,7 @@ function ToggleField(props) {
   );
 }
 function AddField(props) {
-  const { name, handleOpen,type } = props;
+  const { name, handleOpen, type } = props;
   return (
     <Stack
       direction={"row"}
@@ -116,9 +125,25 @@ const Create = () => {
     isOpen: false,
     type: "",
   });
- 
+  const [avatar, setAvartar] = useState("");
+
+  useEffect(() => {
+    return () => {
+      avatar && URL.revokeObjectURL(avatar.preview);
+    };
+  }, [avatar]);
+
   const handleOpen = (type) => {
     setIsOpen({ isOpen: true, type });
+  };
+  const handlePreviewAvatar = (e) => {
+    const file = e.target.files[0];
+    file.preview = URL.createObjectURL(file);
+
+    setAvartar(file);
+  };
+  const removeAvatar = () => {
+    setAvartar("");
   }
   return (
     <WrapperContainer>
@@ -130,7 +155,7 @@ const Create = () => {
           {isOpen.type === "create" && <CreateModal />}
         </ModalMain>
       )}
-      
+
       <BackGroundOverLayPage />
       <TitleSection>Create New Item</TitleSection>
       <Grid container spacing={10}>
@@ -143,16 +168,42 @@ const Create = () => {
             Max size: 100 MB
           </Subtitle>
           <UploadComponent component="label">
-            <Avatar
-              sx={{ height: 72, width: 72 }}
-              src={iconupload}
-              alt="iconupload"
+            {avatar ? (
+              <>
+                <CardMedia
+                  component="img"
+                  height={"100%"}
+                  image={avatar.preview}
+                  alt="avatar"
+                />
+                <IconButton
+                  sx={{ position: "absolute", top: 5, right: 5, zIndex: 999 }}
+                  onClick={removeAvatar}
+                >
+                  <CloseRoundedIcon />
+                </IconButton>
+              </>
+            ) : (
+              <Avatar
+                sx={{ height: 72, width: 72 }}
+                src={iconupload}
+                alt="iconupload"
+              />
+            )}
+            <input
+              hidden
+              accept="image/*"
+              onChange={handlePreviewAvatar}
+              type="file"
             />
-            <input hidden accept="image/*" multiple type="file" />
           </UploadComponent>
-          <AddField name="Properties" type="properties" handleOpen={handleOpen}/>
-          <AddField name="Levels" type="levels" handleOpen={handleOpen}/>
-          <AddField name="Stats" type="stats" handleOpen={handleOpen}/>
+          <AddField
+            name="Properties"
+            type="properties"
+            handleOpen={handleOpen}
+          />
+          <AddField name="Levels" type="levels" handleOpen={handleOpen} />
+          <AddField name="Stats" type="stats" handleOpen={handleOpen} />
         </Grid>
         <Grid item md={8} sm={12}>
           <Input
@@ -202,7 +253,9 @@ const Create = () => {
             }}
           >
             <ButtonOutline>
-              <ButtonContent onClick={() => handleOpen("create")}>Create</ButtonContent>
+              <ButtonContent onClick={() => handleOpen("create")}>
+                Create
+              </ButtonContent>
             </ButtonOutline>
           </Box>
         </Grid>

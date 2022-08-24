@@ -13,7 +13,7 @@ export const TabsBig = styled(Tabs)(({ theme }) => ({
 
 export const TabBig = styled(Tab)(({ theme }) => ({
     height:84,
-    width:164,
+    width:150,
     borderRadius: '8px',
     transition: 'all 0.4s ease-in-out',
     color: Colors.white,
@@ -23,5 +23,7 @@ export const TabBig = styled(Tab)(({ theme }) => ({
         border:'2px solid ' + Colors.error,
         color: Colors.white,
     },
-
+    [theme.breakpoints.up('sm')]: {
+        width:164
+    },
 }));

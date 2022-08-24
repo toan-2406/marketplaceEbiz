@@ -13,7 +13,7 @@ export default function ToggleDrawer(props) {
   const {setIsOpen, isOpen , type} = props;
   const list = () => (
     <Box
-      sx={{ width: {xs:250, sm:500} ,background: Colors.gradientDark,height: "100vh",display: 'flex',flexDirection:'column', gap:'20px', alignItems: "center" ,justifyContent:'center'}}
+      sx={{ width: {xs:250, sm:500} ,background: 'radial-gradient(97.1% 97.1% at 10.37% 4.33%, #56132B 0%, #3E0D39 100%)',height: "100vh",display: 'flex',flexDirection:'column', gap:'20px', alignItems: "center" ,justifyContent:'center'}}
       role="presentation"
       onClick={() => setIsOpen(false)}
       onKeyDown={() => setIsOpen(false)}
@@ -127,6 +127,7 @@ const filter = () => {
         open={isOpen}
         onClose={() => setIsOpen(false)}
         onOpen={() => setIsOpen(true)}
+        sx={{border:'none',outline:'none'}}
       >
         { type === "filter" ? filter() : list() }
       </SwipeableDrawer>

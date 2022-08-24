@@ -4,11 +4,9 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { Colors } from "../../styles/theme";
-import { useMediaQuery } from "@mui/material";
 export default function ModalMain(props) {
   const { setOpen, open, children, width } = props;
   const handleClose = () => setOpen(false);
-  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <>
       <Modal
@@ -26,10 +24,10 @@ export default function ModalMain(props) {
           <Box
             sx={{
               position: "absolute",
-              top: isMobile ? "50%" : "40%",
+              top: {xs:'50%',sm:"40%"},
               left: "50%",
               transform: "translate(-50%, -50%)",
-              width: isMobile ? "100%" : width,
+              width: {xs:"100%",sm:"80%",md:width},
               background: "linear-gradient(45deg, #2e071a, #40163d)",
               border: "3px solid " + Colors.border,
               borderRadius: "8px",

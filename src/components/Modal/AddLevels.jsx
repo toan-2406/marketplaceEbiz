@@ -25,10 +25,10 @@ export default function AddLevels() {
       <Grid container spacing={{xs:1,md:2}} alignItems='center'>
         <Grid item xs={4.5} md={7}>
           <InputContainer>
-            <InputOutline placeholder="Enter type (e.g.Size)" />
+            <InputOutline placeholder="Enter name (e.g.Size)" />
           </InputContainer>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} md={4}>
           <Stack direction="row" justifyContent="space-between" alignItems='center' spacing={1} >
           <InputContainer>
             <InputOutline type='number' placeholder="0" />

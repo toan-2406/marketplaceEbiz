@@ -141,15 +141,14 @@ export const Header = () => {
         </Box>
         <IconButton
             size="large"
-  
             color="inherit"
             aria-label="menu"
             sx={{ display: { md: "flex",lg:"none", xl: "none" },zIndex:99999 }}
             onClick={ToggleMenu}
           >
             {
-              isOpen ?<CloseIcon/> 
-              :<MenuIcon  />
+              isOpen ?<CloseIcon fontSize="large"/> 
+              :<MenuIcon fontSize="large" />
             }
           </IconButton>
       </Toolbar>

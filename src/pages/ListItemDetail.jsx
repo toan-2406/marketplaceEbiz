@@ -13,24 +13,21 @@ import {
 import { LinkCustom } from "../styles/profile";
 import { IOSSwitch, TitleInput } from "../styles/create";
 import CardNTFs from "../components/Card/CardNTFs";
-
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import AttachMoneySharpIcon from '@mui/icons-material/AttachMoneySharp';
+import AccessTimeSharpIcon from '@mui/icons-material/AccessTimeSharp';
 import { TabBig, TabsBig } from "../styles/component/tab";
 
 import ModalMain from "../components/Modal";
 
 import CompleteList from "../components/Modal/CompleteList";
+import CardCollection from "../components/Card/CardCollection";
 const item = {
   id: 1,
-  name: "NFT 1",
-  images: {
-    avatar:
+  collectionID: 1898,
+  name: "Bored Ape Yatch Club",
+  images:
       "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
-    cover:
-      "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
-  },
-  description: "NFT 1",
+
 };
 const currency = [
   {
@@ -49,7 +46,7 @@ const currency = [
 
 const ListItemDetail = () => {
   const [value, setValue] = React.useState(0);
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
   const OpenModal = () => {
     setIsOpen(true);
   };
@@ -68,16 +65,16 @@ const ListItemDetail = () => {
       <BackGroundOverLayPage />
       <LinkCustom href="/">Back</LinkCustom>
       <TitleSection>List Item</TitleSection>
-      <Grid container spacing={5} justifyContent="space-between">
-        <Grid item xs={12} sm={7}>
+      <Grid container spacing={5} flexDirection={{xs:"column-reverse",md:'row'}} justifyContent="space-between">
+        <Grid item xs={12} md={7}>
           <TitleInput>Type</TitleInput>
           <TabsBig
             value={value}
             onChange={handleChange}
             aria-label="icon label tabs example"
           >
-            <TabBig icon={<AttachMoneyIcon />} label="Fixed Price" />
-            <TabBig icon={<AccessTimeIcon />} label="Timed Auction" />
+            <TabBig icon={<AttachMoneySharpIcon />} label="Fixed Price" />
+            <TabBig icon={<AccessTimeSharpIcon />} label="Timed Auction" />
           </TabsBig>
           <TitleInput>Price</TitleInput>
           <Stack direction={"row"} spacing={3}>
@@ -141,9 +138,11 @@ const ListItemDetail = () => {
             </ButtonOutline>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={5}>
           <TitleInput>Preview</TitleInput>
-          <CardNTFs item={item} />
+         <Box sx={{height:'auto',marginRight:{md:'auto'},marginX:{xs:'auto',md:'unset'},width:{xs:'100%',sm:'55%',md:'70%'}}}>
+         <CardCollection item={item} />
+         </Box>
         </Grid>
       </Grid>
     </WrapperContainer>

@@ -82,10 +82,13 @@ export default function TableMain(props) {
                     </TableCell>
                     }
                     {
-                      row.price &&<TableCell align="center"><TitleBold>{row.status === 'Transfer' ? '---' : row.price}</TitleBold></TableCell>
+                      row.event &&<TableCell align="center"><TitleBold>{row.event}</TitleBold></TableCell>
+                    }
+                    {
+                      row.price &&<TableCell align="center"><TitleBold sx={{fontWeight:'500',fontSize:'16px'}} >{row.status === 'Transfer' ? '---' : row.price}</TitleBold></TableCell>
                     }
                    {
-                    row.expiration &&  <TableCell align="center"><TitleBold>{row.expiration}</TitleBold></TableCell>
+                    row.expiration &&  <TableCell align="center"><TitleBold sx={{fontWeight:'500',fontSize:'16px'}}>{row.expiration}</TitleBold></TableCell>
                    }
                    {
                      row.quality && <TableCell align="center"><TitleBold>{row.status === 'Collection offers' ? '---' : row.quality}</TitleBold></TableCell>

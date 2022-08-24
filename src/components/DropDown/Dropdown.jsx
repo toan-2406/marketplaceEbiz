@@ -12,6 +12,7 @@ import {
   ButtonOutline,
   ColorButton,
 } from "../../styles/component/button";
+import { Colors } from "../../styles/theme";
 const blockchain = [
   {
     id: 1,
@@ -45,7 +46,11 @@ export default function DropDown(props) {
             sx={{
               //   pb: open ? 0 : 2.5,
               "& svg": { opacity: 1, fill: "#E5E9F0" },
+              backgroundColor: Colors.backgroundSecondary ,
+              borderTopLeftRadius: "8px",
+              borderTopRightRadius: "8px",
             }}
+            
           >
             <ListItemText
               primary={title}
@@ -72,10 +77,13 @@ export default function DropDown(props) {
         <>
           <ListItemButton
             alignItems="flex-start"
+          
             sx={{
               //   pb: open ? 0 : 2.5,
               "& svg": { opacity: 1, fill: "#E5E9F0" },
-              display: "inline-block",
+              backgroundColor: Colors.backgroundSecondary ,
+              borderTopLeftRadius: "8px",
+            
             }}
           >
             <ListItemText
@@ -88,6 +96,15 @@ export default function DropDown(props) {
               }}
               sx={{ my: 0 }}
             />
+             <KeyboardArrowDown
+              sx={{
+                mr: -1,
+                opacity: 0,
+                transform: open ? "rotate(-180deg)" : "rotate(0)",
+                transition: "0.2s",
+                visibility: "hidden",
+              }}
+            />
           </ListItemButton>
           <Box sx={{ padding: "12px" }}>{children}</Box>
         </>
@@ -99,6 +116,8 @@ export default function DropDown(props) {
             sx={{
               //   pb: open ? 0 : 2.5,
               "& svg": { opacity: 1, fill: "#E5E9F0" },
+              backgroundColor: Colors.backgroundSecondary ,
+             
             }}
           >
             <ListItemText

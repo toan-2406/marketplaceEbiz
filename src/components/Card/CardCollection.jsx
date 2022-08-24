@@ -2,9 +2,8 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Avatar, CardActionArea} from "@mui/material";
-import { StyledBadge } from "../../styles/home/topcollection";
+import {  CardActionArea} from "@mui/material";
+
 
 import { Link } from "react-router-dom";
 import { Subtitle } from "../../styles/create";
@@ -65,13 +64,13 @@ backdropFilter: 'blur(70px)',
             {item.name}
           </TitleBold>
           <Subtitle component='p' sx={{margin:'unset'}}>
-            Price
+          {item.price && 'Price'} 
          </Subtitle >
          <TitleBold component='h3' sx={{margin:'unset'}}>
             {item.price} {item.currency}
           </TitleBold>
           <Subtitle component='p' sx={{margin:'unset'}}>
-            Last {item.lastPrice} {item.currency}
+            { item.lastPrice && 'Last '} {item.lastPrice} {item.currency}
          </Subtitle >
         </CardContent>
       </CardActionArea>

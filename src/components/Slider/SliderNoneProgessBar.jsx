@@ -6,7 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import './style.css';
+import "./style.css";
+import "../page/home/NFTs/style.css";
 
 // import required modules
 import { Navigation } from "swiper";
@@ -23,17 +24,15 @@ const SliderNoneProgessBar = (props) => {
       spaceBetween={16}
       slidesPerGroup={1}
       loop={true}
-      navigation={{ enabled: true}}
-      modules={ Navigation}
+      navigation={{ enabled: true }}
+      modules={Navigation}
       className="mySwiper"
-      
     >
-      
-       {props.data.map((item) => (
-          <SwiperSlide key={item.id} >
-          <CardCollection item={item}/>
+      {props.data.map((item) => (
+        <SwiperSlide key={item.id}>
+          <CardCollection item={item} />
         </SwiperSlide>
-        ))} 
+      ))}
     </Swiper>
   );
 };

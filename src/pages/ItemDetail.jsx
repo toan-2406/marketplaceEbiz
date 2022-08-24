@@ -62,8 +62,9 @@ const data = [
     price: "85,69 ETH ($90.557,19)",
     expiration: "10 hours",
     from: "franklinisbored",
-  }
+  },
 ];
+
 const data1 = [
   {
     id: 1,
@@ -144,11 +145,11 @@ const data1 = [
     lastPrice: 9,
   },
 ];
-const headCells = [
+const headCellsOffers = [
   {
     id: "price",
     numeric: true,
-    disablePadding: true,
+    disablePadding: false,
     label: "Price",
   },
   {
@@ -162,26 +163,92 @@ const headCells = [
     numeric: true,
     disablePadding: false,
     label: "From",
+  },
+];
+const data2 = [
+  {
+    id: 1,
+    event: "Offer",
+    price: "85,69 ETH ($90.557,19)",
+    to: 'H122132',
+    from: "franklinisbored",
+    timeTransaction: '2 minutes ago'
+  },
+  {
+    id: 2,
+    event: "Offer",
+    price: "85,69 ETH ($90.557,19)",
+    to: 'H122132',
+    from: "franklinisbored",
+    timeTransaction: '2 minutes ago'
+  },
+  {
+    id: 3,
+    event: "Transfer",
+    price: "85,69 ETH ($90.557,19)",
+    to: 'H122132',
+    from: "franklinisbored",
+    timeTransaction: '2 minutes ago'
+  },
+  {
+    id: 4,
+    event: "Offer",
+    price: "85,69 ETH ($90.557,19)",
+    to: 'H122132',
+    from: "franklinisbored",
+    timeTransaction: '2 minutes ago'
+  },
+];
+const headCellsActivity = [
+  {
+    id: "event",
+    numeric: true,
+    disablePadding: false,
+    label: "Event",
+  },
+  {
+    id: "price",
+    numeric: true,
+    disablePadding: false,
+    label: "Price",
+  },
+  {
+    id: "from",
+    numeric: true,
+    disablePadding: false,
+    label: "From",
+  },
+  {
+    id: "to",
+    numeric: true,
+    disablePadding: false,
+    label: "To",
+  },
+  {
+    id: "time",
+    numeric: true,
+    disablePadding: false,
+    label: "Time",
   }
 ];
 
 export default function ItemDetail() {
   const [isOpen, setIsOpen] = React.useState({
     isOpen: false,
-    type: ""
+    type: "",
   });
   const [selected, setSelected] = useState(false);
   const [progress, setProgress] = useState(0);
   const OpenModal = (type) => {
     setIsOpen({
       isOpen: true,
-      type: type
+      type: type,
     });
   };
   //useEffect to update progress bar
   useEffect(() => {
     const timer = setInterval(() => {
-       setProgress((prevProgress) => prevProgress + 50);
+      setProgress((prevProgress) => prevProgress + 50);
       console.log(progress);
     }, 800);
     return () => {
@@ -197,9 +264,8 @@ export default function ItemDetail() {
           ) : (
            <PuchaseItem progress={progress}/>
           )} */}
-          {
-            isOpen.type === "makeoffer" && (<Transfer/>)
-          }
+          <PurchaseSuccess />
+          {isOpen.type === "makeoffer" && <Transfer />}
         </ModalMain>
       )}
       <BackGroundOverLayPage />
@@ -272,9 +338,9 @@ export default function ItemDetail() {
           <DropDown type="checkbox" title="Properties">
             <Stack
               sx={{
-                padding: " 0 12px ",
+                padding: " 10px 12px ",
                 marginRight: "12px",
-                height: "138px",
+                height: "145px",
                 overflow: "auto",
               }}
               flexWrap="wrap"
@@ -288,13 +354,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
               <ListItem
                 sx={{
@@ -302,13 +365,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
               <ListItem
                 sx={{
@@ -316,13 +376,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
               <ListItem
                 sx={{
@@ -330,13 +387,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
               <ListItem
                 sx={{
@@ -344,13 +398,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
               <ListItem
                 sx={{
@@ -358,13 +409,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
               <ListItem
                 sx={{
@@ -372,13 +420,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
               <ListItem
                 sx={{
@@ -386,13 +431,10 @@ export default function ItemDetail() {
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
-                  backgroundColor: Colors.blackCard,
+                  backgroundColor: Colors.backgroundSecondary,
                 }}
               >
-                <ListItemItems
-                  primary="background"
-                  secondary="New Punk Blue"
-                />
+                <ListItemItems primary="background" secondary="New Punk Blue" />
               </ListItem>
             </Stack>
           </DropDown>
@@ -452,7 +494,10 @@ export default function ItemDetail() {
           </DropDown>
         </Grid>
         <Grid item xs={12} md={7} sx={{ "& > * ~ *": { marginTop: "20px" } }}>
-          <BorderBox padding="52px 24px 20px 24px">
+          <BorderBox padding="20px 24px 20px 24px">
+            <TitleNormal sx={{ color: "#0085FF" }}>
+              Bored Ape Yacht Club
+            </TitleNormal>
             <TitleBold fontSize="28px !important" lineHeight="40px !important">
               #1898
             </TitleBold>
@@ -481,28 +526,34 @@ export default function ItemDetail() {
               mt={2}
             >
               <ButtonOutline>
-                <ButtonContent sx={{ padding: "15px 67px" }} onClick={() => OpenModal('makeoffer')}>
+                <ButtonContent
+                  sx={{ padding: "15px 67px" }}
+                  onClick={() => OpenModal("makeoffer")}
+                >
                   Make offer
                 </ButtonContent>
               </ButtonOutline>
-              <ColorButton sx={{ padding: "18px 75px" }} onClick={() => OpenModal('buy')}>
+              <ColorButton
+                sx={{ padding: "18px 75px" }}
+                onClick={() => OpenModal("buy")}
+              >
                 Buy now
               </ColorButton>
             </Stack>
           </BorderBox>
           <DropDown type="normal" title="Offers">
             <Box sx={{ maxHeight: "272px", overflow: "auto" }}>
-              <TableMain headCells={headCells} data={data} />
+              <TableMain headCells={headCellsOffers} data={data} />
             </Box>
           </DropDown>
-          <DropDown type="normal" title="Offers">
+          <DropDown type="normal" title="Item Activity">
             <Box sx={{ maxHeight: "400px", overflow: "auto" }}>
-              <TableMain headCells={headCells} data={data} />
+              <TableMain headCells={headCellsActivity} data={data2} />
             </Box>
           </DropDown>
         </Grid>
       </Grid>
-      <BorderBox padding="20px 0">
+      <BorderBox padding="20px 0" mt={2}>
         <Stack
           padding="0 12px"
           direction="row"
@@ -512,7 +563,7 @@ export default function ItemDetail() {
           <TitleBold>NFTs related to this item</TitleBold>
           <ColorButton>View collection</ColorButton>
         </Stack>
-        <Box mt={2} paddingLeft="12px">
+        <Box mt={2} paddingLeft="12px" position={"relative"}>
           <SliderNoneProgessBar data={data1} mt={2} />
         </Box>
       </BorderBox>
