@@ -18,6 +18,7 @@ export default function CardSpolight(props) {
       }} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         <CardMedia
           component="img"
+          image={props.image}
           height={380} 
           alt="spolight"
           sx={{

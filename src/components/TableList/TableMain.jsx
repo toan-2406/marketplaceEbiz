@@ -14,7 +14,6 @@ import Paper from "@mui/material/Paper";
 import { Avatar } from "@mui/material";
 import { SubTitleBold, TitleBold } from "../../styles/component/typography";
 
-
 function EnhancedTableHead(props) {
   const { rowCount, headCell } = props;
 
@@ -40,68 +39,143 @@ export default function TableMain(props) {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-  const { data , headCells } = props;
+  const { data, headCells, rank } = props;
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data.length) : 0;
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Paper sx={{ width: "100%", mb: 2,backgroundColor:'transparent' }}>
+      <Paper sx={{ width: "100%", mb: 2, backgroundColor: "transparent" }}>
         <TableContainer>
-          <Table
-            aria-labelledby="tableTitle"
-  
-          >
+          <Table aria-labelledby="tableTitle">
             <EnhancedTableHead headCell={headCells} rowCount={data.length} />
             <TableBody>
               {data.map((row, index) => {
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-                    {
-                      row.status && <TableCell
-                      align="center"
-                    >
-                     <TitleBold> {row.status}</TitleBold>
-                    </TableCell>
-                    }
-                    {
-                      row.name && <TableCell align="center">
-                      <Box sx={{display:'flex', alignItems:'center'}}>
-                        <Avatar
-                          sx={{
-                            height: "44px",
-                            width: "44px",
-                            marginRight: "10px",
-                          }}
-                          alt={row.name}
-                          src={row.image}
-                        />
-                        <TitleBold component="span">{row.name}</TitleBold>
-                      </Box>
-                    </TableCell>
-                    }
-                    {
-                      row.event &&<TableCell align="center"><TitleBold>{row.event}</TitleBold></TableCell>
-                    }
-                    {
-                      row.price &&<TableCell align="center"><TitleBold sx={{fontWeight:'500',fontSize:'16px'}} >{row.status === 'Transfer' ? '---' : row.price}</TitleBold></TableCell>
-                    }
-                   {
-                    row.expiration &&  <TableCell align="center"><TitleBold sx={{fontWeight:'500',fontSize:'16px'}}>{row.expiration}</TitleBold></TableCell>
-                   }
-                   {
-                     row.quality && <TableCell align="center"><TitleBold>{row.status === 'Collection offers' ? '---' : row.quality}</TitleBold></TableCell>
-                   }
-                    {
-                      row.from && <TableCell align="center"><SubTitleBold sx={{color: '#0085FF'}}>{row.from}</SubTitleBold></TableCell>
-                    }
-                   {
-                     row.to && <TableCell align="center"><SubTitleBold >{row.status === 'Collection offers' || row.status === 'Offer' || row.status === 'List' ? '---' : <SubTitleBold sx={{color: '#0085FF',overflow: 'hidden', display: '-webkit-box', WebkitLineClamp:1,maxWidth:160,whiteSpace:'nowrap',textOverflow: 'ellipsis', WebkiBoxOrient: 'vertical'}}>{row.to}</SubTitleBold> }</SubTitleBold></TableCell>
-                   }
-                    {
-                      row.timeTransaction && <TableCell align="center"><SubTitleBold>{row.timeTransaction}</SubTitleBold></TableCell>
-                    }
+                    {row.status && (
+                      <TableCell align="center">
+                        <TitleBold> {row.status}</TitleBold>
+                      </TableCell>
+                    )}
+                    {row.name && rank ? (
+                      <TableCell align="center">
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <TitleBold sx={{marginRight:"20px"}}>{row.id}</TitleBold>
+                          <Avatar
+                            sx={{
+                              height: "44px",
+                              width: "44px",
+                              marginRight: "10px",
+                            }}
+                            alt={row.name}
+                            src={row.image}
+                          />
+                          <TitleBold component="span">{row.name}</TitleBold>
+                        </Box>
+                      </TableCell>
+                    ) : (
+                      <TableCell align="center">
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Avatar
+                            sx={{
+                              height: "44px",
+                              width: "44px",
+                              marginRight: "10px",
+                            }}
+                            alt={row.name}
+                            src={row.image}
+                          />
+                          <TitleBold component="span">{row.name}</TitleBold>
+                        </Box>
+                      </TableCell>
+                    )}
+                    {row.event && (
+                      <TableCell align="center">
+                        <TitleBold>{row.event}</TitleBold>
+                      </TableCell>
+                    )}
+                    {row.volume && (
+                      <TableCell align="center">
+                        <TitleBold>{row.volume} {row.currency}</TitleBold>
+                      </TableCell>
+                    )}
+                    {row.price && (
+                      <TableCell align="center">
+                        <TitleBold sx={{ fontWeight: "500", fontSize: "16px" }}>
+                          {row.status === "Transfer" ? "---" : row.price}
+                        </TitleBold>
+                      </TableCell>
+                    )}
+                    {row.expiration && (
+                      <TableCell align="center">
+                        <TitleBold sx={{ fontWeight: "500", fontSize: "16px" }}>
+                          {row.expiration}
+                        </TitleBold>
+                      </TableCell>
+                    )}
+                    {row.quality && (
+                      <TableCell align="center">
+                        <TitleBold>
+                          {row.status === "Collection offers"
+                            ? "---"
+                            : row.quality}
+                        </TitleBold>
+                      </TableCell>
+                    )}
+                     {row.owner && (
+                      <TableCell align="center">
+                        <TitleBold>
+                          { row.owner}
+                        </TitleBold>
+                      </TableCell>
+                    )}
+                    {row.item && (
+                      <TableCell align="center">
+                        <TitleBold>
+                          { row.item}
+                        </TitleBold>
+                      </TableCell>
+                    )}
+                    {row.from && (
+                      <TableCell align="center">
+                        <SubTitleBold sx={{ color: "#0085FF" }}>
+                          {row.from}
+                        </SubTitleBold>
+                      </TableCell>
+                    )}
+                    {row.to && (
+                      <TableCell align="center">
+                        <SubTitleBold>
+                          {row.status === "Collection offers" ||
+                          row.status === "Offer" ||
+                          row.status === "List" ? (
+                            "---"
+                          ) : (
+                            <SubTitleBold
+                              sx={{
+                                color: "#0085FF",
+                                overflow: "hidden",
+                                display: "-webkit-box",
+                                WebkitLineClamp: 1,
+                                maxWidth: 160,
+                                whiteSpace: "nowrap",
+                                textOverflow: "ellipsis",
+                                WebkiBoxOrient: "vertical",
+                              }}
+                            >
+                              {row.to}
+                            </SubTitleBold>
+                          )}
+                        </SubTitleBold>
+                      </TableCell>
+                    )}
+                    {row.timeTransaction && (
+                      <TableCell align="center">
+                        <SubTitleBold>{row.timeTransaction}</SubTitleBold>
+                      </TableCell>
+                    )}
                   </TableRow>
                 );
               })}
