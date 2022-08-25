@@ -46,11 +46,10 @@ export default function DropDown(props) {
             sx={{
               //   pb: open ? 0 : 2.5,
               "& svg": { opacity: 1, fill: "#E5E9F0" },
-              backgroundColor: Colors.backgroundSecondary ,
+              backgroundColor: Colors.backgroundSecondary,
               borderTopLeftRadius: "8px",
               borderTopRightRadius: "8px",
             }}
-            
           >
             <ListItemText
               primary={title}
@@ -77,13 +76,11 @@ export default function DropDown(props) {
         <>
           <ListItemButton
             alignItems="flex-start"
-          
             sx={{
               //   pb: open ? 0 : 2.5,
               "& svg": { opacity: 1, fill: "#E5E9F0" },
-              backgroundColor: Colors.backgroundSecondary ,
+              backgroundColor: Colors.backgroundSecondary,
               borderTopLeftRadius: "8px",
-            
             }}
           >
             <ListItemText
@@ -96,7 +93,7 @@ export default function DropDown(props) {
               }}
               sx={{ my: 0 }}
             />
-             <KeyboardArrowDown
+            <KeyboardArrowDown
               sx={{
                 mr: -1,
                 opacity: 0,
@@ -116,8 +113,7 @@ export default function DropDown(props) {
             sx={{
               //   pb: open ? 0 : 2.5,
               "& svg": { opacity: 1, fill: "#E5E9F0" },
-              backgroundColor: Colors.backgroundSecondary ,
-             
+              backgroundColor: Colors.backgroundSecondary,
             }}
           >
             <ListItemText
@@ -142,25 +138,46 @@ export default function DropDown(props) {
           {open && (
             <Box sx={{ padding: "12px" }}>
               <Stack direction="row" spacing={1} justifyContent="space-between">
-                <Box sx={{width:'calc(100% / 3)'}}>
-                <Input
-                  required={false}
-                  label="USD"
-                  select={blockchain}
+                <Box
                   sx={{
-                    "& .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
-                      right: "-2px !important",
-                    },
-
-                    width: "64px !important",
+                    width: "calc(100% / 3)",
+                    
+                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                    borderRadius: "4px",
                   }}
-                />
+                >
+                  <Input
+                    required={false}
+                    label="USD"
+                    select={blockchain}
+                    sx={{
+                      "& .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
+                        right: "-2px !important",
+                      },
+
+                      width: "64px !important",
+                    }}
+                  />
                 </Box>
-                <Box sx={{width:'calc(100% / 3)'}}>
-                <Input required={false} placeholder="From" type="text" />
+                <Box
+                  sx={{
+                    width: "calc(100% / 3)",
+                    
+                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                    borderRadius: "4px",
+                  }}
+                >
+                  <Input required={false} placeholder="From" type="text" />
                 </Box>
-                <Box sx={{width:'calc(100% / 3)'}}>
-                <Input required={false} placeholder="To" type="text" />
+                <Box
+                  sx={{
+                    width: "calc(100% / 3)",
+                    
+                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                    borderRadius: "4px",
+                  }}
+                >
+                  <Input required={false} placeholder="To" type="text" />
                 </Box>
               </Stack>
               <Stack
@@ -169,16 +186,20 @@ export default function DropDown(props) {
                 spacing={1}
                 justifyContent="space-between"
               >
-                <Box sx={{ width: "50%",height:{xs:"30px",md:'auto'} }}>
+                <Box sx={{ width: "50%", height: { xs: "30px", md: "auto" } }}>
                   {" "}
-                  <ButtonOutline sx={{ width: "100%",height:'100%' }}>
-                    <ButtonContent sx={{ width: "100%", padding: "unset",height:'100%' }}>
+                  <ButtonOutline sx={{ width: "100%", height: "100%" }}>
+                    <ButtonContent
+                      sx={{ width: "100%", padding: "unset", height: "100%",backgroundColor : '#3F1A2C' }}
+                    >
                       Clear
                     </ButtonContent>
                   </ButtonOutline>
                 </Box>
-                <Box sx={{ width: "50%",height:{xs:"30px",md:'auto'} }}>
-                  <ColorButton sx={{ width: "100%",height:'100%', padding: "unset" }}>
+                <Box sx={{ width: "50%", height: { xs: "30px", md: "auto" } }}>
+                  <ColorButton
+                    sx={{ width: "100%", height: "100%", padding: "unset" }}
+                  >
                     Apply
                   </ColorButton>
                 </Box>

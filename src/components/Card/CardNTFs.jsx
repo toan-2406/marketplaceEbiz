@@ -109,7 +109,7 @@ export default function CardNTFs(props) {
               BoxOrient: "vertical",
             }}
           >
-            {item.description}
+            {item.description && item.description}
           </Typography>
         </CardContent>
       </CardActionArea>

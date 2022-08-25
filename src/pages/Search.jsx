@@ -20,6 +20,9 @@ import { InputContainer } from "../styles/component/input";
 import Tags from "../components/Tags";
 import ToggleDrawer from "../components/Drawer";
 import {type} from '../assets/data/global_data'
+import { TitleBold } from "../styles/component/typography";
+import SliderNoneProgessBar from "../components/Slider/SliderNoneProgessBar";
+import SliderCollection from "../components/Slider/SliderCollection";
 const data = [
   {
     id: 1,
@@ -47,7 +50,7 @@ const data = [
     id: 3,
     collectionID: "0123",
     images:
-      "https://lh3.googleusercontent.com/P1WOzkGqp_mU_1jvpFhQnevYKryg0BZbzmuiawx-Xm-5NtuvhWXXPQu5P0llghCzAinhL6iOS8M0wmBLS_naA4d1jsyBTYyXP47br6U=h400",
+      "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
@@ -59,7 +62,6 @@ const data = [
     collectionID: "0123",
     images:
       "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
-
     name: "Collections name",
     itemName: "item name",
     price: 90.99,
@@ -210,6 +212,64 @@ const data = [
     lastPrice: 9,
   },
 ];
+const data1 = [
+  {
+    id: 1,
+    images:{
+      avatar: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+      cover: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    },
+    name: "Collections name",
+  },
+  {
+    id: 2,
+    images:{
+      avatar: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+      cover: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    },
+    name: "Collections name",
+  },
+  {
+    id: 3,
+     images:{
+      avatar: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+      cover: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    },
+    name: "Collections name",
+  },
+  {
+    id: 4,
+    images:{
+      avatar: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+      cover: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    },
+    name: "Collections name",
+  },
+  {
+    id: 5,
+    images:{
+      avatar: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+      cover: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    },
+    name: "Collections name",
+  },
+  {
+    id: 6,
+    images:{
+      avatar: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+      cover: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    },
+    name: "Collections name",
+  },
+  {
+    id: 7,
+     images:{
+      avatar: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+      cover: "https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif",
+    },
+    name: "Collections name",
+  },
+];
 const tags = [
   {
     id: 1,
@@ -251,9 +311,7 @@ export default function Search() {
 
   return (
     <ContainerFull>
-      { 
-        isOpen && <ToggleDrawer isOpen={isOpen} setIsOpen={setIsOpen} type="filter">Hello</ToggleDrawer>
-      }
+      
       <BackGroundOverLayPage />
       <Box>
         <Stack
@@ -367,8 +425,16 @@ export default function Search() {
         </Grid>
         <Grid item xs={12} md={isOpen ? 9.5 : 12}>
           <Box>
-            <Stack spacing={2} direction="row">
-              <Tags tags={tags} />
+          <Box position="relative" mb={2}>
+          <SliderCollection data={data1}  />
+          </Box>
+            <Stack spacing={2} direction="row" mb={2} alignItems="center">
+                {tags.map((item) => (
+                  <Box key={item.id}>
+                    <Tags  label={item.name}></Tags>
+                  </Box>
+                ))}
+                <TitleBold sx={{ cursor: "pointer"}}>Clear All</TitleBold>
             </Stack>
             <Grid
               container

@@ -1,7 +1,23 @@
-import {  Button ,Link} from '@mui/material';
+import {  Button ,Chip,Link} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Colors } from '../../theme';
 
+export const TagButton = styled(Chip)(({ theme }) => ({
+    backgroundColor: '#3a1d2c',
+    color: theme.palette.primary.contrastText,
+    margin: theme.spacing.unit,
+    borderColor: Colors.border,
+    borderRadius: '8px',
+    fontSize: '16px',
+    fontWeight: '500',
+    lineHeight: '24px',
+    padding: '12px 24px',
+    height: 'unset',
+    '& .MuiSvgIcon-root': {
+        color: '#fff !important',
+        fontSize: '24px',
+    },
+}));
 export const ButtonOutline = styled(Button)(({ theme }) => ({
     background: Colors.gradientColor,
     borderRadius: '100px',

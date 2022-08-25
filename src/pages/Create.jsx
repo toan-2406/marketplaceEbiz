@@ -253,7 +253,7 @@ const Create = () => {
             }}
           >
             <ButtonOutline>
-              <ButtonContent onClick={() => handleOpen("create")}>
+              <ButtonContent sx={{backgroundColor:"#281327"}} onClick={() => handleOpen("create")}>
                 Create
               </ButtonContent>
             </ButtonOutline>

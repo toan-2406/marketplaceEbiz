@@ -113,7 +113,7 @@ export default function MakeOffer() {
        </Box>
       </Stack>
       <Box mt={5}>
-        <ColorButton sx={{ width: "100%", borderRadius: "10px" }}>
+        <ColorButton sx={{ width: "100%", borderRadius: "10px",backgroundColor: "#2A1125 " }}>
           Make offer
         </ColorButton>
       </Box>
