@@ -6,6 +6,7 @@ import Art from "../../../../assets/images/home/category/art.png";
 import Music from "../../../../assets/images/home/category/music.png";
 import Photo from "../../../../assets/images/home/category/photo.png";
 import Domain from "../../../../assets/images/home/category/domain.png";
+import { Box } from "@mui/material";
 
 const data = [
   {
@@ -56,9 +57,11 @@ const data = [
 ];
 export default function PopularCategories() {
   return (
-    <WrapperContainer sx={{ position: "relative",marginBottom:'40px'  }}>
-      <TitleSection>Popular categories</TitleSection>
-      <SliderCategory data={data} />
-    </WrapperContainer>
+    <Box sx={{ backgroundColor: "#1E1E1E" }}>
+      <WrapperContainer sx={{ position: "relative"}}>
+        <TitleSection>Popular categories</TitleSection>
+        <SliderCategory data={data} />
+      </WrapperContainer>
+    </Box>
   );
 }

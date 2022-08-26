@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
 import { Box } from "@mui/material";
-import { BackGroundSection } from "../styles/home";
+import { BackGroundOverLay1, BackGroundSection } from "../styles/home";
 const Banner = React.lazy(() => import("../components/page/home/Banner"));
-const Spolight = React.lazy(() => import("../components/page/home/Spolight"));
 const TopCollection = React.lazy(() =>
   import("../components/page/home/TopCollection")
 );
@@ -14,14 +13,13 @@ const PopularCategories = React.lazy(() =>
 const Home = () => {
   return (
     <Box>
+      <Box py={4}>
       <Suspense fallback={<div style={{display:'none'}}>Loading...</div>}>
         <Banner />
-        <Spolight />
       </Suspense>
+      </Box>
         <TopCollection />
-        <BackGroundSection>
           <NFTs />
-        </BackGroundSection>
         <PopularCategories /> 
     </Box>
   );

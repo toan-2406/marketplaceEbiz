@@ -66,7 +66,7 @@ export const BackGroundOverLay1 = styled("div")(({ theme }) => ({
   backgroundPosition: "top",
   backgroundRepeat: "no-repeat",
   zIndex: -1,
-  maxHeight: '1076px',
+ height: '100%',
   width: "100%",
 }));
 export const BackGroundOverLayFull = styled("div")(({ theme }) => ({
@@ -89,7 +89,7 @@ export const BackGroundOverLayPage = styled("div")(({ theme }) => ({
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundImage: `url(${bgpage})`,
+  background: 'radial-gradient(20.43% 26.13% at 64.44% 8.01%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.255) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(40.05% 72.11% at 57.47% 79.31%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(51.01% 53.6% at 78.92% 39.66%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(41.08% 71.69% at 16.39% 22.26%, #53152B 0%, #3C1741 100%) ' ,
   backgroundSize: "cover",
   backgroundPosition: "top",
   backgroundRepeat: "no-repeat",

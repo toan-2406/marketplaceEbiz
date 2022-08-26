@@ -2,7 +2,7 @@ import { Box, Divider } from "@mui/material";
 
 import {Header} from "./component/header";
 import Footer from "./component/footer";
-import { Line } from "../../styles/home";
+import { BackGroundOverLayPage, Line } from "../../styles/home";
 
 
 const MainLayout = ({children}) => {
@@ -13,7 +13,7 @@ const MainLayout = ({children}) => {
         position: "relative",
       }}
     >
-      
+      <BackGroundOverLayPage />
       <Header />
       <Line/>
       {children}

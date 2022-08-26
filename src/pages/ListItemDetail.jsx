@@ -58,7 +58,7 @@ const ListItemDetail = () => {
   return (
     <WrapperContainer>
       {isOpen && (
-        <ModalMain width="60%" open={isOpen} setOpen={setIsOpen}>
+        <ModalMain width="80%" open={isOpen} setOpen={setIsOpen}>
          <CompleteList/>
         </ModalMain>
       )}

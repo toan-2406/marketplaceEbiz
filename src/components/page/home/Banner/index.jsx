@@ -2,12 +2,13 @@ import { BoxContainer,BoxContent } from '../../../../styles/home/banner'
 import React from 'react'
 import bannerImg from '../../../../assets/images/home/nft_sell.png'
 import { Container, Typography } from '@mui/material'
-import { BackGroundOverLay1 } from '../../../../styles/home'
+const Spolight = React.lazy(() =>
+  import("../Spolight")
+);
 
 export default function Banner() {
   return (
-    <Container maxWidth='lg' >
-      <BackGroundOverLay1/>
+    <Container maxWidth='lg'>
       <BoxContainer>
 
           <img src={bannerImg} alt="banner" style={{width:'100%'}}/>
@@ -18,6 +19,7 @@ export default function Banner() {
         </Typography>
       </BoxContent>
       </BoxContainer>
+      <Spolight/>
     </Container>
   )
 }

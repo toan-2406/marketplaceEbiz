@@ -15,7 +15,7 @@ import { Link,Navigate } from "react-router-dom";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import CloseIcon from '@mui/icons-material/Close';
+
 import logo from "../../../../assets/images/header/logo.png";
 import { ColorButton } from "../../../../styles/component/button";
 import ToggleSideBar from "../../../Drawer";
@@ -71,24 +71,16 @@ export const Header = () => {
   const [search, setSearch] = useState("");
   const isTablet = useMediaQuery("(max-width: 1024px)");
   const ToggleMenu = () => {
-    setIsOpen(!isOpen);
-  }
-  const onSearch = (e) => {
-    setSearch(e.target.value);
-    console.log(search);
-    //if press enter key then navigate to search page
-    if (e.key === "Enter") {
-      Navigate("/search");
-    }
-  
+    setIsOpen(true);
   }
   return (
     <AppBar
-      position="relative"
+  
       sx={{
         backgroundColor: "transparent",
         backgroundImage: "none",
         boxShadow: "none",
+        position: "relative",
       }}
     >
       <Toolbar
@@ -99,7 +91,7 @@ export const Header = () => {
         }}
       >
         <Box sx={{ height: "28px" }}>
-          <Link to="/search">
+          <Link to="/">
           <img
             src={logo}
             alt="logo"
@@ -114,7 +106,6 @@ export const Header = () => {
           <StyledInputBase 
             placeholder="Search by NFTs, collections, and accounts"
             inputProps={{ "aria-label": "search" }}
-           onChange={onSearch}
           />
         </Search>
         <Box sx={{ display: { xs: "none", md: "none",lg:'flex' }, gap:'20px', alignItems: "center" }}>
@@ -143,13 +134,11 @@ export const Header = () => {
             size="large"
             color="inherit"
             aria-label="menu"
-            sx={{ display: { md: "flex",lg:"none", xl: "none" },zIndex:99999 }}
+            sx={{ display: { md: "flex",lg:"none", xl: "none" },zIndex:'9999'  }}
             onClick={ToggleMenu}
           >
-            {
-              isOpen ?<CloseIcon fontSize="large"/> 
-              :<MenuIcon fontSize="large" />
-            }
+            <MenuIcon fontSize="large" />
+            
           </IconButton>
       </Toolbar>
       {isTablet && <ToggleSideBar isOpen={isOpen} setIsOpen={setIsOpen}/>}
