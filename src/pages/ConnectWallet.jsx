@@ -8,15 +8,28 @@ import coinbaseicon from '../assets/images/icon/coinbase-icon.svg'
 import wavewalleticon from '../assets/images/icon/wavewallet-icon.svg'
 import phantomicon from '../assets/images/icon/phantom-icon.svg'
 import { ListItemItems } from '../styles/component/list'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../redux/features/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 export default function ConnectWallet() {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const handleLogin = () => {
+    dispatch(setUser({
+      name: 'John Doe',
+      isLogin: true,
+      wallet: 'metamask',
+    }))
+    navigate('/profile')
+  }
   return (
     <WrapperContainer>
         <BackGroundOverLayPage/>
         <TitleBold fontSize="40px !important" fontWeight={600} textAlign="center" mb={3}>Connect wallet</TitleBold>
         <Description fontSize="18px !important" fontWeight={400} textAlign="center" mb={5}>Choose how you want to connect. There are several wallet provider. </Description>
         <BorderBox width="60% !important" marginX="auto">
-                <ListItem>
+                <ListItem onClick={handleLogin}>
                   <ListItemAvatar>
                     <Avatar src={metamaskicon} alt="wallet"/>
                   </ListItemAvatar>

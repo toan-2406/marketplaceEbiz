@@ -9,6 +9,7 @@ const routes = {
     search: '/search',
     itemDetail: '/item-detail',
     connectWallet: '/connect-wallet',
+    profile: '/profile',
 };
 
 export default routes;

@@ -14,6 +14,7 @@ import DetailCollection from '../pages/DetailCollection';
 import Search from '../pages/Search';
 import ItemDetail from '../pages/ItemDetail';
 import ConnectWallet from '../pages/ConnectWallet';
+import Profile from '../pages/Profile';
 
 // Public routes
 export const publicRoutes = [
@@ -27,6 +28,7 @@ export const publicRoutes = [
     { path: config.routes.search, component: Search, layout: HeaderOnlyLayout  },
     { path: config.routes.itemDetail, component: ItemDetail  },
     { path: config.routes.connectWallet, component: ConnectWallet },
+    { path: config.routes.profile, component: Profile },
 ];
 
 export const privateRoutes = [];
