@@ -14,6 +14,7 @@ import CardNTFs from "../Card/CardNTFs";
 import { useMediaQuery } from "@mui/material";
 
 const SliderNFTs = (props) => {
+  const [loading, setLoading] = useState(true);
   const [realIndex, setRealIndex] = useState(0)
   const length = props.data.length;
   const isTable = useMediaQuery("(max-width:1112px)");

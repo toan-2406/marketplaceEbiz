@@ -23,6 +23,7 @@ export const EditPhotoContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  position: "relative",
 }));
 export const EditPhotoWrapper = styled(Button)(({ theme }) => ({
     background: Colors.gradientColor,

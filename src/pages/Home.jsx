@@ -13,13 +13,14 @@ const Home = () => {
   return (
     <Box>
       <Suspense fallback={<div style={{display:'none'}}>Loading...</div>}>
-      <Box py={4}>
         <Banner />
-      </Box>
-        <TopCollection />
+      </Suspense>
+      <Suspense fallback={<div style={{display:'none'}}>Loading...</div>}>
+      <TopCollection />
           <NFTs />
         <PopularCategories /> 
       </Suspense>
+      
     </Box>
   );
 };
