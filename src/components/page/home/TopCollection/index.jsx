@@ -209,7 +209,7 @@ export default function TopCollection() {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#1E1E1E" }}>
+    <Box sx={{ backgroundColor: "#1E1E1E"}}>
       <WrapperContainer>
         <TitleSection
           sx={{

@@ -15,6 +15,7 @@ import { ActionTab, ActionTabs } from "../styles/home/topcollection";
 import ExploreDetailItem from "../components/page/explore/ExploreDetailItem";
 import ExploreDetailActivity from "../components/page/explore/ExploreDetailActivity";
 import tokenEth from '../assets/images/icon/eth.svg';
+import { Link } from "react-router-dom";
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -67,33 +68,26 @@ export default function Profile() {
           alt="avatar"
         />
       </Box>
-      <ContainerFull mt={{xs:5,md:1}}>
-        <Stack
-          direction={{xs:'row',md:'row'}}
-          justifyContent="space-between"
-          alignItems={{xs:'start',md:'center'}}
-          spacing={1}
-        >
+      <ContainerFull mt={{xs:1,md:1}}>
           <Box>
-
-          </Box>
-          <Box>
-            <Stack direction={"row"} spacing={6}>
+            <Stack direction={"row"} justifyContent={{xs:'space-between',md:'flex-end'}} alignItems='center' spacing={4}>
              <Box sx={{display: "flex", alignItems: "center"}}>
               <CardMedia component='img' src={tokenEth} sx={{ marginRight:'10px',height:"26px", width:"15px"}}  />
               <SubTitleBold >0xc139...604</SubTitleBold>
              </Box>
+              <Link to="/profile-detail">
               <SettingsIcon
                 sx={{
                   fill: "#E5E9F0",
                   fontSize: "28px",
                 }}
               />
+              </Link>
             </Stack>
           </Box>
-        </Stack>
+    
 
-        <Box padding={"51px 0px"}>
+        <Box padding={"30px 0px"}>
           <TitleBold
             textAlign={"center"}
             sx={{ marginBottom: "14px", fontSize: {

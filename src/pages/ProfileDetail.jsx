@@ -1,4 +1,4 @@
-import {  Box, Grid } from "@mui/material";
+import {  Box, Grid, Stack } from "@mui/material";
 import React from "react";
 import Input from "../components/Input";
 import { ButtonContent, ButtonOutline } from "../styles/component/button";
@@ -12,7 +12,7 @@ import { EditPhotoContainer, EditPhotoWrapper, LinkCustom } from "../styles/prof
 import { TitleInput } from "../styles/create";
 function EditPhoto (props){
     return (
-       <>
+       <Box>
        <TitleInput>
          {props.name}
        </TitleInput>
@@ -22,7 +22,7 @@ function EditPhoto (props){
             <input hidden accept="image/*"  type="file" />
             </EditPhotoContainer>
         </EditPhotoWrapper>
-        </>
+        </Box>
     )
 }
 const ProfileDetail = () => {
@@ -31,8 +31,8 @@ const ProfileDetail = () => {
       <BackGroundOverLayPage />
       <LinkCustom href="/">Back</LinkCustom>
       <TitleSection>Profile Details</TitleSection>
-      <Grid container spacing={5}>
-        <Grid item xs={12} sm={8}>
+      <Grid container spacing={5} flexDirection={{xs:'column-reverse',md:'row'}}>
+        <Grid item xs={12} md={8}>
           <Input
             name="Username"
             type="text"
@@ -57,11 +57,12 @@ const ProfileDetail = () => {
             </ButtonOutline>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={4}>
         
+          <Stack direction={{xs:'row', md:'column'}} justifyContent={{xs:'space-evenly',md:'flex-start'}}>
           <EditPhoto name='Profile image' src={iconedit} bradius='50%' />
-          <br/>
-          <EditPhoto name='Profile banner' src={iconedit} bradius='8px' />
+          <EditPhoto name='Profile banner' src={iconedit} bradius='8px'  />
+          </Stack>
         </Grid>
       </Grid>
     </WrapperContainer>

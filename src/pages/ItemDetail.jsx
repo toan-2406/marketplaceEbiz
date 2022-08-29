@@ -339,7 +339,7 @@ export default function ItemDetail() {
             <Stack
               sx={{
                 padding: " 10px 12px ",
-                marginRight: "12px",
+                marginRight: {xs:'0px',md:'12px'},
                 height: "145px",
                 overflow: "auto",
               }}
@@ -350,7 +350,7 @@ export default function ItemDetail() {
             >
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -361,7 +361,7 @@ export default function ItemDetail() {
               </ListItem>
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -372,7 +372,7 @@ export default function ItemDetail() {
               </ListItem>
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -383,7 +383,7 @@ export default function ItemDetail() {
               </ListItem>
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -394,7 +394,7 @@ export default function ItemDetail() {
               </ListItem>
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -405,7 +405,7 @@ export default function ItemDetail() {
               </ListItem>
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -416,7 +416,7 @@ export default function ItemDetail() {
               </ListItem>
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -427,7 +427,7 @@ export default function ItemDetail() {
               </ListItem>
               <ListItem
                 sx={{
-                  width: "calc(100% / 3 - 14px)",
+                  width: {xs:'calc(100% / 3.4)',md:'calc(100% / 3 - 14px)'},
                   padding: "5px 10px",
                   borderRadius: "8px",
                   display: "inline-block",
@@ -493,7 +493,7 @@ export default function ItemDetail() {
             </ListItem>
           </DropDown>
         </Grid>
-        <Grid item xs={12} md={7} sx={{ "& > * ~ *": { marginTop: "20px" } }}>
+        <Grid item xs={12} md={7} sx={{ "& > * ~ *": { marginTop: "20px" } }} display="flex" flexDirection={{xs:"column-reverse",md:'column'}}>
           <BorderBox padding="20px 24px 20px 24px">
             <TitleNormal sx={{ color: "#0085FF" }}>
               Bored Ape Yacht Club
@@ -519,7 +519,7 @@ export default function ItemDetail() {
               </Description>
             </BorderBox2>
             <Stack
-              direction="row"
+              direction={{xs:'column',sm:'row'}}
               justifyContent="flex-start"
               alignItems="center"
               gap={2}
@@ -527,7 +527,7 @@ export default function ItemDetail() {
             >
               <ButtonOutline>
                 <ButtonContent
-                  sx={{ padding: "15px 67px" }}
+                  sx={{ padding: "15px 67px",backgroundColor:'#271225' }}
                   onClick={() => OpenModal("makeoffer")}
                 >
                   Make offer
@@ -560,7 +560,7 @@ export default function ItemDetail() {
           justifyContent="space-between"
           alignItems="center"
         >
-          <TitleBold>NFTs related to this item</TitleBold>
+          <TitleBold maxWidth={'50%'}>NFTs related to this item</TitleBold>
           <ColorButton>View collection</ColorButton>
         </Stack>
         <Box mt={2} paddingLeft="12px" position={"relative"}>

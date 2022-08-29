@@ -42,7 +42,6 @@ const SliderNFTs = (props) => {
       navigation={{ enabled: true}}
       modules={[Pagination, Navigation]}
       className="mySwiper"
-      
     >
       
        {props.data.map((item) => (

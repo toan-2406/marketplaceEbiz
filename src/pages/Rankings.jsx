@@ -242,7 +242,7 @@ const Rankings = () => {
     setValue(newValue);
   };
   return (
-    <WrapperContainer>
+    <WrapperContainer sx={{minHeight:'100vh' }}>
     <BackGroundOverLayPage/>
     <TitleSection>
     Top Collections

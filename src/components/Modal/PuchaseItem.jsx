@@ -1,4 +1,4 @@
-import { Avatar, Box, Grid, Stack } from '@mui/material'
+import { Avatar, Box, CardMedia, Grid, Stack } from '@mui/material'
 import React from 'react'
 import { ProcesingCircle } from '../../styles/component/progress'
 import { Description, SubTitleBold, TitleBold } from '../../styles/component/typography'
@@ -26,17 +26,17 @@ export const PurchaseSuccess = () => {
               width: "219px",
               borderRadius: "10px",
               overflow: "hidden",
-              
+              marginX:'auto'
             }}
           >
-            <img style={{ height: "100%", width: "100%" }}
+            <CardMedia component={'img'} style={{ height: "100%", width: "100%" }}
               src="https://openseauserdata.com/files/b87867ca79249e972ff261f140cd6b5c.gif"
               alt="avatar"
             />
           </Box>
         </Grid>
         <Grid item xs={12} md={7}>
-          <Stack  direction="column" alignItems="flex-start" justifyContent='space-between' rowGap={1}>
+          <Stack  direction="column" alignItems={{xs:'center',md:'flex-start'}} justifyContent='space-between' rowGap={1}>
             <TitleBold
               variant="h4"
               component="h4"

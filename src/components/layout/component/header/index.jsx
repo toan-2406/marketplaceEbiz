@@ -36,11 +36,10 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginLeft: 0,
+  marginLeft: '10px',
   width: "40%",
-  marginRight: theme.spacing(2),
+  overflow: 'hidden',
   [theme.breakpoints.down('sm')]: {
-    marginLeft: theme.spacing(1),
     width: 'auto',
   },
 }));
@@ -63,9 +62,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: "40ch",
     [theme.breakpoints.down('sm')]: {
-      width: '12ch',
+      width: '9ch',
       '&:focus': {
-        width: '20ch',
+        width: '12ch',
       },
     },
   },
@@ -111,7 +110,7 @@ export const Header = () => {
           <CardMedia component={"img"} src={logo} alt="logo" />
         </Box>
 
-        <Search sx={{ ml: 2}}>
+        <Search>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>

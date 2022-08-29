@@ -27,6 +27,8 @@ const SliderCollection = (props) => {
       navigation={{ enabled: true }}
       modules={Navigation}
       className="mySwiper"
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
     >
       {
       props.data.map((item) => (
