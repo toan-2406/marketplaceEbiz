@@ -58,9 +58,11 @@ const data = [
 export default function PopularCategories() {
   return (
     <Box sx={{ backgroundColor: "#1E1E1E" }}>
-      <WrapperContainer sx={{ position: "relative"}}>
+      <WrapperContainer sx={{ position: "relative"}} >
         <TitleSection>Popular categories</TitleSection>
+        {/* <Box sx={{ position: "relative"}}> */}
         <SliderCategory data={data} />
+        {/* </Box> */}
       </WrapperContainer>
     </Box>
   );

@@ -10,6 +10,8 @@ const routes = {
     itemDetail: '/item-detail',
     connectWallet: '/connect-wallet',
     profile: '/profile',
+    myCollection: '/my-collection',
+    createCollection: '/create-collection',
 };
 
 export default routes;

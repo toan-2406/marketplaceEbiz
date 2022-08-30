@@ -3,66 +3,33 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Avatar, CardActionArea, Skeleton } from "@mui/material";
-import { StyledBadge } from "../../styles/home/topcollection";
+import { Avatar, Box, CardActionArea, Skeleton } from "@mui/material";
 
 import { Link } from "react-router-dom";
+import { StyledBadge } from "../../styles/home/topcollection";
+import { SubTitleBold, TitleBold } from "../../styles/component/typography";
 export default function CardNTFs(props) {
   const { item } = props;
 
   return (
-    <Link to="/collection-detail">
-      <Card
-        sx={{
-          maxWidth: 400,
-          width: "100%",
-          height: "100%",
-          maxHeight: "386px",
-          background: "transparent",
-          borderRadius: "20px",
-          color: "unset",
-          boxShadow: "none",
-        }}
-      >
-        <CardActionArea
-          sx={{
-            background: "transparent",
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-        >
-          {item ? (
-            <CardMedia
-              component="img"
-              height={246}
-              sx={{
-                maxHeight: "246px",
-                width: "100%",
-                overflow: "hidden",
-                objectFit: "cover",
-              }}
-              image={item.images.cover}
-              alt="spolight"
-            />
-          ) : (
-            <Skeleton variant="rectangular" width={'100%'} height={246} />
-          )}
-
-         {item ? ( <CardContent
-            sx={{
-              height: "40%",
-              backgroundColor: "rgb(231 231 231 / 11%)",
-              backdropFilter: "blur(70px) !important",
-              transition: "all 0.3s ",
-              width: "100%",
-              borderRadius: "20px",
-              transform: "translateY(-20px)",
-              position: "relative",
-              textAlign: "center",
-            }}
-          >
-            <StyledBadge
+    <Card sx={{
+      minWidth:{xs:'100%',sm:'300px'},
+      width: "100%",
+      height: "100%",
+      background: "transparent",
+      borderRadius: "20px",
+      color: "unset",
+      boxShadow: "none",
+    }}>
+      <CardActionArea>
+        <CardMedia component="img" sx={{height: "246px",width:'100%', borderTopLeftRadius:'20px',borderTopRightRadius:'20px' ,objectFit:'cover'}} src={item.images.cover} />
+        <CardContent sx={{
+          background: 'rgba(76, 33, 83, 0.25)',
+          mixBlendMode: 'normal',
+          backdropFilter: 'blur(70px)',
+          position: 'relative',
+        }}>
+          <StyledBadge
               // overlap="circular"
               // anchorOrigin={{ vertical: "top", horizontal: "right" }}
               // variant="dot"
@@ -87,37 +54,14 @@ export default function CardNTFs(props) {
                 src={item.images.avatar}
               />
             </StyledBadge>
-            <Typography
-              sx={{ mt: "40px", textTransform: "uppercase", mb: "16px" }}
-              gutterBottom
-              variant="h5"
-              component="p"
-              fontSize={18}
-              fontWeight={700}
-              color="white"
-            >
+              <TitleBold mt={4} textAlign={'center'}>
               {item.name}
-            </Typography>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="p"
-              fontSize={18}
-              fontWeight={500}
-              color="#B6BDCB"
-              sx={{
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                display: "-webkit-box",
-                LineClamp: 2,
-                BoxOrient: "vertical",
-              }}
-            >
-              {item.description && item.description}
-            </Typography>
-          </CardContent>) : ( <Skeleton variant="rectangular" width={'100%'} height={246} />)}
-        </CardActionArea>
-      </Card>
-    </Link>
+              </TitleBold>
+             {item.description ? ( <SubTitleBold textAlign={'center'}>
+              {item.description}
+              </SubTitleBold>):null}
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 }

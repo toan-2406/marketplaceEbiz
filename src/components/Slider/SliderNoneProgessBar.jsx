@@ -12,16 +12,23 @@ import "../page/home/NFTs/style.css";
 // import required modules
 import { Navigation } from "swiper";
 
-import { useMediaQuery } from "@mui/material";
 import CardCollection from "../Card/CardCollection";
 
 const SliderNoneProgessBar = (props) => {
-  const isTable = useMediaQuery("(max-width:1112px)");
-  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Swiper
-      slidesPerView={isMobile ? 1 : isTable ? 3 : 4.5}
-      spaceBetween={16}
+      slidesPerView={1}
+    spaceBetween={10}
+    breakpoints={{
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+      1024: {
+        slidesPerView: 4.5,
+        spaceBetween: 16,
+      },
+    }}
       slidesPerGroup={1}
       loop={true}
       navigation={{ enabled: true }}

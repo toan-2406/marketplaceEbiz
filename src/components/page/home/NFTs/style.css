@@ -11,6 +11,12 @@
   font-weight: 600 !important;
   color: #fff;
 }
+.swiper-navigation-disabled .swiper-button-next, .swiper-navigation-disabled .swiper-button-prev{
+  display: flex !important;
+}
+.swiper-navigation-disabled .swiper-button-next, .swiper-navigation-disabled .swiper-button-prev{
+  display: flex !important;
+}
 .swiper {
   width: 85%;
   height: 100%;

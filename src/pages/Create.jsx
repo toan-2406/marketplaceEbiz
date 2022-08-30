@@ -32,6 +32,7 @@ import AddProperties from "../components/Modal/AddProperties";
 import AddLevels from "../components/Modal/AddLevels";
 import AddStats from "../components/Modal/AddStats";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { LinkCustom } from "../styles/profile";
 
 const collection = [
   {
@@ -157,6 +158,7 @@ const Create = () => {
       )}
 
       <BackGroundOverLayPage />
+      <LinkCustom href="/">Back</LinkCustom>
       <TitleSection>Create New Item</TitleSection>
       <Grid container spacing={10}>
         <Grid item md={4} sm={12}>

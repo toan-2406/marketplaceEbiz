@@ -4,7 +4,7 @@ import {
   TabPanelItem,
   TabPanelLayout,
   StyledBadge,
-} from "../../../../styles/home/topcollection";
+} from "../../styles/home/topcollection";
 
 export default function CardTopCollection(props) {
   return (

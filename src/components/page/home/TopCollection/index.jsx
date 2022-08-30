@@ -6,7 +6,7 @@ import {
 } from "../../../../styles/component/button";
 import { TitleSection, WrapperContainer } from "../../../../styles/home";
 import { ActionTabs, ActionTab } from "../../../../styles/home/topcollection";
-import CardTopCollection from "./CardTopCollection";
+import CardTopCollection from "../../../Card/CardTopCollection";
 
 const data = [
   {

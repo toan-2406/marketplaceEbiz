@@ -15,6 +15,7 @@ import {
   Menu,
   MenuItem,
   CardMedia,
+  Paper,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -29,42 +30,42 @@ import ToggleSideBar from "../../../Drawer";
 import { navbarLink } from "../../../../assets/data/navbar";
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
+const Search = styled(Paper)(({ theme }) => ({
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
+  "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginLeft: '10px',
+  marginLeft: "10px",
   width: "40%",
-  overflow: 'hidden',
-  [theme.breakpoints.down('sm')]: {
-    width: 'auto',
+  overflow: "hidden",
+  [theme.breakpoints.down("sm")]: {
+    width: "auto",
   },
 }));
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
+  color: "inherit",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
+    transition: theme.transitions.create("width"),
     width: "40ch",
-    [theme.breakpoints.down('sm')]: {
-      width: '9ch',
-      '&:focus': {
-        width: '12ch',
+    [theme.breakpoints.down("sm")]: {
+      width: "9ch",
+      "&:focus": {
+        width: "12ch",
       },
     },
   },
@@ -90,6 +91,17 @@ export const Header = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //when user click search button or enter key then navigate to search page
+
+    navigation(`/search?q=${search}`);
+  };
+
   return (
     <AppBar
       sx={{
@@ -110,15 +122,17 @@ export const Header = () => {
           <CardMedia component={"img"} src={logo} alt="logo" />
         </Box>
 
-        <Search>
+        <Search component="form" onSubmit={handleSubmit}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase
             placeholder="Search by NFTs, collections, and accounts"
             inputProps={{ "aria-label": "search" }}
+            onChange={handleSearch}
           />
         </Search>
+
         <Box
           sx={{
             display: { xs: "none", md: "none", lg: "flex" },

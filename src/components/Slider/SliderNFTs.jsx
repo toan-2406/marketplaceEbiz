@@ -11,23 +11,26 @@ import './style.css';
 // import required modules
 import { Pagination, Navigation } from "swiper";
 import CardNTFs from "../Card/CardNTFs";
-import { useMediaQuery } from "@mui/material";
 
 const SliderNFTs = (props) => {
-  const [loading, setLoading] = useState(true);
   const [realIndex, setRealIndex] = useState(0)
   const length = props.data.length;
-  const isTable = useMediaQuery("(max-width:1112px)");
-  const isMobile = useMediaQuery("(max-width:600px)");
   useEffect(() => {
-    console.log(realIndex)
     document.querySelector('.swiper-progressbar-fill1').style.width = `${100 / length}%`
     document.querySelector('.swiper-progressbar-fill1').style.left= `${100 / length * realIndex}%`
   }, [realIndex,length])
   return (
     <Swiper
-      slidesPerView={isMobile ? 1 : isTable ? 2 : 3}
-      spaceBetween={16}
+    slidesPerView={1}
+    spaceBetween={20}
+    breakpoints={{
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    }}
       slidesPerGroup={1}
       loop={true}
       onActiveIndexChange={(realIndex) => {
@@ -35,12 +38,13 @@ const SliderNFTs = (props) => {
       }}
       pagination={{
         type: "progressbar",
+
         progressbarFillClass: "swiper-progressbar-fill1",
         renderProgressbar: (progressbarEl) => {
           return '<span class="' + progressbarEl + '"> </span>';
         }
       }}
-      navigation={{ enabled: true}}
+      navigation={{ enabled: true , clickable: true}}
       modules={[Pagination, Navigation]}
       className="mySwiper"
     >

@@ -12,13 +12,9 @@ import './style.css';
 // import required modules
 import { Pagination, Navigation } from "swiper";
 import CardCategories from "../Card/CardCategories";
-import { useMediaQuery } from "@mui/material";
-
 const SliderCategory = (props) => {
   const [realIndex, setRealIndex] = useState(0)
   const length = props.data.length;
-  const isTable = useMediaQuery("(max-width:1112px)");
-  const isMobile = useMediaQuery("(max-width:600px)");
   useEffect(() => {
     console.log(realIndex)
     document.querySelector('.swiper-progressbar-fill').style.width = `${100 / length}%`
@@ -27,9 +23,18 @@ const SliderCategory = (props) => {
 
   return (
     <Swiper
-    
-      slidesPerView={isMobile ? 1 : isTable ? 2.5 : 3.5}
-      spaceBetween={40}
+      slidesPerView={1}
+    spaceBetween={10}
+    breakpoints={{
+      640: {
+        slidesPerView: 2.5,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3.5,
+        spaceBetween: 40,
+      },
+    }}
       slidesPerGroup={1}
       loop={true}
       style={{ width: "100%" }} 
