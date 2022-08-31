@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./style.css";
 import "../page/home/NFTs/style.css";
@@ -18,21 +17,19 @@ const SliderNoneProgessBar = (props) => {
   return (
     <Swiper
       slidesPerView={1}
-    spaceBetween={10}
+    spaceBetween={5}
     breakpoints={{
       640: {
-        slidesPerView: 3,
-        spaceBetween: 16,
+        slidesPerView: 3
       },
       1024: {
-        slidesPerView: 4.5,
-        spaceBetween: 16,
+        slidesPerView: 4.5
       },
     }}
       slidesPerGroup={1}
       loop={true}
-      navigation={{ enabled: true }}
-      modules={Navigation}
+      navigation={{ enabled: true, clickable: true }}
+      modules={[Navigation]}
       className="mySwiper"
     >
       {props.data.map((item) => (

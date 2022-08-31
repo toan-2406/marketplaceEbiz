@@ -60,9 +60,9 @@ export default function PopularCategories() {
     <Box sx={{ backgroundColor: "#1E1E1E" }}>
       <WrapperContainer sx={{ position: "relative"}} >
         <TitleSection>Popular categories</TitleSection>
-        {/* <Box sx={{ position: "relative"}}> */}
+        <Box sx={{ position: "relative"}}>
         <SliderCategory data={data} />
-        {/* </Box> */}
+        </Box>
       </WrapperContainer>
     </Box>
   );

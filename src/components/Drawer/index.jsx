@@ -44,7 +44,7 @@ export default function ToggleDrawer(props) {
         sx={{position: "absolute", top: "10px", left: "10px"}}
         onClick={() => setIsOpen(false)}
       >
-        <CloseIcon fontSize="large" />
+        <CloseIcon fontSize="large" sx={{color:'#fff'}} />
       </IconButton>
       <Stack spacing={3} direction="column" alignItems={"center"}>
         {navbarLink.map((page, index) => (

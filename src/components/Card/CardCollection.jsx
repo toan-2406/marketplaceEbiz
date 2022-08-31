@@ -54,7 +54,8 @@ backdropFilter: 'blur(70px)',
         <CardContent
           sx={{
             transition: "all 0.3s ",
-            width: "100%"
+            width: "100%",
+            textAlign: "start",
           }}
         >
          <Subtitle component='p' sx={{margin:'unset'}}>

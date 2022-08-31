@@ -1,27 +1,4 @@
-.swiper-button-next,
-.swiper-button-prev {
-  background: linear-gradient(45deg, #88069d 0.01%, #d0004b 97.2%);
-  border-radius: 8px !important;
-  width: 48px !important;
-  height: 48px !important;
-}
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  color: #fff;
-}
-.swiper-navigation-disabled .swiper-button-next, .swiper-navigation-disabled .swiper-button-prev{
-  display: flex !important;
-}
-.swiper-navigation-disabled .swiper-button-next, .swiper-navigation-disabled .swiper-button-prev{
-  display: flex !important;
-}
-.swiper {
-  width: 85%;
-  height: 100%;
-  position: unset !important;
-}
+
 @media screen and (max-width: 768px) {
   .swiper {
     width: 100%;

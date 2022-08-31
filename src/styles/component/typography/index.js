@@ -4,14 +4,14 @@ import { Colors } from "../../theme";
 
 export const TitleBold = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
-  fontSize: "18px",
-  lineHeight: "28px",
+  fontSize: {xs: '16px',md:'18px'},
+  lineHeight: {xs: '24px',md:'28px'},
   color: Colors.textWhite,
 }));
 export const SubTitleBold = styled(Typography)(({ theme }) => ({
     fontWeight: 500,
-    fontSize: "16px",
-    lineHeight: "24px",
+    fontSize: {xs: '14px',md:'16px'},
+  lineHeight: {xs: '20px',md:'24px'},
     color: Colors.blackDark1,
   }));
 

@@ -13,7 +13,7 @@ export default function AcceptOffer(props) {
       <Line2 />
       <Box
         sx={{
-          padding: "31px 78px",
+          padding: {xs:'10px',md:  "31px 78px"},
         }}
       >
         <Stack

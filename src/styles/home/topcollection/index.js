@@ -6,6 +6,7 @@ export const ActionTabs = styled(Tabs)(({ theme }) => ({
   background: "transparent",
   color: Colors.textWhite,
   border: "none",
+  overflow: "auto",
   "&:hover": {
     background: "transparent",
     color: Colors.textWhite,

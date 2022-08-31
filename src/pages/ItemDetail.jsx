@@ -264,7 +264,7 @@ export default function ItemDetail() {
           ) : (
            <PuchaseItem progress={progress}/>
           )} */}
-          <PurchaseSuccess />
+          <PuchaseItem progress={progress}/>
           {isOpen.type === "makeoffer" && <Transfer />}
         </ModalMain>
       )}
@@ -563,7 +563,7 @@ export default function ItemDetail() {
           <TitleBold maxWidth={'50%'}>NFTs related to this item</TitleBold>
           <ColorButton>View collection</ColorButton>
         </Stack>
-        <Box mt={2} paddingLeft="12px" position={"relative"}>
+        <Box mt={2} sx={{width:'100%'}} position={"relative"}>
           <SliderNoneProgessBar data={data1} mt={2} />
         </Box>
       </BorderBox>

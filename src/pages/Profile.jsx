@@ -16,6 +16,7 @@ import ExploreDetailItem from "../components/page/explore/ExploreDetailItem";
 import ExploreDetailActivity from "../components/page/explore/ExploreDetailActivity";
 import tokenEth from '../assets/images/icon/eth.svg';
 import { Link } from "react-router-dom";
+import ExploreCreate from "../components/page/explore/ExploreCreate";
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -121,13 +122,13 @@ export default function Profile() {
        <ExploreDetailItem/>
       </TabPanel>
       <TabPanel value={value} index="2">
-        <ExploreDetailActivity/>
+        <ExploreCreate/>
       </TabPanel>
       <TabPanel value={value} index="3">
-       Tab 3
+      <ExploreDetailActivity/>
       </TabPanel>
       <TabPanel value={value} index="4">
-        Tab 4
+        <ExploreDetailActivity/>
       </TabPanel>
       </ContainerFull> 
     </>

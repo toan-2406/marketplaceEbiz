@@ -423,15 +423,15 @@ export default function Search() {
             </DropDown>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={isOpen ? 9.5 : 12}>
+        <Grid item xs={12} md={isOpen ? 9 : 12} sx={{marginLeft:'auto'}}>
           <Box>
           <Box position="relative" mb={2}>
-          <SliderCollection data={data1}  />
+          <SliderCollection data={data1} col={4} />
           </Box>
             <Stack spacing={2} direction="row" mb={2} alignItems="center">
                 {tags.map((item) => (
                   <Box key={item.id}>
-                    <Tags  label={item.name}></Tags>
+                    <Tags  label={item.name} onDelete={item.id}></Tags>
                   </Box>
                 ))}
                 <TitleBold sx={{ cursor: "pointer"}}>Clear All</TitleBold>

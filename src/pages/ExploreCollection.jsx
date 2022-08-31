@@ -128,7 +128,7 @@ const ExploreCollection = () => {
     <WrapperContainer sx={{paddingBottom:'90px'}}>
         <BackGroundOverLayPage/>
       <TitleSection>Explore Collections</TitleSection>
-      <Box>
+      <Box  sx={{overflowX:'auto',width:'100%'}}>
         <ActionTabs
           value={value}
           onChange={handleChange}

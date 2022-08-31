@@ -13,7 +13,7 @@ export default function CardNTFs(props) {
 
   return (
     <Card sx={{
-      minWidth:{xs:'100%',sm:'300px'},
+      minWidth:{xs:'100%',sm:'200px'},
       width: "100%",
       height: "100%",
       background: "transparent",
@@ -22,7 +22,7 @@ export default function CardNTFs(props) {
       boxShadow: "none",
     }}>
       <CardActionArea>
-        <CardMedia component="img" sx={{height: "246px",width:'100%', borderTopLeftRadius:'20px',borderTopRightRadius:'20px' ,objectFit:'cover'}} src={item.images.cover} />
+        <CardMedia component="img" sx={{height: "230px",width:'100%', borderTopLeftRadius:'20px',borderTopRightRadius:'20px' ,objectFit:'cover'}} src={item.images.cover} />
         <CardContent sx={{
           background: 'rgba(76, 33, 83, 0.25)',
           mixBlendMode: 'normal',

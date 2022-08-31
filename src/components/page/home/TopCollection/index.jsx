@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ButtonContent,
   ButtonOutline,
@@ -209,7 +210,7 @@ export default function TopCollection() {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#1E1E1E"}}>
+    <Box sx={{ backgroundColor: "#1E1E1E" }}>
       <WrapperContainer>
         <TitleSection
           sx={{
@@ -249,9 +250,11 @@ export default function TopCollection() {
             marginTop: "44px",
           }}
         >
-          <ButtonOutline>
-            <ButtonContent>Go to Rankings</ButtonContent>
-          </ButtonOutline>
+          <Link to='/rankings'>
+            <ButtonOutline>
+              <ButtonContent>Go to Rankings</ButtonContent>
+            </ButtonOutline>
+          </Link>
         </Box>
       </WrapperContainer>
     </Box>
