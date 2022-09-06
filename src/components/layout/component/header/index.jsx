@@ -28,7 +28,33 @@ import { ColorButton } from "../../../../styles/component/button";
 import ToggleSideBar from "../../../Drawer";
 
 import { navbarLink } from "../../../../assets/data/navbar";
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = [
+  {
+    id: 1,
+    name: "Profile",
+    link: "/profile",
+  },
+  {
+    id: 2,
+    name: "Favorites",
+    link: "/favorites",
+  },
+  {
+    id: 3,
+    name: "My Collections",
+    link: "/my-collection",
+  },
+  {
+    id: 4,
+    name: "Settings",
+    link: "/profile-detail",
+  },
+  {
+    id: 5,
+    name: "Logout",
+    link: "/logout",
+  },
+];
 
 const Search = styled(Paper)(({ theme }) => ({
   position: "relative",
@@ -70,8 +96,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       },
     },
   },
-  '&:placeholder': {
-    color: '#808089',
+  "&:placeholder": {
+    color: "#808089",
   },
 }));
 export const Header = () => {
@@ -162,8 +188,8 @@ export const Header = () => {
             ))}
           </Stack>
           {isLogin ? (
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
+            <Box sx={{ flexGrow: 0, background: "transparent !important" }}>
+              <Tooltip title="Profile Detail">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
                     alt="Remy Sharp"
@@ -172,7 +198,16 @@ export const Header = () => {
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: "45px" }}
+                sx={{
+                  mt: "45px",
+                  "& .MuiList-root": {
+                    background: "#1E1320",
+                    padding: "unset",
+                  },
+                  "& .MuiPaper-root": {
+                    background: "transparent !important",
+                  },
+                }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
@@ -188,9 +223,22 @@ export const Header = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                  <Link to={setting.link} key={setting.id}>
+                  <MenuItem
+                    onClick={handleCloseUserMenu}
+                    sx={{
+                      "&:hover": {
+                        background: "#28102b",
+                      },
+
+                      borderTop: "0.5px solid rgba(255, 255, 255, 0.2)",
+                    }}
+                  >
+                    <Typography textAlign="center" color="#E5E9F0">
+                      {setting.name}
+                    </Typography>
                   </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </Box>

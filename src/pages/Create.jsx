@@ -170,12 +170,19 @@ const Create = () => {
             Max size: 100 MB
           </Subtitle>
           <UploadComponent component="label">
-            {avatar ? (
-              <>
+             { 
+                avatar ? 
+               (
+                <>
+                 {
+                  avatar?.type?.includes("video/mp4") ? <>
                 <CardMedia
-                  component="img"
+                  component="video"
                   height={"100%"}
-                  image={avatar.preview}
+                  autoPlay
+                  controls
+                  type={avatar.type}
+                  src={avatar.preview}
                   alt="avatar"
                 />
                 <IconButton
@@ -185,7 +192,25 @@ const Create = () => {
                   <CloseRoundedIcon />
                 </IconButton>
               </>
-            ) : (
+              : <>
+                <CardMedia
+                  component="img"
+                  height={"100%"}
+                  type={avatar.type}
+                  src={avatar.preview}
+                  alt="avatar"
+                />
+                <IconButton
+                  sx={{ position: "absolute", top: 5, right: 5, zIndex: 999 }}
+                  onClick={removeAvatar}
+                >
+                  <CloseRoundedIcon />
+                </IconButton>
+              </>
+                }
+                </>
+               )
+             : (
               <Avatar
                 sx={{ height: 72, width: 72 }}
                 src={iconupload}
@@ -194,7 +219,7 @@ const Create = () => {
             )}
             <input
               hidden
-              accept="image/*"
+              accept="*"
               onChange={handlePreviewAvatar}
               type="file"
             />
